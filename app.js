@@ -17,9 +17,26 @@ const attributes = {
   WIL: 0  // Willpower
 };
 
+// Define attribute descriptions
+const attributeDescriptions = {
+  AGI: "Physical coordination and dexterity",
+  APP: "Physical attractiveness and presence",
+  BLD: "Physical size and mass (-5 to +5)",
+  CRE: "Mental agility and problem-solving",
+  FIT: "Physical endurance and health",
+  INF: "Leadership and diplomatic abilities",
+  KNO: "Education and memory",
+  PER: "Awareness of surroundings",
+  PSY: "Mental stability and emotional resilience",
+  WIL: "Mental fortitude and determination"
+};
+
 // Define the character points
 const maxCharacterPoints = 50;
 let usedCharacterPoints = 0;
+
+// Character portrait
+let characterPortrait = null;
 
 // Define the secondary traits calculation functions
 function calculateSecondaryTraits() {
@@ -56,7 +73,7 @@ function updateUI() {
   }
   
   // Update points used displays
-  document.getElementById('character-points-used').textContent = `${usedCharacterPoints}/${maxCharacterPoints}`;
+  document.getElementById('character-points-used').textContent = `${usedCharacterPoints}/${maxCharacterPoints} Points`;
   
   // Update secondary traits
   const secondaryTraits = calculateSecondaryTraits();
@@ -66,48 +83,94 @@ function updateUI() {
       element.textContent = secondaryTraits[trait];
     }
   }
+  
+  // Update faction badge based on selection
+  updateFactionBadge();
 }
 
 // Function to increase an attribute
 function increaseAttribute(attr) {
-  if (usedCharacterPoints < maxCharacterPoints && attributes[attr] < 3) {
-    // Special case for BLD which can go up to +5
-    if (attr === 'BLD' && attributes[attr] < 5) {
-      attributes[attr]++;
-      usedCharacterPoints++;
-    } else if (attr !== 'BLD') {
-      attributes[attr]++;
-      usedCharacterPoints++;
-    }
+  const maxValue = attr === 'BLD' ? 5 : 3; // Build can go up to +5, others to +3
+  
+  if (usedCharacterPoints < maxCharacterPoints && attributes[attr] < maxValue) {
+    attributes[attr]++;
+    usedCharacterPoints++;
     updateUI();
+  } else if (attributes[attr] >= maxValue) {
+    showNotification(`${attr} cannot exceed +${maxValue}`);
+  } else {
+    showNotification("Not enough character points remaining");
   }
 }
 
 // Function to decrease an attribute
 function decreaseAttribute(attr) {
-  if (attributes[attr] > -3) {
-    // Special case for BLD which can go down to -5
-    if (attr === 'BLD' && attributes[attr] > -5) {
-      attributes[attr]--;
-      usedCharacterPoints--;
-    } else if (attr !== 'BLD' && attributes[attr] > -3) {
-      attributes[attr]--;
-      usedCharacterPoints--;
-    }
+  const minValue = attr === 'BLD' ? -5 : -3; // Build can go down to -5, others to -3
+  
+  if (attributes[attr] > minValue) {
+    attributes[attr]--;
+    usedCharacterPoints--;
     updateUI();
+  } else {
+    showNotification(`${attr} cannot be lower than ${minValue}`);
   }
 }
 
-// Function to save character data (to localStorage for now)
+// Simple notification system
+function showNotification(message, type = 'info') {
+  // Check if notification container exists, create if not
+  let notificationContainer = document.getElementById('notification-container');
+  
+  if (!notificationContainer) {
+    notificationContainer = document.createElement('div');
+    notificationContainer.id = 'notification-container';
+    notificationContainer.style.position = 'fixed';
+    notificationContainer.style.top = '20px';
+    notificationContainer.style.right = '20px';
+    notificationContainer.style.zIndex = '1000';
+    document.body.appendChild(notificationContainer);
+  }
+  
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.style.backgroundColor = type === 'error' ? 'var(--error-color)' : 'var(--secondary-color)';
+  notification.style.color = 'white';
+  notification.style.padding = '10px 15px';
+  notification.style.borderRadius = '4px';
+  notification.style.marginBottom = '10px';
+  notification.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+  notification.style.transition = 'all 0.3s ease';
+  notification.textContent = message;
+  
+  // Add to container
+  notificationContainer.appendChild(notification);
+  
+  // Remove after timeout
+  setTimeout(() => {
+    notification.style.opacity = '0';
+    setTimeout(() => {
+      notificationContainer.removeChild(notification);
+    }, 300);
+  }, 3000);
+}
+
+// Function to save character data
 function saveCharacter() {
   const characterName = document.getElementById('character-name').value;
+  const characterConcept = document.getElementById('character-concept').value;
+  const characterFaction = document.getElementById('character-faction').value;
+  
   if (!characterName) {
-    alert('Please enter a character name');
+    showNotification('Please enter a character name', 'error');
     return;
   }
   
   const character = {
     name: characterName,
+    concept: characterConcept,
+    faction: characterFaction,
+    portrait: characterPortrait,
     attributes: { ...attributes },
     skills: getCharacterSkills(),
     secondaryTraits: calculateSecondaryTraits(),
@@ -118,10 +181,23 @@ function saveCharacter() {
   };
   
   const savedCharacters = JSON.parse(localStorage.getItem('jovianChroniclesCharacters') || '[]');
-  savedCharacters.push(character);
+  
+  // Check if character with same name exists
+  const existingIndex = savedCharacters.findIndex(char => char.name === characterName);
+  
+  if (existingIndex >= 0) {
+    if (confirm(`A character named "${characterName}" already exists. Do you want to overwrite it?`)) {
+      savedCharacters[existingIndex] = character;
+    } else {
+      return;
+    }
+  } else {
+    savedCharacters.push(character);
+  }
+  
   localStorage.setItem('jovianChroniclesCharacters', JSON.stringify(savedCharacters));
   
-  alert(`Character ${characterName} saved!`);
+  showNotification(`Character ${characterName} saved!`);
   
   // Refresh the character select dropdown
   loadSavedCharacters();
@@ -153,20 +229,87 @@ function loadCharacter() {
   const character = savedCharacters[index];
   
   if (character) {
-    document.getElementById('character-name').value = character.name;
+    // Load basic info
+    document.getElementById('character-name').value = character.name || '';
+    document.getElementById('character-concept').value = character.concept || '';
+    document.getElementById('character-faction').value = character.faction || '';
+    
+    // Load portrait if exists
+    characterPortrait = character.portrait;
+    if (characterPortrait) {
+      const portraitElement = document.querySelector('.character-portrait');
+      portraitElement.style.backgroundImage = `url(${characterPortrait})`;
+      portraitElement.style.backgroundSize = 'cover';
+      portraitElement.style.backgroundPosition = 'center';
+      document.querySelector('.portrait-placeholder').style.display = 'none';
+    }
     
     // Load attributes
     for (const attr in character.attributes) {
       attributes[attr] = character.attributes[attr];
     }
     
-    // Load skills using the new module
+    // Load skills using the skills module
     setCharacterSkills(character.skills);
     
     // Load character points
     usedCharacterPoints = character.characterPoints.used;
     
+    // Update UI
     updateUI();
+    
+    showNotification(`Character ${character.name} loaded!`);
+  }
+}
+
+// Function to update faction badge based on selection
+function updateFactionBadge() {
+  const factionSelect = document.getElementById('character-faction');
+  const factionBadge = document.getElementById('faction-badge');
+  
+  if (factionSelect && factionBadge) {
+    const selectedIndex = factionSelect.selectedIndex;
+    
+    if (selectedIndex > 0) {
+      const selectedText = factionSelect.options[selectedIndex].text;
+      factionBadge.textContent = selectedText;
+    } else {
+      factionBadge.textContent = 'Unaffiliated';
+    }
+  }
+}
+
+// Setup portrait upload functionality
+function setupPortraitUpload() {
+  const uploadButton = document.getElementById('upload-portrait-btn');
+  
+  if (uploadButton) {
+    uploadButton.addEventListener('click', function() {
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.accept = 'image/*';
+      
+      fileInput.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(event) {
+            characterPortrait = event.target.result;
+            const portraitElement = document.querySelector('.character-portrait');
+            portraitElement.style.backgroundImage = `url(${characterPortrait})`;
+            portraitElement.style.backgroundSize = 'cover';
+            portraitElement.style.backgroundPosition = 'center';
+            
+            // Hide placeholder text
+            document.querySelector('.portrait-placeholder').style.display = 'none';
+          };
+          
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+      
+      fileInput.click();
+    });
   }
 }
 
@@ -184,6 +327,15 @@ function setupAttributeButtons() {
     if (decreaseBtn) {
       decreaseBtn.addEventListener('click', () => decreaseAttribute(attr));
     }
+  }
+}
+
+// Set up faction change listener
+function setupFactionSelect() {
+  const factionSelect = document.getElementById('character-faction');
+  
+  if (factionSelect) {
+    factionSelect.addEventListener('change', updateFactionBadge);
   }
 }
 
@@ -212,6 +364,8 @@ async function init() {
   // Set up UI event listeners
   setupAttributeButtons();
   setupSaveLoadButtons();
+  setupPortraitUpload();
+  setupFactionSelect();
   
   // Update the attributes UI
   updateUI();
