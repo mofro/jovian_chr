@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovian Chronicles Character Creator</title>
+    
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="base-styles.css">
+    
+    <!-- Skills Module Styles -->
+    <link rel="stylesheet" href="skillsStyles.css">
+</head>
+<body>
+    <div class="character-sheet">
+        <h1>Jovian Chronicles Character Creator</h1>
+        
+        <div class="character-info">
+            <h2>Character Information</h2>
+            <input type="text" id="character-name" placeholder="Character Name" />
+        </div>
+        
+        <div class="section">
+            <h2>Attributes</h2>
+            <div class="points-tracker">
+                <div>Character Points:</div>
+                <div id="character-points-used">0/50</div>
+            </div>
+            
+            <div class="attribute-grid">
+                <div class="attribute-item">
+                    <div class="attribute-name">Agility (AGI)</div>
+                    <div class="attribute-controls">
+                        <button id="agi-decrease">-</button>
+                        <span id="agi-value">0</span>
+                        <button id="agi-increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="attribute-item">
+                    <div class="attribute-name">Appearance (APP)</div>
+                    <div class="attribute-controls">
+                        <button id="app-decrease">-</button>
+                        <span id="app-value">0</span>
+                        <button id="app-increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="attribute-item">
+                    <div class="attribute-name">Build (BLD)</div>
+                    <div class="attribute-controls">
+                        <button id="bld-decrease">-</button>
+                        <span id="bld-value">0</span>
+                        <button id="bld-increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="attribute-item">
+                    <div class="attribute-name">Creativity (CRE)</div>
+                    <div class="attribute-controls">
+                        <button id="cre-decrease">-</button>
+                        <span id="cre-value">0</span>
+                        <button id="cre-increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="attribute-item">
+                    <div class="attribute-name">Fitness (FIT)</div>
+                    <div class="attribute-controls">
+                        <button id="fit-decrease">-</button>
+                        <span id="fit-value">0</span>
+                        <button id="fit-increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="attribute-item">
+                    <div class="attribute-name">Influence (INF)</div>
+                    <div class="attribute-controls">
+                        <button id="inf-decrease">-</button>
+                        <span id="inf-value">0</span>
+                        <button id="inf-increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="attribute-item">
+                    <div class="attribute-name">Knowledge (KNO)</div>
+                    <div class="attribute-controls">
+                        <button id="kno-decrease">-</button>
+                        <span id="kno-value">0</span>
+                        <button id="kno-increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="attribute-item">
+                    <div class="attribute-name">Perception (PER)</div>
+                    <div class="attribute-controls">
+                        <button id="per-decrease">-</button>
+                        <span id="per-value">0</span>
+                        <button id="per-increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="attribute-item">
+                    <div class="attribute-name">Psyche (PSY)</div>
+                    <div class="attribute-controls">
+                        <button id="psy-decrease">-</button>
+                        <span id="psy-value">0</span>
+                        <button id="psy-increase">+</button>
+                    </div>
+                </div>
+                
+                <div class="attribute-item">
+                    <div class="attribute-name">Willpower (WIL)</div>
+                    <div class="attribute-controls">
+                        <button id="wil-decrease">-</button>
+                        <span id="wil-value">0</span>
+                        <button id="wil-increase">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Secondary Traits</h2>
+            <div class="secondary-traits-grid">
+                <div class="secondary-trait-item">
+                    <div class="trait-name">Strength (STR)</div>
+                    <div class="trait-value" id="str-value">0</div>
+                </div>
+                
+                <div class="secondary-trait-item">
+                    <div class="trait-name">Health (HLT)</div>
+                    <div class="trait-value" id="hlt-value">0</div>
+                </div>
+                
+                <div class="secondary-trait-item">
+                    <div class="trait-name">Stamina (STA)</div>
+                    <div class="trait-value" id="sta-value">25</div>
+                </div>
+                
+                <div class="secondary-trait-item">
+                    <div class="trait-name">Unarmed Damage</div>
+                    <div class="trait-value" id="unarmeddmg-value">3</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="skills-section">
+            <h2>Skills</h2>
+            <div class="points-tracker">
+                <div>Skill Points:</div>
+                <div id="skill-points-used">0/70</div>
+            </div>
+            
+            <div class="skills-controls">
+                <div class="filter-container">
+                    <label for="skill-category-filter">Category:</label>
+                    <select id="skill-category-filter">
+                        <option value="All">All Categories</option>
+                        <!-- Categories will be populated by JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="search-container">
+                    <label for="skill-search">Search:</label>
+                    <input type="text" id="skill-search" placeholder="Search skills...">
+                </div>
+                
+                <div class="display-options">
+                    <label>
+                        <input type="checkbox" id="show-descriptions" checked>
+                        Show Descriptions
+                    </label>
+                    <label>
+                        <input type="checkbox" id="show-specializations">
+                        Show Specializations
+                    </label>
+                </div>
+            </div>
+            
+            <div class="skill-list" id="skill-list">
+                <!-- Skills will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="save-load">
+            <button id="save-button">Save Character</button>
+            <select id="load-character-select">
+                <option value="">Select a character</option>
+            </select>
+            <button id="load-button">Load Character</button>
+        </div>
+    </div>
+    
+    <!-- Main Application Script (using ES modules) -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
