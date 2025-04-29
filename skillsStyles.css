@@ -35,7 +35,8 @@
 /* Skill items */
 .skill-item {
   background-color: #e2e8f0;
-  padding: 15px;
+  border-top: dotted 0.12rem #fff200;
+  padding: 20px 15px 15px;
   border-radius: 4px;
   margin-bottom: 10px;
   transition: all 0.3s ease;
