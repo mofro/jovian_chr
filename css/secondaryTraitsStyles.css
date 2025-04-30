@@ -1,0 +1,207 @@
+/* secondaryTraitsStyles.css - Styling for the secondary traits section */
+
+.secondary-traits-container {
+    margin-bottom: 25px;
+}
+
+.secondary-traits-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #1a365d;
+    padding-bottom: 8px;
+}
+
+.secondary-traits-header h2 {
+    color: #1a365d;
+    margin: 0;
+}
+
+.secondary-traits-description {
+    background-color: #e9ecf3;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.traits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.traits-section {
+    background-color: #f7fafc;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+}
+
+.traits-section h3 {
+    margin-top: 0;
+    color: #1a365d;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.traits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.trait-item {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.trait-item:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.trait-name {
+    font-weight: bold;
+    color: #1a365d;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.trait-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 8px 15px;
+    margin: 5px 0;
+    background-color: #e9ecf3;
+    border-radius: 4px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.trait-formula {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Colors for different trait types */
+.trait-physical {
+    border-left: 4px solid #3182ce; /* blue */
+}
+
+.trait-damage {
+    border-left: 4px solid #e53e3e; /* red */
+}
+
+.trait-threshold {
+    border-left: 4px solid #805ad5; /* purple */
+}
+
+.trait-resistance {
+    border-left: 4px solid #38a169; /* green */
+}
+
+/* Injury Levels Section */
+.injury-levels {
+    margin-top: 30px;
+}
+
+.injury-levels h3 {
+    color: #1a365d;
+    margin-bottom: 15px;
+}
+
+.injury-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.injury-table th,
+.injury-table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.injury-table th {
+    background-color: #e9ecf3;
+    font-weight: bold;
+    color: #1a365d;
+}
+
+.injury-table tr:hover {
+    background-color: #f7fafc;
+}
+
+.injury-type {
+    font-weight: bold;
+}
+
+.injury-threshold {
+    font-weight: bold;
+    text-align: center;
+}
+
+.injury-effects {
+    color: #4a5568;
+}
+
+/* System Shock Track */
+.system-shock-track {
+    margin-top: 30px;
+}
+
+.system-shock-track h3 {
+    color: #1a365d;
+    margin-bottom: 15px;
+}
+
+.shock-boxes {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.shock-box {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #1a365d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.shock-box.active {
+    background-color: #e9ecf3;
+}
+
+.shock-box.marked {
+    background-color: #e53e3e;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .traits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .traits-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}

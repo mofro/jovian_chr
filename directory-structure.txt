@@ -1,0 +1,25 @@
+Jovian Chronicles Character Creator/
+│
+├── index.html                # Main HTML file
+│
+├── css/                      # CSS styles directory
+│   ├── base.css              # Base styling
+│   ├── attributesStyles.css  # Attributes component styling
+│   ├── secondaryTraitsStyles.css  # Secondary traits styling
+│   ├── skillsStyles.css      # Skills component styling (to be added)
+│   └── perksFlawsStyles.css  # Perks & Flaws styling (to be added)
+│
+├── js/                       # JavaScript files directory
+│   ├── app.js                # Main application script
+│   ├── attributeManager.js   # Attributes data management
+│   ├── attributesUI.js       # Attributes UI management
+│   ├── secondaryTraitsManager.js  # Secondary traits calculations
+│   ├── secondaryTraitsUI.js  # Secondary traits UI management
+│   ├── skillManager.js       # Skills data management (to be added)
+│   ├── skillsUI.js           # Skills UI management (to be added)
+│   ├── perksFlawsManager.js  # Perks & Flaws management (to be added)
+│   └── perksFlawsUI.js       # Perks & Flaws UI (to be added)
+│
+└── data/                     # Data files directory
+    ├── skills.json           # Skills data
+    └── perks-flaws.json      # Perks and Flaws data

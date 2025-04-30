@@ -1,0 +1,394 @@
+/**
+ * File: css/skillsStyles.css
+ * Styling for the Skills component of the Jovian Chronicles Character Creator
+ */
+
+/* Skills Section Container */
+.section {
+    margin-bottom: 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent-color, #41548f);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    color: var(--primary-color, #1a2d5d);
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.points {
+    background-color: var(--secondary-color, #333e63);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Skills Controls */
+.skills-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: var(--section-bg, #e9ecf3);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #ccd);
+}
+
+.filter-group,
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-group label,
+.option-group label {
+    font-weight: bold;
+    color: var(--secondary-color, #333e63);
+    font-size: 0.9rem;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color, #ccd);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Skill List Container */
+.skill-list-container {
+    margin-bottom: 20px;
+}
+
+/* Skill List */
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.no-skills-message {
+    grid-column: 1 / -1;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--section-bg, #e9ecf3);
+    border-radius: 6px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Skill Item */
+.skill-item {
+    background-color: var(--section-bg, #e9ecf3);
+    border-radius: 6px;
+    padding: 15px;
+    border: 1px solid var(--border-color, #ccd);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.skill-item:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.active-skill {
+    border-color: var(--accent-color, #41548f);
+    box-shadow: 0 0 0 1px var(--accent-color, #41548f);
+}
+
+/* Skill Header */
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color, #ccd);
+    padding-bottom: 8px;
+}
+
+.skill-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary-color, #1a2d5d);
+}
+
+.complex-tag {
+    font-size: 0.75rem;
+    background-color: var(--primary-color, #1a2d5d);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.skill-category {
+    font-size: 0.8rem;
+    background-color: var(--secondary-color, #333e63);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+/* Skill Description */
+.skill-description {
+    font-size: 0.9rem;
+    color: #666;
+    border-bottom: 1px solid var(--border-color, #ccd);
+    padding-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Skill Stats and Controls */
+.skill-stats-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+    align-items: center;
+}
+
+.skill-stat-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.skill-stat-label {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.skill-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-stat-value {
+    font-weight: bold;
+    font-size: 1.2rem;
+    min-width: 20px;
+    text-align: center;
+}
+
+.skill-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.dec-btn {
+    background-color: var(--error-color, #e53e3e);
+}
+
+.dec-btn:hover:not(:disabled) {
+    background-color: #c53030;
+}
+
+.inc-btn {
+    background-color: var(--success-color, #48bb78);
+}
+
+.inc-btn:hover:not(:disabled) {
+    background-color: #38a169;
+}
+
+.skill-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.skill-cost-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.skill-cost-value {
+    font-weight: bold;
+    color: var(--primary-color, #1a2d5d);
+}
+
+/* Specializations */
+.skill-specializations {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid var(--border-color, #ccd);
+    padding-top: 8px;
+}
+
+.specs-label {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.specs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.spec-tag {
+    font-size: 0.8rem;
+    background-color: var(--light-accent, #8b9dc9);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+.add-spec-row {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.spec-input {
+    flex: 1;
+    padding: 5px 8px;
+    border: 1px solid var(--border-color, #ccd);
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.add-spec-btn {
+    background-color: var(--accent-color, #41548f);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.add-spec-btn:hover {
+    background-color: var(--hover-color, #354a80);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.pagination-btn {
+    background-color: var(--section-bg, #e9ecf3);
+    border: 1px solid var(--border-color, #ccd);
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: var(--light-accent, #8b9dc9);
+    color: white;
+}
+
+.pagination-btn.current-page {
+    background-color: var(--primary-color, #1a2d5d);
+    border-color: var(--primary-color, #1a2d5d);
+    color: white;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Skills Summary */
+.skills-summary {
+    margin-top: 30px;
+    background-color: var(--section-bg, #e9ecf3);
+    border-radius: 6px;
+    padding: 15px;
+    border: 1px solid var(--border-color, #ccd);
+}
+
+.skills-summary h3 {
+    color: var(--primary-color, #1a2d5d);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-color, #ccd);
+    padding-bottom: 8px;
+}
+
+.summary-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.summary-item {
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border-left: 3px solid var(--accent-color, #41548f);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .skills-controls,
+    .summary-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-stats-controls {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,334 @@
+/**
+ * File: data/perks-flaws.json
+ * Perks and Flaws data for Jovian Chronicles Character Creator
+ */
+{
+  "perks": [
+    {
+      "id": "accelerated-healing",
+      "name": "Accelerated Healing",
+      "cost": 4,
+      "description": "Thanks to some natural vigor, the character heals faster than other people, requiring only three-quarters of the normal healing time.",
+      "downside": "None"
+    },
+    {
+      "id": "acute-sense-hearing",
+      "name": "Acute Sense: Hearing",
+      "cost": 1,
+      "description": "The character has excellent hearing and tends to notice faint or high-pitched sounds more readily than other people. Gain +1 to Notice checks based on hearing.",
+      "downside": "Sudden loud noises can momentarily deafen the character."
+    },
+    {
+      "id": "acute-sense-sight",
+      "name": "Acute Sense: Sight",
+      "cost": 1,
+      "description": "The character has sharp eyes and tends to notice faraway or small items more readily than other people. Gain +1 to Notice checks based on vision.",
+      "downside": "Sudden bright lights can momentarily blind the character."
+    },
+    {
+      "id": "acute-sense-smell-taste",
+      "name": "Acute Sense: Smell/Taste",
+      "cost": 2,
+      "description": "The character has a sharp nose or palate and can readily identify odors and tastes. Gain +1 to Notice checks based on smell or taste.",
+      "downside": "None"
+    },
+    {
+      "id": "ambidextrous",
+      "name": "Ambidextrous",
+      "cost": 1,
+      "description": "The character can use either hand for tasks requiring manual dexterity without the 'Using Off Hand' penalty.",
+      "downside": "None"
+    },
+    {
+      "id": "animal-companion",
+      "name": "Animal Companion",
+      "cost": {
+        "small": 1,
+        "medium": 2,
+        "large": 4
+      },
+      "description": "The character has a faithful pet, steed or companion animal that is both well trained and emotionally bonded.",
+      "downside": "Responsibility: pets must be fed, walked and housed."
+    },
+    {
+      "id": "animal-kinship",
+      "name": "Animal Kinship",
+      "cost": 1,
+      "description": "The character has a 'touch' with animals. Domesticated animals respond well to training, granting +1 to Animal Handling tests.",
+      "downside": "None"
+    },
+    {
+      "id": "common-sense",
+      "name": "Common Sense",
+      "cost": 4,
+      "description": "The character always considers the outcomes of actions first. The Gamemaster gives warnings when about to do something foolish.",
+      "downside": "None"
+    },
+    {
+      "id": "lucky",
+      "name": "Lucky",
+      "cost": 10,
+      "description": "The character is exceptionally lucky. Once per session, the player may elect to reroll a Fumble or switch the modifier of a single die roll.",
+      "downside": "None"
+    },
+    {
+      "id": "photographic-memory",
+      "name": "Photographic Memory",
+      "cost": 2,
+      "description": "The character has an excellent memory. Whenever a Knowledge roll is made to recall information, add +1 to the dice roll.",
+      "downside": "Traumatic events can also be recalled vividly."
+    },
+    {
+      "id": "thick-skinned",
+      "name": "Thick-Skinned",
+      "cost": 5,
+      "description": "The character has a high pain threshold. Add five points to Stamina and recalculate damage thresholds accordingly.",
+      "downside": "None"
+    },
+    {
+      "id": "strong-immune-system",
+      "name": "Strong Immune System",
+      "cost": 3,
+      "description": "The character is especially resistant to diseases and drugs. Gain +1 to Health tests against diseases and drugs.",
+      "downside": "Will also resist beneficial drugs."
+    },
+    {
+      "id": "radiation-resistance",
+      "name": "Radiation Resistance",
+      "cost": 2,
+      "description": "The character is exceptionally resistant to radiation poisoning. Gain +1 to Health tests against radiation.",
+      "downside": "None"
+    },
+    {
+      "id": "sense-of-direction",
+      "name": "Sense of Direction",
+      "cost": 2,
+      "description": "The character seems to have a compass in their head and always knows where they are located.",
+      "downside": "None"
+    },
+    {
+      "id": "military-rank",
+      "name": "Military Rank",
+      "cost": {
+        "enlisted": 2,
+        "junior-nco": 4,
+        "senior-nco": 6,
+        "junior-officer": 8,
+        "senior-officer": 10,
+        "general-officer": 12
+      },
+      "description": "The character has rank in an organized military force with authority from a nation.",
+      "downside": "Responsibility: must follow codes of conduct, regulations and orders from superiors."
+    },
+    {
+      "id": "wealthy",
+      "name": "Wealthy",
+      "cost": 3,
+      "description": "The character has money. Each rating is multiplied by 10,000 credits. Rating temporarily reduces by one for a week after each use.",
+      "downside": "Responsibility: maintain fortunes, possible tax audits and lawsuits."
+    }
+  ],
+  "flaws": [
+    {
+      "id": "addiction",
+      "name": "Addiction",
+      "value": -3,
+      "description": "The character is psychologically or physically addicted to a substance that they need regular doses of.",
+      "upside": "None"
+    },
+    {
+      "id": "age-young",
+      "name": "Age: Young",
+      "value": -4,
+      "description": "The character is a teenager (13-16 years) or younger, with limits on freedom of movement and how seriously others take their opinions.",
+      "upside": "Juvenile misbehavior may be forgiven."
+    },
+    {
+      "id": "age-old",
+      "name": "Age: Old",
+      "value": -2,
+      "description": "The character is a senior citizen (65+ years), with potential health problems and mobility issues.",
+      "upside": "May benefit from respect from younger characters."
+    },
+    {
+      "id": "amnesiac",
+      "name": "Amnesiac",
+      "value": -4,
+      "description": "The character has no recollection of their life up to a few days or weeks ago.",
+      "upside": "Possible unknown allies or skills from past life."
+    },
+    {
+      "id": "animal-antipathy",
+      "name": "Animal Antipathy",
+      "value": -2,
+      "description": "Something about the character disturbs animals. Suffer -1 penalty to Animal handling tests; wild animals are more likely to attack.",
+      "upside": "None"
+    },
+    {
+      "id": "bad-luck",
+      "name": "Bad Luck",
+      "value": -5,
+      "description": "The character is plagued by bad luck. Once per game, an opponent may reroll a Fumble or the GM can switch a die result.",
+      "upside": "None"
+    },
+    {
+      "id": "bloodlust",
+      "name": "Bloodlust",
+      "value": -4,
+      "description": "The character always tries to kill opponents by any means possible, never accepting surrender, nor surrendering themselves.",
+      "upside": "None"
+    },
+    {
+      "id": "code-of-honor",
+      "name": "Code of Honor",
+      "value": {
+        "minor": -1,
+        "moderate": -2,
+        "strict": -3,
+        "extreme": -4
+      },
+      "description": "The character lives by a restrictive code of honor that they follow even when it puts them at a disadvantage.",
+      "upside": "May gain trust and admiration of other honorable people."
+    },
+    {
+      "id": "criminal-background",
+      "name": "Criminal Background",
+      "value": {
+        "minor": -1,
+        "major": -2
+      },
+      "description": "The character committed a criminal act in their past that continues to haunt them, making it hard to get respect or employment.",
+      "upside": "Criminal contacts can occasionally be useful."
+    },
+    {
+      "id": "curse",
+      "name": "Curse",
+      "value": {
+        "minor": -2,
+        "moderate": -4,
+        "severe": -6
+      },
+      "description": "One aspect of the character's life (love life, job, friendships, finances, etc.) continuously refuses to 'work out'.",
+      "upside": "None"
+    },
+    {
+      "id": "dependent",
+      "name": "Dependent",
+      "value": {
+        "powerful": -1,
+        "moderate": -2,
+        "weak": -3,
+        "very-weak": -4
+      },
+      "description": "The character must take care of someone: an adopted child, a relative, etc. This includes care, protection and friendship.",
+      "upside": "The dependent may be helpful in certain situations."
+    },
+    {
+      "id": "destitute",
+      "name": "Destitute",
+      "value": -2,
+      "description": "The character doesn't have much money and has no secure source of income. Cannot afford more than basics without special arrangements.",
+      "upside": "None"
+    },
+    {
+      "id": "flashbacks",
+      "name": "Flashbacks",
+      "value": -2,
+      "description": "The character has sudden flashbacks of their past, especially in stressful situations. Must make a WIL or PSY test to act.",
+      "upside": "None"
+    },
+    {
+      "id": "goal",
+      "name": "Goal",
+      "value": -3,
+      "description": "The character has a powerful, all-consuming goal to which they are dedicated to the point of obsession.",
+      "upside": "Strong motivation"
+    },
+    {
+      "id": "heavy-sleeper",
+      "name": "Heavy Sleeper",
+      "value": -2,
+      "description": "The character sleeps like a brick and is very hard to awaken. -3 penalty to wake in dangerous situations.",
+      "upside": "None"
+    },
+    {
+      "id": "lame",
+      "name": "Lame",
+      "value": {
+        "temporary": -2,
+        "permanent": -6
+      },
+      "description": "The character has a medical problem in one or both legs, causing a -1 modifier to movement-related skill checks.",
+      "upside": "None"
+    },
+    {
+      "id": "one-armed",
+      "name": "One-Armed",
+      "value": {
+        "temporary": -2,
+        "permanent": -5
+      },
+      "description": "The character is missing an arm, suffering a -1 modifier to manipulation-related skill checks.",
+      "upside": "None"
+    },
+    {
+      "id": "poor-senses",
+      "name": "Poor Senses",
+      "value": {
+        "hearing": -1,
+        "sight": -1,
+        "smell-taste": -1,
+        "blind-permanent": -8,
+        "deaf-permanent": -8
+      },
+      "description": "The character has especially poor senses, suffering a -1 penalty to all related Notice tests.",
+      "upside": "None"
+    },
+    {
+      "id": "radiation-vulnerability",
+      "name": "Radiation Vulnerability",
+      "value": -2,
+      "description": "The character is exceptionally vulnerable to radiation poisoning. -1 modifier to Health checks for radiation status.",
+      "upside": "None"
+    },
+    {
+      "id": "slow-healing",
+      "name": "Slow Healing",
+      "value": -4,
+      "description": "The character heals more slowly than other people, needing 50% more time to heal injuries.",
+      "upside": "None"
+    },
+    {
+      "id": "slow-learner",
+      "name": "Slow Learner",
+      "value": -2,
+      "description": "The character has a hard time learning in a structured environment, adding one month to required learning time.",
+      "upside": "None"
+    },
+    {
+      "id": "thin-skinned",
+      "name": "Thin-Skinned",
+      "value": -4,
+      "description": "The character has a low pain threshold. Subtract five points from Stamina and recalculate damage thresholds.",
+      "upside": "None"
+    },
+    {
+      "id": "wanted",
+      "name": "Wanted",
+      "value": {
+        "minor": -1,
+        "moderate": -3,
+        "severe": -5
+      },
+      "description": "Somebody is currently chasing the character, often heavily armed pursuers that appear at the worst times.",
+      "upside": "Others hunted by the same group may be helpful."
+    },
+    {
+      "id": "weak-immune-system",
+      "name": "Weak Immune System",
+      "value": -3,
+      "description": "The character is especially vulnerable to diseases and drugs. -1 penalty to Health tests against diseases and drugs.",
+      "upside": "Less resistance to beneficial drugs."
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "categories": [
+    "Combat",
+    "Technical",
+    "Physical",
+    "Social",
+    "Knowledge",
+    "Space Operations"
+  ],
+  "skills": [
+    {
+      "id": "animal-handling",
+      "name": "Animal Handling",
+      "category": "Physical",
+      "complex": false,
+      "description": "The ability to care for and train various animal species. Includes knowledge of preferred foods, daily habits, and basic signs of disease.",
+      "relatedAttributes": ["INF", "KNO"],
+      "specializations": ["Animal Type", "Herding", "Performing Tricks"]
+    },
+    {
+      "id": "athletics",
+      "name": "Athletics",
+      "category": "Physical",
+      "complex": false,
+      "description": "The ability to engage in sports and physical activities, including running, climbing, swimming, and tumbling.",
+      "relatedAttributes": ["AGI", "FIT"],
+      "specializations": ["Running", "Climbing", "Swimming", "Break Fall"]
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "category": "Knowledge",
+      "complex": true,
+      "description": "The ability to manage business affairs, including finance, management, economics and accounting.",
+      "relatedAttributes": ["INF", "KNO"],
+      "specializations": ["Finance", "Management", "Foreign Trade", "Accounting", "Economics"]
+    },
+    {
+      "id": "combat-sense",
+      "name": "Combat Sense",
+      "category": "Combat",
+      "complex": false,
+      "description": "Training to be aware in dangerous situations like firefights. Used to detect ambushes and for initiative in combat.",
+      "relatedAttributes": ["PER", "KNO"],
+      "specializations": ["Urban", "Space", "Zero-G", "Night-time", "Ambushes"]
+    },
+    {
+      "id": "communications",
+      "name": "Communications",
+      "category": "Technical",
+      "complex": true,
+      "description": "The ability to operate and maintain communication systems and equipment.",
+      "relatedAttributes": ["KNO", "CRE"],
+      "specializations": ["Space Comms", "Laser Comms", "Radio", "Cryptography"]
+    },
+    {
+      "id": "craft",
+      "name": "Craft",
+      "category": "Technical",
+      "complex": false,
+      "description": "The ability to produce useful and artistic creations with one's hands.",
+      "relatedAttributes": ["CRE", "KNO"],
+      "specializations": ["Cooking", "Metalwork", "Woodcraft", "Jewelry", "Grooming"]
+    },
+    {
+      "id": "defense",
+      "name": "Defense",
+      "category": "Combat",
+      "complex": false,
+      "description": "The ability to avoid incoming attacks by using cover or dodging.",
+      "relatedAttributes": ["AGI", "PER"],
+      "specializations": ["Unarmed", "Melee Attacks", "Ranged Attacks", "Zero-G Combat"]
+    },
+    {
+      "id": "electronic-warfare",
+      "name": "Electronic Warfare",
+      "category": "Technical",
+      "complex": true,
+      "description": "The ability to operate and counter electronic systems, including ECM and ECCM.",
+      "relatedAttributes": ["KNO", "CRE"],
+      "specializations": ["Sensors", "ECM", "Communications Jamming", "Countermeasures"]
+    },
+    {
+      "id": "exo-pilot",
+      "name": "Exo Pilot",
+      "category": "Space Operations",
+      "complex": true,
+      "description": "The ability to pilot Exo-Armor (mecha) suits used in Jovian space.",
+      "relatedAttributes": ["AGI", "PER"],
+      "specializations": ["Wyvern", "Pathfinder", "Retaliator", "Syreen", "Vindicator"]
+    },
+    {
+      "id": "gunnery-exo",
+      "name": "Gunnery (Exo)",
+      "category": "Space Operations",
+      "complex": true,
+      "description": "The ability to operate weapon systems mounted on Exo-Armor units.",
+      "relatedAttributes": ["PER", "KNO"],
+      "specializations": ["Beam Weapons", "Projectile Weapons", "Missiles", "Zero-G"]
+    },
+    {
+      "id": "hand-to-hand",
+      "name": "Hand-to-hand",
+      "category": "Combat",
+      "complex": false,
+      "description": "Proficiency in close-range unarmed combat techniques.",
+      "relatedAttributes": ["AGI", "FIT"],
+      "specializations": ["Striking", "Grappling", "Tripping", "Throwing"]
+    },
+    {
+      "id": "investigation",
+      "name": "Investigation",
+      "category": "Knowledge",
+      "complex": false,
+      "description": "The ability to collect information on people, places and events.",
+      "relatedAttributes": ["PER", "KNO"],
+      "specializations": ["Searching", "Surveillance", "Forensics"]
+    },
+    {
+      "id": "language",
+      "name": "Language",
+      "category": "Knowledge",
+      "complex": false,
+      "description": "The ability to communicate and be literate in additional languages.",
+      "relatedAttributes": ["CRE", "KNO"],
+      "specializations": ["English", "Chinese", "Russian", "Spanish", "Japanese"]
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "category": "Social",
+      "complex": false,
+      "description": "The capacity to lead others, either by example or through inspiration.",
+      "relatedAttributes": ["INF", "PER"],
+      "specializations": ["Military", "Political", "Business", "Crisis Management"]
+    },
+    {
+      "id": "medicine",
+      "name": "Medicine",
+      "category": "Knowledge",
+      "complex": true,
+      "description": "The ability to diagnose and treat various pathological conditions.",
+      "relatedAttributes": ["CRE", "KNO", "INF"],
+      "specializations": ["Combat Medicine", "Zero-G Medicine", "Surgery", "Toxicology"]
+    },
+    {
+      "id": "melee",
+      "name": "Melee",
+      "category": "Combat",
+      "complex": false,
+      "description": "Proficiency with close-combat weapons such as knives or batons.",
+      "relatedAttributes": ["AGI", "FIT"],
+      "specializations": ["Knives", "Batons", "Improvised Weapons"]
+    },
+    {
+      "id": "natural-sciences",
+      "name": "Natural Sciences",
+      "category": "Knowledge",
+      "complex": true,
+      "description": "Knowledge of scientific disciplines like physics, chemistry, biology, etc.",
+      "relatedAttributes": ["CRE", "KNO"],
+      "specializations": ["Physics", "Chemistry", "Biology", "Geology", "Astronomy"]
+    },
+    {
+      "id": "navigation-space",
+      "name": "Navigation (Space)",
+      "category": "Space Operations",
+      "complex": true,
+      "description": "The ability to plot courses and determine position in space.",
+      "relatedAttributes": ["CRE", "KNO"],
+      "specializations": ["Solar System", "Jovian Region", "Near Earth Space", "Asteroid Belt"]
+    },
+    {
+      "id": "negotiation",
+      "name": "Negotiation",
+      "category": "Social",
+      "complex": false,
+      "description": "The ability to influence decisions in bargaining or transactions.",
+      "relatedAttributes": ["INF", "PER"],
+      "specializations": ["Business", "Diplomacy", "Haggling", "Crisis Negotiation"]
+    },
+    {
+      "id": "notice",
+      "name": "Notice",
+      "category": "Physical",
+      "complex": false,
+      "description": "The ability to perceive details that may otherwise be overlooked.",
+      "relatedAttributes": ["PER", "KNO"],
+      "specializations": ["Visual", "Auditory", "Space Environment", "Body Language"]
+    },
+    {
+      "id": "personal-flight-device",
+      "name": "Personal Flight Device",
+      "category": "Space Operations",
+      "complex": false,
+      "description": "The ability to use and control personal flight devices like EVA units.",
+      "relatedAttributes": ["AGI", "FIT"],
+      "specializations": ["EVA", "Thruster Pack", "Emergency Evacuation"]
+    },
+    {
+      "id": "pilot-ground",
+      "name": "Pilot (Ground)",
+      "category": "Physical",
+      "complex": false,
+      "description": "The ability to control and maneuver ground vehicles.",
+      "relatedAttributes": ["AGI", "PER"],
+      "specializations": ["Wheeled Vehicles", "Tracked Vehicles", "Hover Vehicles"]
+    },
+    {
+      "id": "pilot-air",
+      "name": "Pilot (Air)",
+      "category": "Space Operations",
+      "complex": true,
+      "description": "The ability to pilot atmospheric aircraft.",
+      "relatedAttributes": ["AGI", "PER"],
+      "specializations": ["VTOL", "Fixed Wing", "Rotary Wing"]
+    },
+    {
+      "id": "pilot-space",
+      "name": "Pilot (Space)",
+      "category": "Space Operations",
+      "complex": true,
+      "description": "The ability to pilot spacecraft in the vacuum of space.",
+      "relatedAttributes": ["AGI", "PER"],
+      "specializations": ["Shuttles", "Interceptors", "Capital Ships", "Freighters"]
+    },
+    {
+      "id": "small-arms",
+      "name": "Small Arms",
+      "category": "Combat",
+      "complex": false,
+      "description": "Proficiency with man-portable firearms such as pistols and rifles.",
+      "relatedAttributes": ["AGI", "PER"],
+      "specializations": ["Pistols", "Rifles", "SMGs", "Zero-G Combat"]
+    },
+    {
+      "id": "stealth",
+      "name": "Stealth",
+      "category": "Physical",
+      "complex": false,
+      "description": "The ability to go undetected and move silently.",
+      "relatedAttributes": ["AGI", "PER"],
+      "specializations": ["Urban", "Space Station", "Ship Interior", "EVA"]
+    },
+    {
+      "id": "streetwise",
+      "name": "Streetwise",
+      "category": "Social",
+      "complex": false,
+      "description": "Knowledge of the underground elements of society and how to interact with them.",
+      "relatedAttributes": ["INF", "PER"],
+      "specializations": ["Criminal Organizations", "Black Market", "Information Gathering"]
+    },
+    {
+      "id": "social-sciences",
+      "name": "Social Sciences",
+      "category": "Knowledge",
+      "complex": true,
+      "description": "Knowledge of humanities disciplines like history, psychology, sociology, etc.",
+      "relatedAttributes": ["KNO", "INF"],
+      "specializations": ["History", "Psychology", "Sociology", "Political Science"]
+    },
+    {
+      "id": "survival",
+      "name": "Survival",
+      "category": "Physical",
+      "complex": false,
+      "description": "The ability to survive in hostile environments.",
+      "relatedAttributes": ["KNO", "CRE"],
+      "specializations": ["Space", "Low Gravity", "Vacuum", "Emergency Protocols"]
+    },
+    {
+      "id": "technical-sciences",
+      "name": "Technical Sciences",
+      "category": "Technical",
+      "complex": true,
+      "description": "Knowledge of technical fields like computer science, electronics, mechanics, etc.",
+      "relatedAttributes": ["CRE", "KNO"],
+      "specializations": ["Computers", "Electronics", "Mechanics", "Robotics"]
+    },
+    {
+      "id": "zero-g",
+      "name": "Zero-G",
+      "category": "Space Operations",
+      "complex": false,
+      "description": "The ability to move and function in zero or micro-gravity environments.",
+      "relatedAttributes": ["FIT", "KNO"],
+      "specializations": ["Movement", "Combat", "EVA Operations", "Emergency Procedures"]
+    }
+  ]
+}

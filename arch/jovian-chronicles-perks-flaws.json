@@ -1,0 +1,673 @@
+{
+  "perks": [
+    {
+      "id": "accelerated-healing",
+      "name": "Accelerated Healing",
+      "cost": 4,
+      "description": "The character heals faster than normal, requiring only three-quarters of the normal healing time.",
+      "downside": "None"
+    },
+    {
+      "id": "acute-sense-hearing",
+      "name": "Acute Sense: Hearing",
+      "cost": 1,
+      "description": "The character has excellent hearing and gains +1 to Notice checks based on hearing.",
+      "downside": "Sudden loud noises can momentarily deafen the character."
+    },
+    {
+      "id": "acute-sense-sight",
+      "name": "Acute Sense: Sight",
+      "cost": 1,
+      "description": "The character has sharp eyes and gains +1 to Notice checks based on vision.",
+      "downside": "Sudden bright lights can momentarily blind the character."
+    },
+    {
+      "id": "acute-sense-smell-taste",
+      "name": "Acute Sense: Smell/Taste",
+      "cost": 2,
+      "description": "The character has a sharp nose or palate and gains +1 to Notice checks based on smell or taste.",
+      "downside": "None"
+    },
+    {
+      "id": "ambidextrous",
+      "name": "Ambidextrous",
+      "cost": 1,
+      "description": "The character can use either hand without penalties.",
+      "downside": "None"
+    },
+    {
+      "id": "animal-companion",
+      "name": "Animal Companion",
+      "cost": {
+        "small": 1,
+        "medium": 2,
+        "large": 4,
+        "intelligent": 4
+      },
+      "description": "The character has a faithful animal companion that is well-trained and emotionally bonded.",
+      "downside": "The animal must be cared for, fed, and housed."
+    },
+    {
+      "id": "animal-kinship",
+      "name": "Animal Kinship",
+      "cost": 1,
+      "description": "The character has a 'touch' with animals and gains +1 to Animal Handling or Riding skills.",
+      "downside": "None"
+    },
+    {
+      "id": "authority",
+      "name": "Authority",
+      "cost": 3,
+      "description": "The character represents authorities and has official powers within a jurisdiction.",
+      "downside": "Responsibilities and duties come with the authority."
+    },
+    {
+      "id": "common-sense",
+      "name": "Common Sense",
+      "cost": 4,
+      "description": "The GM gives warnings when the character is about to do something foolish.",
+      "downside": "None"
+    },
+    {
+      "id": "connections-allies",
+      "name": "Connections: Allies",
+      "cost": {
+        "minor": 3,
+        "major": 5,
+        "exceptional": 7
+      },
+      "description": "The character has allies willing to help even in dire circumstances.",
+      "downside": "Allies may call upon the character for help when needed."
+    },
+    {
+      "id": "connections-contacts",
+      "name": "Connections: Contacts",
+      "cost": {
+        "minor": 1,
+        "useful": 3,
+        "powerful": 5
+      },
+      "description": "The character has contacts who can provide information or services.",
+      "downside": "Contacts expect payment or returned favors."
+    },
+    {
+      "id": "double-jointed",
+      "name": "Double Jointed",
+      "cost": 3,
+      "description": "The character can contort their body and gains +1 to escape restraints.",
+      "downside": "None"
+    },
+    {
+      "id": "fake-identity",
+      "name": "Fake Identity",
+      "cost": 3,
+      "description": "The character has an alternate identity with documentation and background.",
+      "downside": "Requires time and money to maintain the alternate identity."
+    },
+    {
+      "id": "famous",
+      "name": "Famous",
+      "cost": {
+        "local": 1,
+        "regional": 3,
+        "global": 7
+      },
+      "description": "The character is well-known and can leverage their fame for assistance.",
+      "downside": "Lack of anonymity and possible unwanted attention."
+    },
+    {
+      "id": "favor",
+      "name": "Favor",
+      "cost": {
+        "key": 1,
+        "multiple": 2,
+        "major": 3,
+        "multiple-major": 4,
+        "life": 5
+      },
+      "description": "Someone important owes the character a debt or favor.",
+      "downside": "Possible resentment if used carelessly."
+    },
+    {
+      "id": "immunity",
+      "name": "Immunity",
+      "cost": 1,
+      "description": "The character is immune to a specific drug, poison, or disease.",
+      "downside": "None unless immune to beneficial drugs."
+    },
+    {
+      "id": "influence",
+      "name": "Influence",
+      "cost": {
+        "minor": 2,
+        "moderate": 4,
+        "major": 6
+      },
+      "description": "The character has prestige and authority in a specific sphere.",
+      "downside": "May be targeted due to their position."
+    },
+    {
+      "id": "intuition",
+      "name": "Intuition",
+      "cost": 4,
+      "description": "The character gets hunches and insights even without obvious clues.",
+      "downside": "Failed intuition rolls can lead to poor guesses."
+    },
+    {
+      "id": "light-sleeper",
+      "name": "Light Sleeper",
+      "cost": 5,
+      "description": "The character awakens at slight noises and can't be surprised while sleeping.",
+      "downside": "May have difficulty getting good sleep in noisy environments."
+    },
+    {
+      "id": "longevity",
+      "name": "Longevity",
+      "cost": 3,
+      "description": "The character ages more slowly and retains youthful appearance and energy.",
+      "downside": "May outlive friends and family."
+    },
+    {
+      "id": "lucky",
+      "name": "Lucky",
+      "cost": 10,
+      "description": "Once per session, can reroll a Fumble or reverse a modifier.",
+      "downside": "None"
+    },
+    {
+      "id": "machine-touch",
+      "name": "Machine-Touch",
+      "cost": 5,
+      "description": "All machinery repair tasks are considered Complexity 1 regardless of device.",
+      "downside": "None"
+    },
+    {
+      "id": "perfect-pitch",
+      "name": "Perfect Pitch",
+      "cost": 5,
+      "description": "The character has perfect pitch and gets +1 to music or sound-related tasks.",
+      "downside": "None"
+    },
+    {
+      "id": "photographic-memory",
+      "name": "Photographic Memory",
+      "cost": {
+        "1": 2,
+        "2": 4,
+        "3": 6
+      },
+      "description": "The character has exceptional recall ability.",
+      "downside": "Traumatic memories are equally vivid."
+    },
+    {
+      "id": "quick-learner",
+      "name": "Quick Learner",
+      "cost": 2,
+      "description": "The character learns faster, reducing training time and XP costs.",
+      "downside": "None"
+    },
+    {
+      "id": "radiation-resistance",
+      "name": "Radiation Resistance",
+      "cost": 2,
+      "description": "The character gets +1 to Health tests against radiation.",
+      "downside": "None"
+    },
+    {
+      "id": "sense-of-direction",
+      "name": "Sense of Direction",
+      "cost": {
+        "2D": 2,
+        "3D": 5
+      },
+      "description": "The character never gets lost and always knows their orientation.",
+      "downside": "None"
+    },
+    {
+      "id": "sense-of-time",
+      "name": "Sense of Time",
+      "cost": 2,
+      "description": "The character always knows the time and duration of events.",
+      "downside": "None"
+    },
+    {
+      "id": "strong-immune-system",
+      "name": "Strong Immune System",
+      "cost": 3,
+      "description": "The character gets +1 to Health tests against diseases and drugs.",
+      "downside": "Resistance to beneficial drugs as well."
+    },
+    {
+      "id": "thick-skinned",
+      "name": "Thick-Skinned",
+      "cost": 5,
+      "description": "The character adds 5 points to Stamina, increasing damage thresholds.",
+      "downside": "None"
+    },
+    {
+      "id": "wealthy",
+      "name": "Wealthy",
+      "cost": 3,
+      "description": "The character has significant financial resources.",
+      "downside": "Responsibility to maintain the fortune."
+    }
+  ],
+  "flaws": [
+    {
+      "id": "addiction",
+      "name": "Addiction",
+      "value": "Varies",
+      "description": "The character is physically or psychologically dependent on a substance or behavior.",
+      "upside": "None"
+    },
+    {
+      "id": "age-young",
+      "name": "Age: Young",
+      "value": -4,
+      "description": "The character is a teenager or younger with limits on freedom and respect.",
+      "upside": "Juvenile misbehavior may be forgiven."
+    },
+    {
+      "id": "age-old",
+      "name": "Age: Old",
+      "value": -2,
+      "description": "The character is elderly with possible physical limitations.",
+      "upside": "May be respected for wisdom and experience."
+    },
+    {
+      "id": "amnesiac",
+      "name": "Amnesiac",
+      "value": -4,
+      "description": "The character has no memory of their past.",
+      "upside": "May have unknown allies or skills."
+    },
+    {
+      "id": "animal-antipathy",
+      "name": "Animal Antipathy",
+      "value": -2,
+      "description": "Animals are disturbed by the character, causing -1 to Animal Handling.",
+      "upside": "None"
+    },
+    {
+      "id": "bad-luck",
+      "name": "Bad Luck",
+      "value": -5,
+      "description": "Once per game, an opponent may reroll a Fumble or reverse a modifier.",
+      "upside": "None"
+    },
+    {
+      "id": "beliefs",
+      "name": "Beliefs",
+      "value": {
+        "minor": -1,
+        "moderate": -2,
+        "major": -3
+      },
+      "description": "The character holds strong beliefs that may lead to ridicule or danger.",
+      "upside": "May attract like-minded allies."
+    },
+    {
+      "id": "bloodlust",
+      "name": "Bloodlust",
+      "value": -4,
+      "description": "The character always tries to kill opponents and won't surrender.",
+      "upside": "None"
+    },
+    {
+      "id": "code-of-honor",
+      "name": "Code of Honor",
+      "value": {
+        "minor": -1,
+        "moderate": -2,
+        "strict": -3,
+        "extreme": -4
+      },
+      "description": "The character follows a code that limits their actions.",
+      "upside": "Respect from other honorable people."
+    },
+    {
+      "id": "criminal-background",
+      "name": "Criminal Background",
+      "value": {
+        "minor": -1,
+        "major": -2
+      },
+      "description": "The character has a criminal history that continues to cause problems.",
+      "upside": "Criminal contacts may be useful."
+    },
+    {
+      "id": "curse",
+      "name": "Curse",
+      "value": {
+        "minor": -2,
+        "moderate": -4,
+        "severe": -6
+      },
+      "description": "One aspect of the character's life continuously fails.",
+      "upside": "None"
+    },
+    {
+      "id": "debt",
+      "name": "Debt",
+      "value": {
+        "key": -1,
+        "multiple": -2,
+        "major": -3,
+        "multiple-major": -4,
+        "life": -5
+      },
+      "description": "The character owes someone a substantial debt.",
+      "upside": "Creditor may provide help."
+    },
+    {
+      "id": "dedicated",
+      "name": "Dedicated",
+      "value": {
+        "minor": -1,
+        "moderate": -2,
+        "major": -3
+      },
+      "description": "The character is dedicated to a cause that directs their actions.",
+      "upside": "Others dedicated to the cause may help."
+    },
+    {
+      "id": "dependent",
+      "name": "Dependent",
+      "value": {
+        "powerful": -1,
+        "moderate": -2,
+        "weak": -3,
+        "very-weak": -4
+      },
+      "description": "The character must care for someone else.",
+      "upside": "The dependent may be helpful in some situations."
+    },
+    {
+      "id": "destitute",
+      "name": "Destitute",
+      "value": -2,
+      "description": "The character has no money or reliable income.",
+      "upside": "None"
+    },
+    {
+      "id": "flashbacks",
+      "name": "Flashbacks",
+      "value": -2,
+      "description": "The character has sudden flashbacks in stressful situations.",
+      "upside": "None"
+    },
+    {
+      "id": "goal",
+      "name": "Goal",
+      "value": -3,
+      "description": "The character has an all-consuming goal that may be unattainable.",
+      "upside": "Strong motivation"
+    },
+    {
+      "id": "heavy-sleeper",
+      "name": "Heavy Sleeper",
+      "value": -2,
+      "description": "The character is difficult to awaken and gets -3 to notice dangers while sleeping.",
+      "upside": "None"
+    },
+    {
+      "id": "infamous",
+      "name": "Infamous",
+      "value": {
+        "minor": -1,
+        "moderate": -2,
+        "major": -3,
+        "extreme": -4
+      },
+      "description": "The character has a bad reputation.",
+      "upside": "May intimidate others."
+    },
+    {
+      "id": "insomniac",
+      "name": "Insomniac",
+      "value": -1,
+      "description": "The character cannot sleep well and suffers penalties from fatigue.",
+      "upside": "None"
+    },
+    {
+      "id": "lame-temporary",
+      "name": "Lame (Temporary)",
+      "value": -2,
+      "description": "The character has a leg injury causing -1 to movement-related skills.",
+      "upside": "None"
+    },
+    {
+      "id": "lame-permanent",
+      "name": "Lame (Permanent)",
+      "value": -6,
+      "description": "The character has a permanent disability causing -1 to movement-related skills.",
+      "upside": "None"
+    },
+    {
+      "id": "liar",
+      "name": "Liar",
+      "value": -1,
+      "description": "The character often lies when it's advantageous.",
+      "upside": "None"
+    },
+    {
+      "id": "mythomaniac",
+      "name": "Mythomaniac",
+      "value": -5,
+      "description": "The character cannot tell the truth and constantly invents stories.",
+      "upside": "None"
+    },
+    {
+      "id": "mechanical-ineptitude",
+      "name": "Mechanical Ineptitude",
+      "value": -5,
+      "description": "All machinery tasks are considered Complexity 3 regardless of device.",
+      "upside": "None"
+    },
+    {
+      "id": "motion-sickness",
+      "name": "Motion Sickness",
+      "value": -1,
+      "description": "The character gets sick from movement, with penalty equal to the rating.",
+      "upside": "None"
+    },
+    {
+      "id": "nemesis",
+      "name": "Nemesis",
+      "value": -1,
+      "description": "The character has a long-time enemy. Cost is per nemesis' 10 CPs or SPs.",
+      "upside": "The enemy of your enemy may help you."
+    },
+    {
+      "id": "obligation",
+      "name": "Obligation",
+      "value": {
+        "minor": -1,
+        "moderate": -2,
+        "major": -3
+      },
+      "description": "The character has duties they must fulfill.",
+      "upside": "Contacts through the obligation may help."
+    },
+    {
+      "id": "one-armed-temporary",
+      "name": "One-Armed (Temporary)",
+      "value": -2,
+      "description": "The character is missing an arm temporarily.",
+      "upside": "None"
+    },
+    {
+      "id": "one-armed-permanent",
+      "name": "One-Armed (Permanent)",
+      "value": -5,
+      "description": "The character is permanently missing an arm.",
+      "upside": "None"
+    },
+    {
+      "id": "paranoid",
+      "name": "Paranoid",
+      "value": -3,
+      "description": "The character believes people are conspiring against them.",
+      "upside": "None"
+    },
+    {
+      "id": "phobia-mild",
+      "name": "Phobia (Mild)",
+      "value": -2,
+      "description": "The character fears something and gets -1 penalty when exposed to it.",
+      "upside": "None"
+    },
+    {
+      "id": "phobia-severe",
+      "name": "Phobia (Severe)",
+      "value": -4,
+      "description": "The character has an intense fear requiring a Willpower test to function at all.",
+      "upside": "None"
+    },
+    {
+      "id": "poor-sense-hearing",
+      "name": "Poor Sense: Hearing",
+      "value": -1,
+      "description": "The character has poor hearing and gets -1 to related Notice checks.",
+      "upside": "None"
+    },
+    {
+      "id": "poor-sense-sight",
+      "name": "Poor Sense: Sight",
+      "value": -1,
+      "description": "The character has poor vision and gets -1 to related Notice checks.",
+      "upside": "None"
+    },
+    {
+      "id": "poor-sense-smell-taste",
+      "name": "Poor Sense: Smell/Taste",
+      "value": -1,
+      "description": "The character has poor smell/taste and gets -1 to related Notice checks.",
+      "upside": "Can eat bad food without noticing."
+    },
+    {
+      "id": "blind-temporary",
+      "name": "Blind (Temporary)",
+      "value": -2,
+      "description": "The character is temporarily blind and cannot perform sight-based activities.",
+      "upside": "None"
+    },
+    {
+      "id": "blind-permanent",
+      "name": "Blind (Permanent)",
+      "value": -8,
+      "description": "The character is permanently blind and cannot perform sight-based activities.",
+      "upside": "None"
+    },
+    {
+      "id": "deaf-temporary",
+      "name": "Deaf (Temporary)",
+      "value": -2,
+      "description": "The character is temporarily deaf and cannot perform hearing-based activities.",
+      "upside": "None"
+    },
+    {
+      "id": "deaf-permanent",
+      "name": "Deaf (Permanent)",
+      "value": -8,
+      "description": "The character is permanently deaf and cannot perform hearing-based activities.",
+      "upside": "None"
+    },
+    {
+      "id": "quirk",
+      "name": "Quirk",
+      "value": -1,
+      "description": "A small personality flaw that poses minor limitations (max -2 from Quirks).",
+      "upside": "Adds character depth and roleplaying opportunities."
+    },
+    {
+      "id": "radiation-vulnerability",
+      "name": "Radiation Vulnerability",
+      "value": -2,
+      "description": "The character gets -1 to Health tests against radiation.",
+      "upside": "None"
+    },
+    {
+      "id": "secret",
+      "name": "Secret",
+      "value": {
+        "minor": -2,
+        "major": -3
+      },
+      "description": "The character has a dark secret that must remain hidden.",
+      "upside": "None"
+    },
+    {
+      "id": "sickly",
+      "name": "Sickly",
+      "value": {
+        "chronic": -1,
+        "moderate": -3,
+        "severe": -5,
+        "terminal": -7
+      },
+      "description": "The character has a serious ailment with various symptoms.",
+      "upside": "None"
+    },
+    {
+      "id": "slow-healing",
+      "name": "Slow Healing",
+      "value": -4,
+      "description": "The character needs 50% more time to heal from injuries.",
+      "upside": "None"
+    },
+    {
+      "id": "slow-learner",
+      "name": "Slow Learner",
+      "value": -2,
+      "description": "The character learns more slowly, increasing training time and XP costs.",
+      "upside": "None"
+    },
+    {
+      "id": "social-stigma",
+      "name": "Social Stigma",
+      "value": {
+        "minor": -1,
+        "moderate": -2,
+        "severe": -3
+      },
+      "description": "The character belongs to a group with a bad reputation.",
+      "upside": "Other members of the group may provide assistance."
+    },
+    {
+      "id": "split-personality",
+      "name": "Split Personality",
+      "value": -7,
+      "description": "The character has multiple personalities with different mental attributes.",
+      "upside": "None"
+    },
+    {
+      "id": "thin-skinned",
+      "name": "Thin-Skinned",
+      "value": -4,
+      "description": "The character subtracts 5 points from Stamina, decreasing damage thresholds.",
+      "upside": "None"
+    },
+    {
+      "id": "wanted",
+      "name": "Wanted",
+      "value": {
+        "minor": -1,
+        "moderate": -2,
+        "major": -3,
+        "severe": -4,
+        "extreme": -5
+      },
+      "description": "The character is being hunted by authorities or organizations.",
+      "upside": "Others hunted by the same group may be helpful."
+    },
+    {
+      "id": "weak-immune-system",
+      "name": "Weak Immune System",
+      "value": -3,
+      "description": "The character gets -1 to Health tests against diseases and drugs.",
+      "upside": "Better response to beneficial drugs."
+    }
+  ]
+}
+    

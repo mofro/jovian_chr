@@ -1,0 +1,252 @@
+{
+  "categories": [
+    "Combat",
+    "Technical",
+    "Physical",
+    "Social",
+    "Knowledge",
+    "Space Operations"
+  ],
+  "skills": [
+    {
+      "id": "animal-handling",
+      "name": "Animal Handling",
+      "category": "Knowledge",
+      "complex": false,
+      "description": "The ability to train, control, and care for animals.",
+      "specializations": ["Domestic", "Exotic", "Working Animals"],
+      "relatedAttributes": ["INF", "KNO"],
+      "possessedBy": ["Farmers", "Ranchers", "Circus Performers"]
+    },
+    {
+      "id": "athletics",
+      "name": "Athletics",
+      "category": "Physical",
+      "complex": false,
+      "description": "General physical prowess, including running, jumping, and other sports activities.",
+      "specializations": ["Running", "Swimming", "Climbing"],
+      "relatedAttributes": ["AGI", "FIT", "KNO"],
+      "possessedBy": ["Athletes", "Sports Enthusiasts", "Soldiers"]
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "category": "Knowledge",
+      "complex": true,
+      "description": "Understanding of economic principles, markets, and corporate operations.",
+      "specializations": ["Finance", "Management", "Marketing"],
+      "relatedAttributes": ["INF", "KNO"],
+      "possessedBy": ["Businesspeople", "Bankers", "Accountants"]
+    },
+    {
+      "id": "combat-sense",
+      "name": "Combat Sense",
+      "category": "Combat",
+      "complex": false,
+      "description": "Tactical awareness and ability to react effectively in combat situations.",
+      "specializations": ["Small Unit", "Personal", "Vehicle"],
+      "relatedAttributes": ["PER", "KNO"],
+      "possessedBy": ["Soldiers", "Police", "Criminals", "Warzone Residents"]
+    },
+    {
+      "id": "communications",
+      "name": "Communications",
+      "category": "Technical",
+      "complex": true,
+      "description": "Operation and maintenance of communication equipment and protocols.",
+      "specializations": ["Radio", "Encryption", "Networks"],
+      "relatedAttributes": ["KNO", "PER"],
+      "possessedBy": ["Signal Operators", "Technicians", "Hackers"]
+    },
+    {
+      "id": "electronic-warfare",
+      "name": "Electronic Warfare",
+      "category": "Technical",
+      "complex": true,
+      "description": "Use of electronic systems to disrupt enemy operations or protect friendly systems.",
+      "specializations": ["Jamming", "Countermeasures", "Signals Intelligence"],
+      "relatedAttributes": ["KNO", "CRE"],
+      "possessedBy": ["Military Specialists", "Intelligence Agents", "System Security Experts"]
+    },
+    {
+      "id": "exo-pilot",
+      "name": "Exo Pilot",
+      "category": "Space Operations",
+      "complex": true,
+      "description": "Operation of exo-armor mecha units in combat and non-combat situations.",
+      "specializations": ["Combat", "Utility", "Heavy"],
+      "relatedAttributes": ["AGI", "PER"],
+      "possessedBy": ["Combat Pilots", "Military Personnel", "Mercenaries"]
+    },
+    {
+      "id": "gunnery-exo",
+      "name": "Gunnery (Exo)",
+      "category": "Combat",
+      "complex": true,
+      "description": "Use of weapon systems mounted on exo-armor units.",
+      "specializations": ["Energy Weapons", "Ballistic", "Missiles"],
+      "relatedAttributes": ["AGI", "PER"],
+      "possessedBy": ["Combat Pilots", "Combat Gunners", "Military Personnel"]
+    },
+    {
+      "id": "hand-to-hand",
+      "name": "Hand-to-hand",
+      "category": "Combat",
+      "complex": false,
+      "description": "Unarmed combat techniques for self-defense and offensive actions.",
+      "specializations": ["Striking", "Grappling", "Military"],
+      "relatedAttributes": ["AGI", "FIT", "KNO"],
+      "possessedBy": ["Boxers", "Martial Artists", "Police", "Soldiers"]
+    },
+    {
+      "id": "navigation-space",
+      "name": "Navigation (Space)",
+      "category": "Space Operations",
+      "complex": true,
+      "description": "Plotting courses and navigating vessels through space.",
+      "specializations": ["Orbital", "Deep Space", "System Transit"],
+      "relatedAttributes": ["KNO", "PER"],
+      "possessedBy": ["Pilots", "Navigators", "Space Station Personnel"]
+    },
+    {
+      "id": "small-arms",
+      "name": "Small Arms",
+      "category": "Combat",
+      "complex": false,
+      "description": "Use and maintenance of personal firearms and similar weapons.",
+      "specializations": ["Pistols", "Rifles", "Heavy Weapons"],
+      "relatedAttributes": ["AGI", "KNO", "PER"],
+      "possessedBy": ["Soldiers", "Police", "Criminals", "Hunters"]
+    },
+    {
+      "id": "zero-g-combat",
+      "name": "Zero-G Combat",
+      "category": "Space Operations",
+      "complex": true,
+      "description": "Combat techniques adapted for zero gravity environments.",
+      "specializations": ["EVA", "Ship Boarding", "Station Defense"],
+      "relatedAttributes": ["AGI", "WIL"],
+      "possessedBy": ["Space Marines", "Security Personnel", "Military Special Forces"]
+    },
+    {
+      "id": "zero-g-movement",
+      "name": "Zero-G Movement",
+      "category": "Space Operations",
+      "complex": false,
+      "description": "Moving efficiently in zero gravity environments.",
+      "specializations": ["EVA", "Internal", "Emergency"],
+      "relatedAttributes": ["AGI", "FIT"],
+      "possessedBy": ["Astronauts", "Space Station Personnel", "Military Space Units"]
+    },
+    {
+      "id": "defense",
+      "name": "Defense",
+      "category": "Combat",
+      "complex": false,
+      "description": "The ability to avoid incoming attacks by dodging or using cover effectively.",
+      "specializations": ["Unarmed", "Melee Attacks", "Ranged Attacks"],
+      "relatedAttributes": ["AGI", "PER"],
+      "possessedBy": ["Soldiers", "Police", "Criminals", "Bodyguards"]
+    },
+    {
+      "id": "investigation",
+      "name": "Investigation",
+      "category": "Knowledge",
+      "complex": false,
+      "description": "The ability to collect information on people, places and events.",
+      "specializations": ["Searching", "Surveillance", "Forensics"],
+      "relatedAttributes": ["PER", "KNO"],
+      "possessedBy": ["Police", "Private Detectives", "Spies", "Journalists"]
+    },
+    {
+      "id": "medicine",
+      "name": "Medicine",
+      "category": "Knowledge",
+      "complex": true,
+      "description": "The ability to diagnose and treat various pathological conditions and injuries.",
+      "specializations": ["Combat", "Surgery", "Emergency Care", "Neurology"],
+      "relatedAttributes": ["CRE", "KNO", "INF"],
+      "possessedBy": ["Doctors", "Medics", "First Responders", "Combat Medics"]
+    },
+    {
+      "id": "notice",
+      "name": "Notice",
+      "category": "Physical",
+      "complex": false,
+      "description": "The ability to perceive details that may be otherwise overlooked.",
+      "specializations": ["Visual", "Auditory", "Tracking", "Combat"],
+      "relatedAttributes": ["PER", "KNO", "PSY"],
+      "possessedBy": ["Scouts", "Investigators", "Hunters", "Security Personnel"]
+    },
+    {
+      "id": "stealth",
+      "name": "Stealth",
+      "category": "Physical",
+      "complex": false,
+      "description": "The ability to move silently and remain hidden.",
+      "specializations": ["Urban", "Woodland", "Indoors", "Nighttime"],
+      "relatedAttributes": ["AGI", "CRE", "PER"],
+      "possessedBy": ["Spies", "Scouts", "Assassins", "Special Forces"]
+    },
+    {
+      "id": "survival",
+      "name": "Survival",
+      "category": "Knowledge",
+      "complex": false,
+      "description": "The ability to survive in hostile environments.",
+      "specializations": ["Urban", "Wilderness", "Space", "Desert"],
+      "relatedAttributes": ["CRE", "PER", "KNO"],
+      "possessedBy": ["Explorers", "Military", "Colonists", "Wilderness Guides"]
+    },
+    {
+      "id": "negotiation",
+      "name": "Negotiation",
+      "category": "Social",
+      "complex": false,
+      "description": "The ability to influence decisions in bargaining or transactions.",
+      "specializations": ["Diplomacy", "Bargaining", "Mediation", "Contracts"],
+      "relatedAttributes": ["INF", "PER", "KNO"],
+      "possessedBy": ["Diplomats", "Businesspeople", "Lawyers", "Politicians"]
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "category": "Social",
+      "complex": false,
+      "description": "The ability to lead and inspire others effectively.",
+      "specializations": ["Military", "Business", "Crisis", "Political"],
+      "relatedAttributes": ["INF", "PER"],
+      "possessedBy": ["Officers", "Managers", "Politicians", "Team Leaders"]
+    },
+    {
+      "id": "technical-sciences",
+      "name": "Technical Sciences",
+      "category": "Technical",
+      "complex": true,
+      "description": "Knowledge of technical fields including computers, electronics, and mechanics.",
+      "specializations": ["Computing", "Electronics", "Mechanics", "Engineering"],
+      "relatedAttributes": ["CRE", "KNO"],
+      "possessedBy": ["Engineers", "Technicians", "Scientists", "Mechanics"]
+    },
+    {
+      "id": "natural-sciences",
+      "name": "Natural Sciences",
+      "category": "Knowledge",
+      "complex": true,
+      "description": "Knowledge of scientific fields like physics, chemistry, and biology.",
+      "specializations": ["Physical", "Life", "Earth", "Space"],
+      "relatedAttributes": ["CRE", "KNO"],
+      "possessedBy": ["Scientists", "Researchers", "Educators", "Analysts"]
+    },
+    {
+      "id": "social-sciences",
+      "name": "Social Sciences",
+      "category": "Knowledge",
+      "complex": true,
+      "description": "Understanding of humanities including history, psychology, and sociology.",
+      "specializations": ["History", "Psychology", "Sociology", "Political Science"],
+      "relatedAttributes": ["CRE", "KNO", "INF"],
+      "possessedBy": ["Researchers", "Analysts", "Educators", "Consultants"]
+    }
+  ]
+}

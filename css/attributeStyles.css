@@ -1,0 +1,204 @@
+/* attributesStyles.css - Styling for the attributes section */
+
+.attributes-container {
+    margin-bottom: 25px;
+}
+
+.attributes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #1a365d;
+    padding-bottom: 8px;
+}
+
+.attributes-header h2 {
+    color: #1a365d;
+    margin: 0;
+}
+
+.points-tracker {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1a365d;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.attribute-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.attribute-item {
+    background-color: #e9ecf3;
+    border-radius: 6px;
+    padding: 15px;
+    border: 1px solid #cbd5e0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.attribute-item:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.attribute-name {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #1a365d;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 5px;
+}
+
+.attribute-abbr {
+    color: #718096;
+    font-size: 0.9em;
+}
+
+.attribute-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.attribute-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #1a365d;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #1a365d;
+}
+
+.attribute-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.attribute-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.dec-btn {
+    background-color: #e53e3e;
+    color: white;
+}
+
+.dec-btn:hover {
+    background-color: #c53030;
+}
+
+.inc-btn {
+    background-color: #38a169;
+    color: white;
+}
+
+.inc-btn:hover {
+    background-color: #2f855a;
+}
+
+.inc-btn:disabled, .dec-btn:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+}
+
+.attribute-description {
+    font-size: 0.85em;
+    color: #718096;
+    margin-top: 10px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Attribute categories */
+.attribute-physical {
+    border-left: 4px solid #3182ce; /* blue */
+}
+
+.attribute-mental {
+    border-left: 4px solid #805ad5; /* purple */
+}
+
+.attribute-social {
+    border-left: 4px solid #dd6b20; /* orange */
+}
+
+.attribute-psychological {
+    border-left: 4px solid #38a169; /* green */
+}
+
+/* Tooltip for attribute descriptions */
+.attribute-tooltip {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #a0aec0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: help;
+}
+
+.attribute-tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 0;
+    top: 25px;
+    background-color: #1a365d;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    width: 200px;
+    z-index: 10;
+    font-weight: normal;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .attribute-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .attributes-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .attributes-header .points {
+        margin-top: 5px;
+    }
+}
