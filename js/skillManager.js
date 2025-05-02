@@ -4,13 +4,21 @@
  */
 
 // Static Skills Store
-class SkillsStore {
+export class SkillsStore {
     constructor(skillsData) {
         console.log('SkillsStore constructor called with:', skillsData); // Debugging log
+        console.log('SkillsStore constructor received skillsData:', skillsData); // Debugging log
 
-        // Correctly access the nested structure of skillsData
-        this.staticSkills = skillsData.skillsData.skills || []; // Access the correct property
-        this.categories = skillsData.skillsData.categories || []; // Access the correct property
+        if (!skillsData || !skillsData.skills) {
+            console.error('Invalid skillsData passed to SkillsStore:', skillsData); // Debugging log
+            this.staticSkills = [];
+            this.categories = [];
+            return;
+        }
+
+        // Correctly access the top-level structure of skillsData
+        this.staticSkills = skillsData.skills || []; // Access the correct property
+        this.categories = skillsData.categories || []; // Access the correct property
 
         console.log('SkillsStore initialized with staticSkills:', this.staticSkills, 'and categories:', this.categories); // Debugging log
     }
@@ -33,14 +41,20 @@ class SkillsStore {
 export default class SkillManager {
     /**
      * Initialize the SkillManager
-     * @param {Object} skillsData - Skills data
-     * @param {Object} perksFlawsData - Perks and flaws data
+     * @param {Object} skillsStore - Skills store instance
      * @param {number} maxSkillPoints - Maximum skill points
+     * @param {Object} pointManager - Point manager instance
      */
-    constructor(skillsData, perksFlawsData, maxSkillPoints) {
-        console.log('Initializing SkillManager with skillsData:', skillsData); // Debugging log
-        this.skillsStore = new SkillsStore(skillsData); // Use SkillsStore
-        this.perksFlawsData = perksFlawsData || {};
+    constructor({ skillsStore, maxSkillPoints, pointManager }) {
+        if (!skillsStore) {
+            console.error('SkillManager: skillsStore is undefined. Ensure it is properly initialized.');
+            return;
+        }
+
+        console.log('Initializing SkillManager with skillsStore:', skillsStore); // Debugging log
+        console.log('SkillManager constructor received skillsStore:', skillsStore); // Debugging log
+        this.skillsStore = skillsStore; // Use the provided SkillsStore instance
+        this.pointManager = pointManager; // Use PointManager for point tracking
         this.maxSkillPoints = maxSkillPoints || 50; // Default to adventurous game
 
         // Initialize character skills from the static skills store
@@ -240,21 +254,29 @@ export default class SkillManager {
      * @returns {boolean} Whether the increase was successful
      */
     increaseSkillLevel(skillId) {
-        if (!this.canIncreaseSkillLevel(skillId)) {
-            return false;
-        }
-        
         const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
         if (skillIndex === -1) {
             return false;
         }
-        
-        // Increase the level
+
+        const skill = this.characterSkills[skillIndex];
+
+        // Check if there are enough points to increase the skill level
+        const currentCost = this.calculateSkillCost(skill);
+        const increasedSkill = { ...skill, level: skill.level + 1 };
+        const increasedCost = this.calculateSkillCost(increasedSkill);
+        const additionalCost = increasedCost - currentCost;
+
+        if (this.pointManager.getRemainingPoints('skill') < additionalCost) {
+            console.error('Not enough skill points to increase level');
+            return false;
+        }
+
+        // Increase the level and update points
         this.characterSkills[skillIndex].level++;
-        
-        // Recalculate cost
-        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
-        
+        this.characterSkills[skillIndex].cost = increasedCost;
+        this.pointManager.addPoints('skill', additionalCost);
+
         return true;
     }
 
@@ -268,20 +290,24 @@ export default class SkillManager {
         if (skillIndex === -1) {
             return false;
         }
-        
+
         const skill = this.characterSkills[skillIndex];
 
         // Can't decrease below 0
         if (skill.level <= 0) {
             return false;
         }
-        
-        // Decrease the level
+
+        // Decrease the level and update points
+        const currentCost = this.calculateSkillCost(skill);
+        const decreasedSkill = { ...skill, level: skill.level - 1 };
+        const decreasedCost = this.calculateSkillCost(decreasedSkill);
+        const refundedPoints = currentCost - decreasedCost;
+
         this.characterSkills[skillIndex].level--;
-        
-        // Recalculate cost
-        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
-        
+        this.characterSkills[skillIndex].cost = decreasedCost;
+        this.pointManager.removePoints('skill', refundedPoints);
+
         return true;
     }
 

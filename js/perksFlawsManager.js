@@ -4,10 +4,13 @@
  */
 
 // Static Perks & Flaws Store
-class PerksFlawsStore {
+export class PerksFlawsStore {
     constructor(perksFlawsData) {
+        console.log('PerksFlawsStore constructor called with perksFlawsData:', perksFlawsData); // Debugging log
         this.staticPerks = perksFlawsData.perks || [];
         this.staticFlaws = perksFlawsData.flaws || [];
+        console.log('PerksFlawsStore initialized with staticPerks:', this.staticPerks); // Debugging log
+        console.log('PerksFlawsStore initialized with staticFlaws:', this.staticFlaws); // Debugging log
     }
 
     getStaticPerks() {
@@ -26,11 +29,11 @@ class PerksFlawsStore {
 export default class PerksFlawsManager {
     /**
      * Initialize the PerksFlawsManager
-     * @param {Object} perksFlawsData - Perks and flaws data
+     * @param {Object} perksFlawsStore - Perks and flaws store instance
      * @param {number} maxFlawPoints - Maximum allowed flaw points (usually 12, or 20 for Cinematic games)
      */
-    constructor(perksFlawsData, maxFlawPoints = 12) {
-        this.perksFlawsStore = new PerksFlawsStore(perksFlawsData); // Use PerksFlawsStore
+    constructor(perksFlawsStore, maxFlawPoints = 12) {
+        this.perksFlawsStore = perksFlawsStore; // Use the passed PerksFlawsStore instance
 
         // Initialize character perks and flaws
         this.characterPerks = this.initializeCharacterPerks();

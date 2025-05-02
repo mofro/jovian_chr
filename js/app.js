@@ -7,8 +7,12 @@ import SkillsUI from './skillsUI.js';
 import AttributesUI from './attributesUI.js';
 import AttributeManager from './attributeManager.js';
 import SkillManager from './skillManager.js';
+import PerksFlawsManager from './perksFlawsManager.js';
 import PerksFlawsUI from './perksFlawsUI.js';
 import SecondaryTraitsUI from './secondaryTraitsUI.js'; // Added import for SecondaryTraitsUI
+import PointManager from './pointManager.js';
+import { SkillsStore } from './skillManager.js';
+import { PerksFlawsStore } from './perksFlawsManager.js';
 
 // Game settings with power levels
 const gameSettings = {
@@ -64,6 +68,12 @@ class JovianCharacterCreator {
             secondaryTraits: {}
         };
 
+        // Initialize PointManager with default values for the 'adventurous' setting
+        this.pointManager = new PointManager({
+            characterPoints: this.gameSettings.adventurous.characterPoints,
+            skillPoints: this.gameSettings.adventurous.skillPoints
+        });
+
         // Bind methods to ensure correct `this` context
         this.init = this.init.bind(this);
         this.loadData = this.loadData.bind(this);
@@ -93,12 +103,8 @@ class JovianCharacterCreator {
                 throw new Error('Failed to load required data.');
             }
 
-            console.log('Data loaded successfully:', this.skillsData); // Debugging log
-
             // Initialize managers
             this.createManagers();
-
-            console.log('Managers created successfully:', this.managers); // Debugging log
 
             // Initialize UI components
             this.initUI();
@@ -143,6 +149,13 @@ class JovianCharacterCreator {
                 throw new Error('Invalid skills data format');
             }
 
+            this.skillsData = skillsData; // Ensure skillsData is correctly assigned
+
+            const perksFlawsResponse = await fetch('data/perks-flaws.json');
+
+            console.log('Fetched skillsData:', skillsData); // Debugging log
+            console.log('loadData: skillsData fetched:', skillsData); // Debugging log
+            console.log('loadData: Successfully fetched skillsData:', skillsData); // Debugging log
             this.skillsData = skillsData; // Ensure skillsData is correctly assigned
             console.log('Loaded skillsData:', this.skillsData); // Debugging log
 
@@ -419,13 +432,13 @@ class JovianCharacterCreator {
 
         this.character.setting = setting;
 
-        // Update character points
+        // Update PointManager with new values
         const newCharacterPoints = this.gameSettings[setting].characterPoints;
-        this.managers.attributes.setMaxCharacterPoints(newCharacterPoints);
-
-        // Update skill points
         const newSkillPoints = this.gameSettings[setting].skillPoints;
-        this.managers.skills.setMaxSkillPoints(newSkillPoints);
+        this.pointManager = new PointManager({
+            characterPoints: newCharacterPoints,
+            skillPoints: newSkillPoints
+        });
 
         // Notify UI components
         this.updateUI();
@@ -436,19 +449,42 @@ class JovianCharacterCreator {
         if (this.skillsUI) this.skillsUI.update();
         if (this.perksFlawsUI) this.perksFlawsUI.update();
         if (this.secondaryTraitsUI) this.secondaryTraitsUI.update();
+
+        // Update points display
+        const skillPointsDisplay = document.getElementById('skill-points-display');
+        if (skillPointsDisplay) {
+            skillPointsDisplay.textContent = `${this.pointManager.getRemainingPoints('skill')}/${this.pointManager.totalSkillPoints}`;
+        }
+
+        const perksFlawsPointsDisplay = document.getElementById('perks-flaws-points-display');
+        if (perksFlawsPointsDisplay) {
+            const adjustment = this.perksFlawsUI.perksFlawsManager.calculatePointsAdjustment();
+            perksFlawsPointsDisplay.textContent = `Net Adjustment: ${adjustment.netAdjustment} SP`;
+        }
     }
 
     createManagers() {
-        if (!this.skillsData || !Array.isArray(this.skillsData.skills)) {
-            console.error('Invalid skills data: skillsData.skills must be an array.');
+        if (!this.skillsData) {
+            console.error('createManagers: skillsData is undefined. Ensure loadData completed successfully.');
             return;
         }
 
-        console.log('Initializing SkillsStore with skillsData:', this.skillsData); // Debugging log
+        console.log('createManagers: this.skillsData:', this.skillsData); // Debugging log
+        console.log('createManagers: this.skillsData before SkillsStore initialization:', this.skillsData); // Debugging log
+        console.log('Initializing SkillsStore with this.skillsData:', this.skillsData); // Debugging log
 
+        // Initialize SkillsStore
+        const skillsStore = new SkillsStore(this.skillsData);
+
+        console.log('createManagers: Initialized SkillsStore:', skillsStore); // Debugging log
+        console.log('createManagers: SkillsStore instance:', skillsStore); // Debugging log
+        console.log('createManagers: SkillsStore instance before passing to SkillManager:', skillsStore); // Debugging log
+
+        // Pass SkillsStore to SkillManager
         this.managers.skills = new SkillManager({
-            skillsData: this.skillsData,
+            skillsStore: skillsStore,
             maxSkillPoints: this.gameSettings[this.character.setting].skillPoints,
+            pointManager: this.pointManager,
             onUpdate: () => {
                 const skillsForTraits = this.managers.skills.getSkillsForTraits();
                 this.managers.secondaryTraits.updateSkills(skillsForTraits);
@@ -464,6 +500,20 @@ class JovianCharacterCreator {
         });
 
         console.log('SkillsManager initialized:', this.managers.skills); // Debugging log
+
+        console.log('createManagers: Initializing PerksFlawsStore with perksFlawsData:', this.perksFlawsData); // Debugging log
+
+        // Initialize PerksFlawsStore
+        const perksFlawsStore = new PerksFlawsStore(this.perksFlawsData);
+
+        console.log('createManagers: Initialized PerksFlawsStore:', perksFlawsStore); // Debugging log
+        console.log('createManagers: PerksFlawsStore methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(perksFlawsStore))); // Debugging log
+        console.log('createManagers: PerksFlawsStore instance type:', perksFlawsStore.constructor.name); // Debugging log
+
+        console.log('createManagers: perksFlawsData content:', this.perksFlawsData); // Debugging log
+
+        // Pass PerksFlawsStore to PerksFlawsManager
+        this.managers.perksFlaws = new PerksFlawsManager(perksFlawsStore, this.gameSettings[this.character.setting].flawPoints, this.pointManager);
     }
 
     createAttributesUI() {
