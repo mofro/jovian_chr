@@ -132,7 +132,7 @@ export default class PerksFlawsUI {
      * Update the content container based on active tab
      */
     updateContentContainer() {
-        this.contentContainer.innerHTML = '';
+        this.contentContainer.innerHTML = ''; // Clear the content container
 
         if (this.activeTab === 'perks') {
             this.renderPerksContent();

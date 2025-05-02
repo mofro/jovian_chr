@@ -82,10 +82,12 @@ export default class AttributesUI {
         const item = document.createElement('div');
         item.className = `attribute-item attribute-${attr.category}`;
         item.innerHTML = `
-            <div class="attribute-tooltip" data-tooltip="${attr.tooltip}">?</div>
-            <div class="attribute-name">
-                <span>${attr.name}</span>
-                <span class="attribute-abbr">${attr.abbr}</span>
+            <div class="attribute-name-container">
+                <div class="attribute-tooltip" data-tooltip="${attr.tooltip}">?</div>
+                <div class="attribute-name">
+                    <span>${attr.name}</span>
+                    <span class="attribute-abbr">${attr.abbr}</span>
+                </div>
             </div>
             <div class="attribute-controls">
                 <div class="attribute-value" id="${attrCode.toLowerCase()}-value">0</div>

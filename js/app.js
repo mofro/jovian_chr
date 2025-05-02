@@ -93,8 +93,12 @@ class JovianCharacterCreator {
                 throw new Error('Failed to load required data.');
             }
 
+            console.log('Data loaded successfully:', this.skillsData); // Debugging log
+
             // Initialize managers
             this.createManagers();
+
+            console.log('Managers created successfully:', this.managers); // Debugging log
 
             // Initialize UI components
             this.initUI();
@@ -140,6 +144,7 @@ class JovianCharacterCreator {
             }
 
             this.skillsData = skillsData; // Ensure skillsData is correctly assigned
+            console.log('Loaded skillsData:', this.skillsData); // Debugging log
 
             const perksFlawsResponse = await fetch('data/perks-flaws.json');
             this.perksFlawsData = await perksFlawsResponse.json();
@@ -434,12 +439,12 @@ class JovianCharacterCreator {
     }
 
     createManagers() {
-        // console.log('Skills data in createManagers():', this.skillsData); // Debugging skills data
-
         if (!this.skillsData || !Array.isArray(this.skillsData.skills)) {
             console.error('Invalid skills data: skillsData.skills must be an array.');
             return;
         }
+
+        console.log('Initializing SkillsStore with skillsData:', this.skillsData); // Debugging log
 
         this.managers.skills = new SkillManager({
             skillsData: this.skillsData,
@@ -457,6 +462,8 @@ class JovianCharacterCreator {
                 }
             }
         });
+
+        console.log('SkillsManager initialized:', this.managers.skills); // Debugging log
     }
 
     createAttributesUI() {
@@ -488,25 +495,23 @@ class JovianCharacterCreator {
             return;
         }
 
-        console.log('Skills data:', this.skillsData); // Debugging skills data
-        // console.log('Debug: skillsData before passing to SkillsUI:', this.skillsData);
+        console.log('Initializing SkillsUI with SkillsStore:', this.managers.skills.skillsStore); // Debugging log
 
         this.skillsUI = new SkillsUI(skillsContainer, {
-            skillsData: this.skillsData.skills, // Corrected to pass the skills array directly
+            skillsStore: this.managers.skills.skillsStore, // Pass the SkillsStore directly
             maxSkillPoints: this.gameSettings[this.character.setting].skillPoints,
             onUpdate: () => {
-                const points = this.skillsUI.skillManager.getSkillPoints();
+                const points = this.skillsUI.skillsStore.getSkillPoints();
                 this.character.points.skillPoints.used = points.used;
 
                 if (this.managers.secondaryTraits) {
-                    const skillsForTraits = this.skillsUI.skillManager.getSkillsForTraits();
+                    const skillsForTraits = this.skillsUI.skillsStore.getSkillsForTraits();
                     this.managers.secondaryTraits.updateSkills(skillsForTraits);
                 }
             }
         });
 
         console.log('SkillsUI initialized:', this.skillsUI);
-        // console.log('Skills stuff:', this.skillsData); // Debugging duplicate
     }
 
     createPerksFlawsUI() {

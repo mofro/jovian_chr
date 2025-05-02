@@ -3,7 +3,7 @@
  * UI component for skills management
  */
 
-import SkillManager from './skillManager.js';
+import SkillsStore from './skillManager.js';
 
 /**
  * SkillsUI Class
@@ -14,22 +14,14 @@ export default class SkillsUI {
      * Initialize the SkillsUI
      * @param {HTMLElement} container - Container element for the skills UI
      * @param {Object} config - Configuration object
-     * @param {Object} config.skillsData - Skills data object
+     * @param {Object} config.skillsStore - Skills store instance
      * @param {number} config.maxSkillPoints - Maximum skill points
      * @param {function} config.onUpdate - Callback when skills change
      */
     constructor(container, config = {}) {
         this.container = container;
-        this.skillsData = config.skillsData;
+        this.skillsStore = config.skillsStore;
         this.onUpdateCallback = config.onUpdate || function () {};
-
-        // Create skill manager
-        this.skillManager = new SkillManager({
-            skillsData: this.skillsData,
-            maxSkillPoints: config.maxSkillPoints || 50,
-            onUpdate: () => this.update(),
-        });
-        // console.log('this.skillsManager: ',this.skillManager);
 
         // Pagination state
         this.currentPage = 1;
@@ -60,19 +52,10 @@ export default class SkillsUI {
         header.innerHTML = `
             <h2>Skills</h2>
             <div class="points">
-                <span id="skill-points-used">0/${this.skillManager.maxSkillPoints}</span>
+                <span id="skill-points-used">0</span>
             </div>
         `;
         skillsContainer.appendChild(header);
-
-        // Create points tracker
-        const pointsTracker = document.createElement('div');
-        pointsTracker.className = 'points-tracker';
-        pointsTracker.innerHTML = `
-            <div>Skill Points:</div>
-            <div id="skill-points-display">0/${this.skillManager.maxSkillPoints}</div>
-        `;
-        skillsContainer.appendChild(pointsTracker);
 
         // Create controls
         const controls = document.createElement('div');
@@ -82,7 +65,7 @@ export default class SkillsUI {
                 <label for="skill-category-filter">Category</label>
                 <select id="skill-category-filter">
                     <option value="all">All Categories</option>
-                    ${this.skillManager.getCategories()
+                    ${this.skillsStore.getCategories()
                         .map(
                             (category) =>
                                 `<option value="${category.toLowerCase()}">${category}</option>`
@@ -115,75 +98,54 @@ export default class SkillsUI {
         // Create skill list
         const skillList = document.createElement('div');
         skillList.className = 'skill-list';
-        skillList.id = 'skill-list';
         skillsContainer.appendChild(skillList);
         this.skillList = skillList;
 
         // Create pagination
         const pagination = document.createElement('div');
         pagination.className = 'skill-pagination';
-        pagination.id = 'skill-pagination';
         skillsContainer.appendChild(pagination);
         this.pagination = pagination;
-    }
-
-    /**
-     * Update the UI to reflect current skill values
-     */
-    update() {
-        // Update points display
-        const points = this.skillManager.getSkillPoints();
-        const pointsDisplay = document.getElementById('skill-points-display');
-        const pointsUsed = document.getElementById('skill-points-used');
-
-        if (pointsDisplay) {
-            pointsDisplay.textContent = `${points.used}/${points.max}`;
-        } else {
-            console.error('Element with ID "skill-points-display" not found.');
-        }
-
-        if (pointsUsed) {
-            pointsUsed.textContent = `${points.used}/${points.max}`;
-        } else {
-            console.error('Element with ID "skill-points-used" not found.');
-        }
-
-        // Update skill list and other UI elements
-        this.updateSkillList();
-        this.updateButtonsState();
     }
 
     /**
      * Update the skill list based on filters and pagination
      */
     updateSkillList() {
-        this.skillList.innerHTML = 'hello world';
+        this.skillList.innerHTML = ''; // Clear the skill list
 
-        // Filter and paginate skills
-        const filteredSkills = this.skillManager
-            .getCharacterSkills()
-            .filter((skill) => {
-                const matchesCategory =
-                    this.currentCategory === 'all' ||
-                    skill.category.toLowerCase() === this.currentCategory;
-                const matchesSearch =
-                    this.searchQuery === '' ||
-                    skill.name.toLowerCase().includes(this.searchQuery.toLowerCase());
-                return matchesCategory && matchesSearch;
-            });
+        // Fetch all skills from SkillsStore
+        const allSkills = this.skillsStore.getStaticSkills();
 
+        // Apply category filter
+        const filteredByCategory = this.currentCategory === 'all'
+            ? allSkills
+            : allSkills.filter(skill => skill.category.toLowerCase() === this.currentCategory);
+
+        // Apply search filter
+        const filteredSkills = this.searchQuery
+            ? filteredByCategory.filter(skill =>
+                  skill.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+              )
+            : filteredByCategory;
+
+        // Paginate the filtered skills
         const totalPages = Math.ceil(filteredSkills.length / this.itemsPerPage);
         const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-        const paginatedSkills = filteredSkills.slice(
-            startIndex,
-            startIndex + this.itemsPerPage
-        );
+        const paginatedSkills = filteredSkills.slice(startIndex, startIndex + this.itemsPerPage);
 
         // Render skills
-        paginatedSkills.forEach((skill) => {
-            const skillItem = this.createSkillItem(skill, true);
-            this.skillList.appendChild(skillItem);
-        });
+        if (paginatedSkills.length === 0) {
+            const noSkillsMessage = document.createElement('div');
+            noSkillsMessage.className = 'no-skills-message';
+            noSkillsMessage.textContent = 'No skills match your criteria.';
+            this.skillList.appendChild(noSkillsMessage);
+        } else {
+            paginatedSkills.forEach((skill) => {
+                const skillItem = this.createSkillItem(skill);
+                this.skillList.appendChild(skillItem);
+            });
+        }
 
         // Update pagination
         this.createPagination(totalPages);
@@ -192,10 +154,9 @@ export default class SkillsUI {
     /**
      * Create a skill item element
      * @param {Object} skill - Skill data
-     * @param {boolean} showDetails - Whether to show details
      * @returns {HTMLElement} Skill item element
      */
-    createSkillItem(skill, showDetails) {
+    createSkillItem(skill) {
         const item = document.createElement('div');
         item.className = 'skill-item';
 
@@ -209,16 +170,13 @@ export default class SkillsUI {
         item.appendChild(header);
 
         // Skill details
-        if (showDetails) {
-            const details = document.createElement('div');
-            details.className = 'skill-details';
-            details.innerHTML = `
-                <div>Level: ${skill.level}</div>
-                <div>Complexity: ${skill.complexity}</div>
-                <div>Cost: ${skill.cost}</div>
-            `;
-            item.appendChild(details);
-        }
+        const details = document.createElement('div');
+        details.className = 'skill-details';
+        details.innerHTML = `
+            <div>Description: ${skill.description}</div>
+            <div>Complex: ${skill.complex}</div>
+        `;
+        item.appendChild(details);
 
         return item;
     }
@@ -247,15 +205,9 @@ export default class SkillsUI {
     }
 
     /**
-     * Update buttons state based on skill levels and points
+     * Update the UI to reflect current skill values
      */
-    updateButtonsState() {
-        const points = this.skillManager.getSkillPoints();
-        const remainingPoints = points.max - points.used;
-
-        // Update all skill items
-        this.skillManager.getCharacterSkills().forEach((skill) => {
-            // Logic to enable/disable buttons based on remaining points
-        });
+    update() {
+        this.updateSkillList();
     }
 }

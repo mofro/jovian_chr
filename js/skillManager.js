@@ -6,15 +6,22 @@
 // Static Skills Store
 class SkillsStore {
     constructor(skillsData) {
-        this.staticSkills = skillsData.skills || [];
-        this.categories = skillsData.categories || [];
+        console.log('SkillsStore constructor called with:', skillsData); // Debugging log
+
+        // Correctly access the nested structure of skillsData
+        this.staticSkills = skillsData.skillsData.skills || []; // Access the correct property
+        this.categories = skillsData.skillsData.categories || []; // Access the correct property
+
+        console.log('SkillsStore initialized with staticSkills:', this.staticSkills, 'and categories:', this.categories); // Debugging log
     }
 
     getStaticSkills() {
+        console.log('Fetching static skills:', this.staticSkills); // Debugging log
         return [...this.staticSkills]; // Return a copy to prevent modification
     }
 
     getCategories() {
+        console.log('Fetching categories:', this.categories); // Debugging log
         return [...this.categories]; // Return a copy to prevent modification
     }
 }
@@ -31,6 +38,7 @@ export default class SkillManager {
      * @param {number} maxSkillPoints - Maximum skill points
      */
     constructor(skillsData, perksFlawsData, maxSkillPoints) {
+        console.log('Initializing SkillManager with skillsData:', skillsData); // Debugging log
         this.skillsStore = new SkillsStore(skillsData); // Use SkillsStore
         this.perksFlawsData = perksFlawsData || {};
         this.maxSkillPoints = maxSkillPoints || 50; // Default to adventurous game
