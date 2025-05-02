@@ -19,13 +19,13 @@ export default class SecondaryTraitsUI {
         this.container = container;
         this.attributesManager = config.attributesManager;
         this.skillsManager = config.skillsManager;
-        this.onUpdateCallback = config.onUpdate || function() {};
-        
+        this.onUpdateCallback = config.onUpdate || function () {};
+
         // Create secondary traits manager
         this.traitsManager = new SecondaryTraitsManager({
             onUpdate: () => this.update()
         });
-        
+
         // Initialize UI
         this.createUI();
         this.update();

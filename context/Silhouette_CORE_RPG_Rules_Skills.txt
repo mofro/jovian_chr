@@ -1,0 +1,3618 @@
+! 2. Chapter Two:
+Character Design
+!2 2
+!
+ 
+Chapter Two:
+Character Design
+
+2 3 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+
+! 2. Chapter Two:
+Character Design
+!2 4
+!
+ 
+Chapter Two:
+Character Design
+ACTION: HEAVY GEAR
+Introduction
+Before sitting down to actually roleplay, players
+will have to create their characters. The
+characters can be almost any type of person
+that fits the background of the campaign. The
+process outlined in the following pages
+assumes characters above the average, but
+still far from the level of the elites. This can be
+adjusted to better accommodate the style
+intended for the game, be it gritty or cinematic.
+The characters are going to be the conduit
+through which the players interact with the
+game world. They will, as mentioned in section
+1.1, be the heroes of the story that will be told
+through playing the game. The characters can
+be pure or flawed and their motivations may
+differ, but it doesn’t matter as long as they are
+interesting to control and watch. And
+remember, all characters can grow further
+through experience, adding new abilities and
+contacts.
+In order to keep the basic character generation
+rules as clear and concise as possible, a
+number of advanced options (such as Special
+Abilities, which are “super” Perks and alien
+race design rules) have been placed in
+Chapter Six. They follow the same point
+spending rules, but their use is restricted to
+certain types of campaigns — the
+Gamemaster and players should confer
+together to see what will be allowed.
+The important thing to remember is that there
+is no right or wrong way to do things, as long
+as the point-spending rules are respected. The
+player is in complete charge of the design
+decisions — no one is forced to purchase a
+certain Skill, unless they are required for the
+campaign (a game about a squadron of fighter
+pilots will obviously need characters who can
+pilot planes). Examine each choice closely,
+remembering that all characters have potential
+strong points.
+ACTION: HEAVY GEAR
+
+2 5 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+Appearance (APP)
+Appearance rates the physical attractiveness
+of the character. This can modify how other
+people react to him: many heroic characters
+have a high Appearance rating in order to
+impress those they come in contact with. Note
+that Appearance applies solely between
+members of the same race.
+2.1 Attributes
+The basic abilities, knowledge and
+weaknesses of a character are defined by their
+Attributes. These largely represent the
+characteristics a character was born with, or
+acquired in their formative years. These range
+from physical Attributes, such as Agility and
+Fitness, to mental proficiencies such as
+Willpower and Knowledge. The ten basic
+Attributes represent a character’s natural
+proficiencies and potential. A character with
+high Fitness will tend to be a better athlete,
+one with high Influence will gravitate to
+leadership positions and so on.
+Attributes can be improved through hard work,
+but it is very tough and time-consuming. They
+can be lowered, but usually this is the result of
+awful wounds or advanced age that will likely
+retire the character from an active adventuring
+life. Attributes, unlike Skills and other abilities,
+thus vary little throughout much of a campaign
+(see
+Character Improvement, section 2.5).
+2.1.1 Descriptions
+The following texts describe the ten basic
+Atributes and their use in the game. Along with
+each description, a table giving a real world
+equivalent for different ratings is listed.
+Attribute levels are based on an average
+human person in their young adulthood; some
+creatures or aliens may have much more
+widely dispersed Attribute ranges. The human
+average range is -3 to +3, with Build being the
+sole exception.
+Agility (AGI)
+Agility is the character’s hand-eye
+coordination, nimbleness and reflexes. This
+Attribute is best suited to action-oriented
+characters such as pilots, bodyguards and
+pickpockets, all of which are likely to have high
+Agility ratings.
+Agility (AGI)
+AGI RATING EQUIVALENT
++3 Olympic gymnast
++2 Agile
++1 Well-coordinated
+0 Average Person
+-1 Awkward
+-2 Clumsy
+-3 Suffers from a crippling disease
+Appearance (APP)
+APP RATING EQUIVALENT
++3 World-class models
++2 Beautiful
++1 Attractive, Cute
+0 Average Person
+-1 Plain
+-2 Homely
+-3 Physically revolting
+ACTION: HEAVY GEAR
+
+! 2. Chapter Two:
+Character Design
+!2 6
+!
+ 
+Chapter Two:
+Character Design
+Build (BLD)
+Build is a rating of the character’s size and
+body frame. It does not represent the
+character’s physical might — that’s what’s the
+Strength Secondary Attribute is for — but the
+actual body size and mass. This is most
+apparent in the archetypal couch potato who
+is very large (high Build), but can barely lift
+the remote to change the channel.
+Fitness (FIT)
+Fitness rates the character’s general flexibility,
+cardiovascular endurance, resistance to effort
+and overall muscle tone. While Build measures
+raw size, Fitness measures how well
+maintained the character’s body is. Illness can
+temporarily reduce this Attribute, as can other
+hardships (such as a substandard air supply
+and starvation).
+Build (BLD)
+BLD RATING EQUIVALENT
++5 180-249.9 kg
++4 140-179.9 kg
++3 115-139.9 kg
++2 95-114.9 kg
++1 80-94.9 kg
+0 70-79.9 kg
+-1 60-69.9 kg
+-2 50-59.9 kg
+-3 40-49.9 kg
+-4 25-39.9 kg
+-5 10-24.9 kg
+Creativity (CRE)
+Creativity is a measure of the character’s ability to
+use his mind in innovative ways. It is also a measure
+of the character’s ability to think on his feet. This
+Attribute is useful for most characters who
+are likely to be thrust into unfamiliar
+situations and for leaders who have to make
+many decisions while on the run.
+Fitness (FIT)
+FIT RATING EQUIVALENT
++3 Olympic athlete
++2 Professional athlete
++1 College jock
+0 Average Person
+-1 Out of shape
+-2 Shrimp
+-3 Gets winded after a few steps
+Creativity (CRE)
+CRE RATING EQUIVALENT
++3 Great artists and tacticians
++2 Bright
++1 Witty
+0 Average Person
+-1 Slow
+-2 Dumb
+-3 Mentally Disabled
+Influence (INF)
+Influence measures the character’s charm, wit
+and persuasiveness. A high Influence rating
+is a must for any charismatic leader. It is also
+useful for those who desire to spend lots of
+time in corporate or social settings, or
+characters who need to get past security in
+more subtle ways.
+Influence (INF)
+INF RATING EQUIVALENT
++3 Charismatic leader or professional con artist
++2 Believable
++1 Likable
+0 Average Person
+-1 Timid
+-2 Annoying
+-3 Either obnoxious or socially inept
+
+2 7 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+Knowledge (KNO)
+Knowledge is the character’s ability to learn
+and recall information and also takes into
+account the number of years of education the
+character has successfully completed.
+Scientists and “brainiac” characters typically
+have high Knowledge ratings.
+Psyche (PSY)
+Psyche is an abstract measure of the
+character’s karma, happiness, sensitivity and
+love of life.
+It also reflects the empathy of the character
+and how “in tune” he is with his own emotions
+and those of others, as well as his innate
+luck. Psyche is an abstract concept
+which is best reflected by extremes;
+someone with a low psyche seems to
+have a black cloud over his head all the
+time and people will intuitively avoid him.
+A person with a high Psyche is empathic
+towards the feelings of others and tends
+to be easily trusted.
+Knowledge (KNO)
+KNO RATING EQUIVALENT
++3 Eminent Scholar
++2 Well-educated
++1 Knowledgeable
+0 Average Person
+-1 Doesn’t read much
+-2 Poor education
+-3 Learning disability, or just dense
+Perception (PER)
+Perception is a measure of the character’s
+attentiveness to detail and overall alertness. It
+is crucial for action heroes, since the enemy who
+cannot be seen cannot be dealt with. Perception
+is especially important for scouts and
+investigators, who need to pay attention to
+obscure details and find things hidden from view.
+Perception (PER)
+PER RATING EQUIVALENT
++3 Amazingly sharp senses
++2 Quick
++1 Fast
+0 Average Person
+-1 Slow
+-2 Absent-minded
+-3 Unaware of his surroundings
+Psyche (PSY)
+PSY RATING EQUIVALENT
++3 Unusually spry and sane
++2 Very happy
++1 Happy
+0 Average Person
+-1 Unhappy
+-2 Troubled
+-3 Unstable
+ACTION: JOVIAN CHRONICLES
+
+! 2. Chapter Two:
+Character Design
+!2 8
+!
+ 
+Chapter Two:
+Character Design
+ACTION: HEAVY GEAR
+ACTION: JOVIAN CHRONICLES
+Willpower (WIL)
+Willpower is a rating of the character’s self-
+discipline, determination and pain threshold.
+Unlike Psyche, Willpower does not imply a love
+of life; it does however reflect the character’s
+ability to deny death using sheer strength of will.
+Headstrong and arrogant characters are good
+candidates for a high WIL, as are shocktroopers
+who want to be able to take a bullet.
+Willpower (WIL)
+WIL RATING EQUIVALENT
++3 Can endure weeks of torture without cracking
++2 Strong willed
++1 Willful
+0 Average Person
+-1 Easily swayed
+-2 Weak resolve
+-3 Cannot stay on a diet longer than five minutes
+2.1.2 Picking Attributes
+Players purchase Attributes to flesh out the
+rough mental image of their character. A
+certain number of Character Points (CPs) are
+available to purchase Attributes. The cost in
+CPs of an Attribute rating is listed in the
+Attribute Costs table. Purchasing very low stats
+“gives back” some CPs. A rating must be
+purchased in all ten Attributes. None are truly
+more important than the others and all have
+their usefulness. If any CPs are left over, each
+point becomes one Emergency Die (see
+Emergency Dice, section 2.6.2) or a Skill Point,
+at the player’s choice.
+Joe Average, the man on the street, has only
+10 CPs available. This is just enough to
+purchase 0 (normal, average Attributes) in all
+Attributes. Player characters are heroes, so
+they receive a few more points, depending on
+the style of play of the campaign chosen by
+the GM (see
+Reality Distorsion Factors, section
+6.4.1, for more details).
+
+2 9 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+Though normal humans cannot have Attributes
+above +3 or below -3, the cost table can be
+extended further to accommodate creatures
+and alien beings. The point cost is equal to
+the Attribute plus one, squared: e.g., +4 would
+cost (5 x 5) or 25 points. For negative Attribute,
+the cost is the rebate in points: e.g., -4 would
+cost (-3 x -3), giving back nine points.
+‘Quick Start’ Generation
+For rapid generation of a player character in a
+standard Adventurous-level Silhouette game,
+the character starts with one +2, four +1’s and
+five +0’s, placed in the ten basic Attributes as
+desired. This accounts for exactly 30 CPs.
+Design Notes:
+Simplifying Attributes
+Ten Attributes were chosen to reflect as many
+facets of a character as possible. Some players
+prefer to deal with fewer characteristics,
+however, in order to spend less time worrying
+about the mechanical aspects of the game and
+more time on the plot. Luckily, this is possible
+by simply
+averaging Attributes (rounding
+toward zero) that govern similar areas. Some
+detail is lost, but game speed is increased.
+Six Stats: essentially, a d20 version. See the
+OGL conversion guide in Chapter 8.
+Five Stats: Alertness (AGI+PER)/2, Body
+(BLD+FIT)/2, Intelligence (KNO+CRE)/2,
+Charisma (APP+INF)/2, Mind (WIL+PSY)/2.
+Strength tests use the new Body Attribute,
+Health tests use Mind; Stamina is (5 x
+(Body+Mind)/2) x 25. Divide starting CPs in
+half, rounded up.
+Three Stats: Body (AGI+BLD+FIT)/3, Mind
+(CRE+KNO+PER)/3, Spirit (APP+INF+WIL)/3.
+PSY is not used, except if magic or other special
+powers are required. Strength tests use the Body
+Attribute, Health tests use Spirit; Stamina is (5 x
+(Body+Spirit)/2) x 25. Divide starting CPs by
+three, rounded up.
+Character Points
+JOE AVERAGE PC MAJOR NPC
+Gritty Game 10 20 30
+Adventurous Game 10 30 50
+Cinematic Game 10 50 70
+Attribute Costs
+ATTRIBUTE RATING CHARACTER POINT COST
++3 16
++2 9
++1 4
+0 1
+-1 0
+-2 +1*
+-3 +4*
+* These values are added to available CPs instead of
+being subtracted.
+Hooks & Tips:
+Gritty or Cinematic?
+The Character Point table provides listed point
+costs for various game styles. These are
+covered in greater length in section 6.4.1.
+Basically, the more heroic the game, the more
+powerful the characters have to be to face its
+challenges.
+ACTION: TRIBE 8
+
+! 2. Chapter Two:
+Character Design
+!3 0
+!
+ 
+Chapter Two:
+Character Design
+2.2 Skills
+While a character’s Attributes define his
+potential, his Skills define his actual abilities.
+This section details all the basic Skills
+available; Core Player Handbooks may add
+more as necessary to cover the requirements
+of their individual campaign worlds. Note that
+some Skills have a pre-modern version (for use
+in fantasy settings, for example).
+Gamemasters should feel free to invent new
+Skills if they are absolutely required in their
+campaign. A new Skill should not be too
+general nor too specific —
+Shooting is an
+example of something too general, as it might
+allow any sort of ranged weapon to be used,
+while
+Identification of Martian Flatworm
+Subspecies is definitely too specific.
+Skills are used in Skill Tests, where a number
+of six-sided dice equal to the Skill level is rolled
+and the highest number picked. Modifiers are
+then added to the result, including situation
+and Attribute modifiers. The latter will vary
+according to the task at hand:
+Agility-based Skill Tests: These are situations
+which require a high degree of hand-eye
+coordination and quick reaction times, as well
+as those which require precisely controlled
+movements of the body.
+Appearance-Based Skill Tests: By using a Skill
+to accentuate his attractiveness, a character
+can modify what other people’s reactions will
+be, or, on the other hand, use his looks to boost
+the result of a social Skill.
+Build-based Skill Tests: Most of the tasks which
+are related to Build are innate, not learned, thus
+there are few times a Skill test will be called
+for this Attribute.
+Creativity-based Skill Tests: These are
+situations that involve an individual’s ability to
+think up new solutions to a problem. An artist
+tries to find new ways to entertain his audience;
+a lost person tries to make the best he can
+with what he has at his immediate disposal; a
+commander tries to find a new way to achieve
+his mission objectives. All of these show the
+ingenuity of an individual under at least
+somewhat stressful conditions.
+Fitness-based Skill Tests: These are situations
+that place high physical stresses upon the
+body. Pushing one’s body to the edge has long
+been a source of fascination of Humankind.
+Influence-based Skill Tests: The natural desires
+of people to try and get the most in return for
+their work have manifested themselves through
+communications of various types for ages. The
+ability to convince another person of one’s
+ideals without the use of force is now far
+preferred to violence by many cultures.
+Knowledge-based Skill Tests: These situations
+call as much on long study and past
+experience as they do on natural aptitude.
+Perception-based Skill Tests: These tests rely
+on a character’s awareness of his
+surroundings, including both actions and
+objects. These take into account sight, sound
+and possibly other senses such as smell or a
+“sixth sense.”
+Willpower-based Skill Tests: These are
+generally Opposed Skill tests between two
+people, to see who will crack first. These tests
+are also used when focus on a task is
+important.
+Psyche-based Skill Tests: The rather ethereal
+quality of the Psyche Attribute is reflected in
+its tests, with the ability to pick up on the body
+language, eye movements and other subtle
+signals which people send. What information
+this type of test imparts is even more at the
+whim of the GM than other types of tests and
+players should not rely on it as a lie detector.
+
+3 1 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+2.2.1 Skill Levels
+Players should now choose Skills for their
+characters with their stock of Skill Points (see
+below). The
+Skill Costs tables list the Skill point
+costs for both Level and Complexity. Starting
+Skill Levels and Cpx are generally low, but can
+be improved through experience.
+2.2.2 Skill Complexity
+Complexity was first explained in section 1.2.2
+and represents the breadth of knowledge. All
+Skills begin with a free Complexity of 1.
+Additional levels of Cpx can be purchased at a
+cost in Skill Points (see
+Skill Complexity Costs
+table). A higher Complexity allows the character
+to use higher technology or more versatile
+tools with his Skill and also provides him
+with additional breadth of knowledge that
+will make completing a task easier.
+Complexity is noted as a second number
+after a slash, such as “2/4” for a Skill level
+of 2 with a Complexity of 4.
+Unless specifically noted in their description,
+all Attributes and Skill tests, equipment and
+weapons are Complexity 1.
+2.2.3 Skill Specialization
+A character may obtain a Skill
+Specialization at a cost of 5 Skill Points.
+This gives the character a +1 modifier to
+his Skill test totals under certain
+conditions. For example, a soldier could
+have a Small Arms Specialization in
+“rifles,” and thus add one to every roll
+made while using a rifle. A scientist could
+have a Physical Sciences Specialization
+in nuclear physics and gain the +1
+whenever a relevant test is called for. The
+Skills section later in this chapter includes
+suggested Specializations, but the
+Gamemaster and players can add more
+should they wish.
+A character may purchase multiple
+different Specializations in the same Skill,
+but no more than one Specialization (i.e.
++1 bonus, maximum) can be applied on
+a single die roll. Players may be tempted
+to focus their characters at excelling in a
+few Skills by purchasing specializations
+and high levels in three or four Skills. Quite
+often, the advantages of this are more than
+offset by the inflexibility of the character, which
+will surface whenever the Gamemaster thrusts
+him into unfamiliar situations.
+Skill Points Available
+JOE AVERAGE PC MAJOR NPC
+Gritty Game 20 40 60
+Adventurous Game 20 50 80
+Cinematic Game 20 70 120
+Skill Level Costs
+SKILL LEVEL COST
+1 1
+2 4
+3 9
+4 16
+5 25
+6 36
+7 49
+8 64
+9 81
+10 100
+Specialization (each) 5
+Skill Complexity Costs
+SKILL COMPLEXITY COST
+1 Free
+2 4
+3 9
+4 16
+5 25
+
+! 2. Chapter Two:
+Character Design
+!3 2
+!
+ 
+Chapter Two:
+Character Design
+On record sheets, Specializations are
+usually noted either as a footnote to the
+Skill entry or right after it, in parenthesis.
+2.2.4 Skill List
+In order to make future character
+creation easier, only the Skills’ names
+are listed in the table on the next page.
+Full descriptions can be found in the
+reference section at the end of this game
+manual.
+Skill descriptions have several entries.
+The
+Attributes entry shows which
+Attributes are used for which tasks; note
+that this is not an exhaustive list and the
+Gamemaster may call on other
+Attributes depending on the nature of
+the test at hand. The
+Specializations
+entry lists a few suggestions for Skill
+Specializations. The next entry lists
+some professions that normally have
+some training in the Skill. The final entry
+is a short, plain-English description.
+Some Skills are noted with a (Specific)
+after their name. These Skills cover a
+wide field of related abilities that rely on
+the same basic knowledge. When
+buying one such Skill, a specific field of
+expertise must be specified, but the
+character can also use the Skill for
+situations that fall under the general
+header, albeit with a penalty. It is possible to
+buy multiple instances of the Skill to cover
+multiple fields, if desired (for example, a
+scientist with multiple doctorates could have
+Natural Sciences (Physical) and Natural
+Sciences (Earth), to avoid taking a penalty and
+boost them to high levels).
+In cinematic games (see section 7.3), where
+characters tend to be expert at everything, the
+above requirements are waved. The professor
+with Natural Sciences is equally adept at
+biology, physics and geology.
+Design Notes:
+Hey, Where’s Skill ‘X’?
+A number of Skills were folded together in the
+Silhouette revision. Many of them, such as
+Acrobatics and First Aid, are now expressed
+as an additional Complexity of another Skill.
+(If converting an old character, take the folded
+Skill’s level and apply it as a free bonus to the
+Cpx of the new Skill.) Skills that are not used
+often in a typical action game, such as the
+various art- and science-related Skills, were
+likewise merged together to free up points and
+allow well-rounded characters that are useful
+outside the lab or workshop.
+Hooks & Tips:
+Favored Item
+When initially purchasing a Skill, a related item
+(be it a reference book, weapon, vehicle, etc.)
+can be chosen. It is then known as the
+character’s “Favored Item,” and only one
+favored item is allowed per Skill (it may not be
+changed later, either). When using a favored
+item, the character may ignore the bad side of
+any Fumbles rolled and treat the roll as a result
+of one. If the item is lost or destroyed in the
+course of an adventure, one Experience Point
+(XP) can buy a replacement for future sessions.
+
+3 3 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+ACTION: HEAVY GEAR
+Skill List
+• Animal Handling
+• Archery
+• Athletics
+• Business
+• Combat Sense
+• Craft (Specific)
+• Defense
+• Demolition/Traps
+• Disguise
+• Etiquette (Specific)
+• Forgery (Specific)
+• Gambling
+• Gunnery (Specific)
+• Hand-to-hand
+• Heavy Weapons
+• Information Warfare
+• Interrogation
+• Investigation
+• Language (Specific)
+• Leadership
+• Medicine
+• Melee
+• Natural Sciences
+• Navigation (Specific)
+• Negotiation
+• Notice
+• Personal Flight Device
+• Performance Art
+• Pilot (Specific)
+• Riding
+• Seduction
+• Sleight-of-Hand
+• Small Arms
+• Social Sciences (Specific)
+• Stealth
+• Streetwise
+• Survival
+• Teaching
+• Technical Sciences
+• Tinker
+• Throwing
+• Trivia/Lore (Specific)
+• Visual Art (Specific)
+• Zero-G
+
+! 2. Chapter Two:
+Character Design
+!3 4
+!
+ 
+Chapter Two:
+Character Design
+2.3 Secondary
+Attributes
+Secondary Attributes are labeled that way
+because they are not selected like the basic
+Attributes, but are derived on the latter (and,
+in some cases, Skill levels). They represent
+facets of the character’s physical and mental
+abilities. Unlike the basic Attributes, the
+Secondary Attributes can and do vary over the
+course of the game to reflect additional Skills
+gained, or injuries suffered.
+The character’s Secondary Traits, Wound
+Thresholds and System Shock are calculated
+using the following formulas. Although the
+formulas appear involved, most of them are
+simply an averaging of two or three Attributes.
+Some Traits have minimum values, meaning
+this is the lowest value they can have
+regardless of Attributes and skills.
+2.3.1 Descriptions
+The following texts describe the five
+Secondary Attributes and their use in the
+game. Along with each description, a table
+giving a real world equivalent for different
+ratings is listed. Attribute levels are based on
+an average human person in their young
+adulthood; some creatures or aliens will have
+more widely dispersed Secondary Attribute
+ranges.
+Strength (STR)
+Strength is a measure of a character’s raw
+physical power and brute strength; it is a zero-
+average rating. Strength is the average of Build
+and Fitness, rounded towards zero. Cross-
+indexing with the Build mass table (section
+2.1.1) shows the maximum weight that can be
+deadlifted and carried a few paces — the
+lowest weight value in the corresponding entry
+is used. Thus, a character with a +2 Strength
+can heft around 95 kg and stagger for a few
+steps before running into difficulty. A mass
+equal to half the deadlift capacity can be held
+above the head and a mass double the deadlift
+capacity can be dragged along.
+Calculating
+Secondary Attributes
+Strength = (Build + Fitness) / 2, round
+towards zero
+Health = (Fitness + Psyche +
+Willpower) / 3, round off
+Stamina = (5 x (Build + Health)) + 25,
+minimum 1
+Unarmed Damage = 3 + Strength + Build + Hand-
+to-Hand Skill level, minimum 1
+Armed Damage = 3 + Strength + Build + Melee
+Skill level, minimum 1
+Flesh Wound Threshold = Stamina / 2, round up
+Deep Wound Threshold = Stamina
+Instant Death Threshold = Stamina x 2
+System Shock = 5 + Health, minimum 1
+Strength (STR)
+STR RATING EQUIVALENT
++3 Weightlifter
++2 Professional wrestler
++1 College jock
+0 Average Person
+-1 Out of shape
+-2 Shrimp
+-3 Weakling
+
+3 5 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+ACTION: HEAVY GEAR
+ACTION: HEAVY GEAR
+Hooks & Tips:
+Pushing One’s Strength
+Characters may attempt to push their
+Strength beyond its normal limits. This lasts
+only for the duration of the STR test. Strength
+can be pushed by up to +2 for characters
+with STR 0 or higher and by +1 for characters
+with STR below 0. Characters risk physical
+injury when doing this: make a Health
+Attribute test vs. a Threshold of 4 for an
+additional +1 Strength, or a Threshold of 6
+for +2. Failing this roll results in a Light Wound
+for the character (torn ligaments, strains,
+back pain, etc.); Fumbling it will result in a
+Deep Wound (slipped disk, ripped muscle,
+etc.). Characters may push their strength as
+often as they like, but each additional push
+per day (before a full night of sleep) incurs
+additional risk of injury: add +2 (cumulative)
+to the base Threshold.
+Health (HEA)
+Health rates a character’s resistance to illness,
+toxins and physiological shock; it is a zero-
+average rating. Health is the average of Fitness,
+Psyche and Willpower, rounded to the nearest
+whole number. People who never seem to get
+sick and those who can drink large quantities of
+alcoholic beverages have a high HEA rating.
+Health (HEA)
+HEA RATING EQUIVALENT
++3 Never gets a cold
++2 Great health
++1 Good health
+0 Average Person
+-1 Weak health
+-2 Poor health
+-3 Perpetually ill
+
+! 2. Chapter Two:
+Character Design
+!3 6
+!
+ 
+Chapter Two:
+Character Design
+Stamina (STA)
+Stamina is a rating of how much sheer
+physical punishment a character’s body
+can tolerate. Unlike many other
+Attributes, Stamina is
+not a zero-average
+rating: it is equal to five times the total
+of Build and Health, plus 25. No
+character may have a Stamina lower
+than 1 (if lower, round up to one). While a high
+Stamina will decrease the chances of injury, it
+is still quite easy for a character to be wounded
+by gunfire or other deadly weapons. Stamina
+will be used to work out the Wound Thresholds,
+which determine when and if a character gets
+hurt (see sections 2.3.3 and 3.5).
+Stamina (STA)
+STA RATING EQUIVALENT
+10 Frail old grandmother, child
+15 Young teenager
+20 Weak adult
+25 Average individual
+30 Fitness enthusiast
+40 Professional athlete
+50 Professional boxer
+Unarmed Damage (UD)
+Unarmed damage is the Damage
+Multiplier of any unarmed (Hand-to-
+hand Skill) attacks performed by the
+character. It is
+not a zero-average rating:
+Unarmed Damage is equal to three plus
+the total of Hand-to-hand Skill level,
+Strength and Build. The minimum
+Unarmed Damage rating is 1. This
+damage is on the Personal Scale, not
+the Vehicle Scale (see section 4.4). The
+Damage Multiplier is a reflection of both
+how much force a character can put
+behind a punch and how well the
+character can place the blow.
+Armed Damage (AD)
+Armed Damage is the base Damage Multiplier
+of any of the character’s armed attacks (Melee
+Skill). It is
+not a zero-average rating: Armed
+Damage is equal to three plus the total of Melee
+Skill level, Strength and Build. The minimum
+Armed Damage rating is 1. The Damage
+Multiplier of a melee weapon is equal to the
+character’s Armed Damage rating and the
+weapon’s own base DM. This damage is on
+the Personal Scale, not the Vehicle Scale (see
+section 4.4).
+Unarmed Damage (UD)
+UD RATING EQUIVALENT
+1 Small Child
+3 Average adult
+5 Brawler
+8 Martial artist
+Armed Damage (AD)
+AD RATING EQUIVALENT
+1 Small Child
+3 Average adult
+5 Street Thug
+8 Skilled swordsman
+Design Notes:
+Damage Multipliers
+Most game rules include provision on injuries
+and damage and Silhouette is no different. In
+order to speed up gameplay and avoid
+multiple dice rolls for hitting, damaging and
+guarding against damage, all this is done in
+one fell swoop. The Margin of Success of a hit
+is multiplied by the Damage Multiplier of the
+attack to yield the total damage; armor and
+other protections will be factored into the
+Stamina ratings, which are used to determine
+wounds. Speed of resolution, always!
+
+3 7 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+ACTION: HEAVY GEAR
+2.3.2 Injury List
+Physical Status represents the level of
+resistance to physical wounds. There are three
+types of injuries. Flesh Wounds are nasty but
+not crippling wounds; Deep Wounds are
+immediately life-threatening injuries; Instant
+Death requires no further explanation.
+Each level of injury has an associated
+wounding Threshold. Wound Thresholds are
+the amount of damage an attack must cause
+to produce a certain type of wound. An attack
+produces the type of injury whose Wound
+Threshold is equal to or under the amount of
+damage inflicted by the attack; only the most
+severe of the possible results is applied. For
+example, if an attack does 40 points of damage
+to an average individual (whose Wound
+Thresholds are Flesh Wound = 13, Deep
+Wound = 25, Instant Death = 50), the attack
+victim suffers a Deep Wound (40 is greater than
+the Deep Wound score “25” but is less than
+the Instant Death score “50”).
+The Wound Threshold of Flesh Wounds is
+equal to half of the character’s Stamina (round
+up). The Wound Threshold of Deep Wounds
+is equal to the character’s Stamina. The Wound
+Threshold of instant death is twice the
+character’s Stamina. Personal armor, if any is
+worn, adds its Armor Points to
+each Wound
+Threshold individually when the character is
+under physical attack; the modified Wound
+Threshold should be noted in parentheses after
+the original Wound Threshold.
+Action penalties are negative modifiers to all
+actions that reflect the pain and distraction
+induced by wounds. A character is penalized
+-1 to all actions per Flesh Wound and -2 to all
+actions per Deep Wound. For example, a
+character with two Flesh Wounds and one
+Deep Wound would have a -4 penalty to all
+actions: -2 from the Flesh Wounds and another
+-2 from the single Deep Wound.
+The final column of the injury list is used to
+note how many of each type of injury a
+character has sustained and possibly what
+they are (see section 3.5).
+2.3.3 System Shock Rating
+The System Shock rating is a measure of how
+many injuries a character can take before
+going into shock and dying. If the total of
+System Shock and a character’s wound-
+induced action penalties equals zero or less,
+the character goes into shock (see
+Injuries,
+section 3.5). System shock is equal to five plus
+the character’s Health. System Shock cannot
+be lower than one.
+System Shock is shown on the character sheet
+as a row of boxes — unused boxes are simply
+crossed out. As wounds are taken, boxes can
+be crossed out according to action penalties,
+representing the damage. See
+Injuries, section
+3.5, for more details on bruises, wounds and
+their game effects.
+
+! 2. Chapter Two:
+Character Design
+!3 8
+!
+ 
+Chapter Two:
+Character Design
+2.4 Perks and Flaws
+In order to keep the dice rolling and the
+bookkeeping to a minimum, the Silhouette
+system uses a fairly small range of numbers
+to describe the basic capabilities and skills of
+an individual. This can lead to characters that
+are fairly similar, especially if they are in the
+same general line of work. To help create
+unique characters with their own
+capabilities, Character Perks and Flaws
+(and Special Abilities, for some worlds
+— see Chapter Six) are used to provide
+additional details.
+Each Perk costs a certain amount of Skill
+Points (SPs) and each Flaw “gives back”
+a certain number of SPs. These are the
+same Skill Points that are given to
+purchase Skills, so a character with
+more Flaws than Perks can gain
+additional Skills or Skill Levels, while a
+character with more Perks will start with
+fewer Skills. Perks and Flaws can be
+acquired later on during the game, as
+well (see
+Experience, section 2.7).
+There is no strict limit to the number of
+Perks and Flaws a character can have. In
+order to prevent excess, we recommend
+not exceeding 12 points of Flaws (20 in a
+Cinematic game). Gamemasters have final
+approval and should make their decision
+according to two criteria: whether the Perks
+and Flaws fit the character concept and
+whether they fit the campaign concept.
+The first criterion prevents blind pilots; the
+second prevents multimillionaires in a
+campaign about pioneers scrounging for
+resources (for example).
+Gamemasters can also choose to
+remove some Perks and Flaws from the
+selection altogether. For example, those who
+believe in letting Players define their
+character’s psychology without concern for
+points can eliminate all personality-related
+Flaws.
+Design Notes:
+Previous Versions
+If you’re a veteran Silhouette player, you’ll no
+doubt notice that some of the Perks and Flaws
+have changed. This is mostly for play balance.
+We’ve also removed the “Innate/Acquired”
+note, because it brought an additional
+complexity with little benefits.
+Gamemasters should also not impose unfair
+costs for Perks. If the campaign concept calls
+for everyone to have military rank, be police
+officers, or be political leaders, then the Players
+need not pay for the relevant Perks.
+Gamemasters may have them pay for elevated
+rank or especially good reputations, but the
+campaign “base line” should be free.
+Hooks & Tips: Min-Maxing
+Perks and Flaws are intended to give players
+a variety of options to define their character.
+Unfortunately, the variety of options, each with
+a cost or benefit, drives some to make the most
+of the system, purchasing a ludicrous number
+of Perks and Flaws to get extra Skills and
+special abilities. The number of blind, one-
+armed combat monsters wanted by the law
+and saddled with a large disabled family to
+care for is legion in the halls of roleplaying
+history.
+Solutions to this problem include limiting the
+number or gravity of Flaws and Perks. You can
+tell Players they can get only one Perk and
+one Flaw, forcing them to take only that which
+is really important for their character
+concept.
+In order to make future character creation
+easier, only the Perks’ and Flaws’ names and
+costs are listed in the table on the next page.
+Full descriptions can be found in the reference
+section at the end of this game manual.
+
+3 9 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+Flaws List
+Addiction Addiction or Dependence Value/3 as appropriate
+Age -4 (young), -2 (old)
+Amnesiac -4
+Animal Antipathy -2
+Bad Luck -5
+Beliefs -1 to -3, depending on nature of belief
+Bloodlust -4
+Code of Honor -1 to -4, depending on depth of code
+Criminal Background -1 to -2, depending on severity
+Curse -2 to -6, depending on gravity
+Debt (Same as perk, but - instead of +)
+Dedicated -1 to -3, depending on demands & duties
+Dependent
+CP/SP*total Cost CP/SP*total Cost
+20/30 -1 10/30 -2
+10/20 -3 5/10 -4
+*Character Points/Skill Points
+Destitute -2
+Flashbacks -2
+Goal -3
+Heavy Sleeper -2
+Infamous -1 to -4, depending on severity
+Insomniac -1
+Lame -6 if permanent, -2 if removable
+Liar -1, -5 if mythomaniac
+Mechanical Inaptitude -5
+Motion Sickness -1 per Rating
+Nemesis -1 per nemesis’ 10 CPs or SPs
+Obligation -1 to -3, depending on severity and frequency
+One-Armed -2, -5 if permanent
+Paranoid -3
+Phobia -2 for Mild Phobia, -4 for Severe Phobia
+Poor Senses (Specific)
+Hearing -1
+Sight -1
+Smell/Taste -1
+Blind/Deaf -2 each to -8 each if permanent
+Quirk -1 per Quirk (max. -2)
+Radiation Vulnerability -2
+Secret -2 to -3, depending on gravity
+Sick -1 to -7, depending on gravity
+Slow Healing -4
+Slow Learner -2
+Social Stigma -1 to -3, depending on severity
+Split Personality -7
+Thin-skinned -4
+Wanted -1 to -5 depending, on power of the hunter
+Weak Immune System -3
+Perk List
+Accelerated Healing 4
+Acute Senses (Specific)
+Hearing 1
+Sight 1
+Smell/Taste 2 each
+Ambidextrous 1
+Animal Companion 1-8 (depending on usefulness)
+Animal Kinship 1 for modern setting, 5 for fantasy
+Authority 3
+Common Sense 4
+Connections 1
+Allies between 3 and 7 per ally, depending on quality
+Contacts between 1 and 5 per contact, ‘’ “ “
+Double Jointed 3
+Fake Identity 3 per fake indentity
+Famous between 1 (local actor) and7 (world famous)
+Favor
+Financial Debts Debts of Honor Point Cost
+20,000 credits key favor 1
+50,000 credits multiple favors 2
+75,000 credits major boon 3
+150,000 credits multiple boons 4
+500,000 credits life boon 5
+Immunity 1
+Influence 2-6 depending on scope & power
+Intuition 4
+Light Sleeper 5
+Longevity 3
+Lucky 10
+Machine-Touch 5
+Perfect Pitch 5
+Photographic Memory 2 per rating, up to +3
+Property 1 to 9, depending on property
+Quick Learner 2
+Radiation Resistance 2
+Military Rank
+Rank Military Civilian
+Enlisted/Member 2 0-2
+Junior Nco/Veteran Member 4 2-4
+Senior Nco/Assistant-Director 8 6-8
+Senior Officer/Director 12 10-12
+Sense of Direction 2 for 2D, 5 for 3D
+Sense of Time 2
+Strong Immune System 3
+Subordinates 1 per subordinate’s 5 CPs or SPs
+Thick-Skinned 5
+Wealthy 3 points per rating (1 pt. if non-renewable)
+
+! 2. Chapter Two:
+Character Design
+!4 0
+!
+ 
+Chapter Two:
+Character Design
+2.5 Character
+Improvement
+One of the more blatant rewards of roleplaying
+is character improvement. As they learn new
+Skills and abilities and grow through the trials
+they face in their lives, the characters’
+Attributes and other characteristics will
+correspondingly rise. They will also learn new
+tricks and become more cunning, helping
+them to get out of trouble more easily. Simply
+put, experienced adventurers are better than
+greenhorns. In the Silhouette game system, the
+characters’ life experience is recorded in the
+form of abstract Experience Points (XPs).
+2.5.1 Earning XPs
+Experience Points are awarded by the
+Gamemaster at the end of each playing
+session. His decision is final. Some players
+also like to judge each other’s performances
+and give additional “audience merit points,”
+but this requires a high level of maturity to avoid
+self-congratulatory excesses. In general, an
+average of five XPs should be awarded for
+each session (ten for cinematic campaigns).
+Some Gamemasters use the distribution of
+Experience Points as the stick and carrot to
+control their players, but this is generally a bad
+idea that is likely to cause dissension within
+the group.
+Awarding Experience Points*
+BASE XPS
+Player showed little interest in the game and did not get involved 0
+Player gave a good effort, but did nothing exceptional 1
+Player stayed in character and showed enthusiasm 2
+Player always stayed in character and showed genuine enthusiasm 3
+TECHNICAL BONUSES
+Performed critical maneuver that moves the story forward 1
+Discovered vital information or plot element 1
+Makes clever and unexpected use of character abilities 1
+COMBAT BONUSES
+Being in a combat encounter 1
+Defeated opponents of lower power 0
+Defeated opponents of equivalent power 1
+Defeated opponents of higher power 2 or more
+ROLEPLAYING BONUSES
+Dramatic acts of self-sacrifice 1 to 5
+Player selflessly provides scenes for other characters 1
+Player acts wildly out of character, even if successful -1 to -3
+SCENARIO BONUSES
+Players worked as a team 1ea
+Minor setback or failure in a multi-session adventure -1ea
+Major setback or failure in a multi-session adventure -3ea
+GAME BONUSES
+Short Game Session (two hours or less) x0.5
+Typical Game session (three to four hours) x1
+Long Game session (five to ten hours) x2
+Marathon Game session (ten hours or more) **
+*No session can end with less than 0 XP
+** Award XPs as normal every four hours of game play
+
+4 1 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+Combat
+Nothing seasons a character more than
+fighting for one’s life. Combat is a great
+source of XPs, though it shouldn’t used to
+excess (because of the risk involved and its
+lethality). Each player receives 1 XP, just for
+being in a combat situation.
+Each player receives 1 XP per group of
+opponents defeated, if the opponents are
+roughly the same in terms of power (i.e.,
+have similar Character and Skill Point totals).
+Defeating larger or more dangerous
+opponents, such as a monster or well-
+equipped henchmen, multiply the XP bonus
+by their relative power (e.g., defeating an
+ogre twice the size of a human brings 2 XPs).
+Defeating opponents that are less powerful do
+not give any XP at all.
+Encounters &
+Problem-solving
+Simply overcoming challenges can
+generate XPs. Difficult situations may be
+overcome through death, persuasion,
+trickery, or simply figuring out a way to
+avoid the confrontation in the first place.
+Sometimes, bribing the guard to look the
+other way is just as efficient (and less
+troublesome) than knocking him out cold.
+Each player receives 1 XP per significant
+challenge, puzzle or encounter resolved.
+Goals
+Characters that reach their stated goals
+will receive XPs for doing so. How many
+depends on the goal itself. This is a good
+way to provide the XPs required to buy off Flaws.
+Hooks & Tips: Detailed XPs
+The system proposed here is somewhat
+coarse — there are many occasions where an
+XP reward is obviously indicated, but a full XP
+is too much. In this case, use a more detailed
+XP model, by multiplying all XP awards and
+uses by a factor of 1000. This allow the
+Gamemaster to hand out smaller amount of
+XP as rewards, for example 50, or 300. Some
+Silhouette-based settings, such as CORE
+Command, use this model by default.
+For example, a player that stayed in character
+and showed enthusiasm would receive 2000
+XPs at the end of the session. When the time
+comes to convert them to, say, Emergency
+Dice, one ED will be purchased for 1000 XPs.
+ACTION: TRIBE 8
+
+! 2. Chapter Two:
+Character Design
+!4 2
+!
+ 
+Chapter Two:
+Character Design
+2.6.2 Spending XPs
+A character can stockpile XPs if desired, but
+most players will wish to spend theirs, either
+to improve their characters or to press their
+luck. There are two ways to spend XPs: buying
+the life-saving Emergency Dice or improving
+either the characters’ Attributes or Skills.
+Experienced roleplayers will notice that
+character abilities progress rather slowly. The
+reason for this is simple: Skills levels of 3 or
+more are very powerful. Most of a character’s
+core occupational Skills should be level 2.
+Secondary occupational Skills and hobby
+Skills should be level 1. If a character has level
+3 in a “hobby” Skill, it is more than a hobby: it
+is an obsession, or a way of life!
+Emergency Dice
+Everyone gets a certain number of lucky
+breaks in life. To represent these lucky breaks,
+any or all XPs can be converted to Emergency
+Dice, which are then spent to boost crucial die
+rolls. Each XP spent buys one Emergency Die.
+When spent, these are added to the dice
+already available for the roll. Unless the
+Gamemaster disagrees, up to five Emergency
+Dice may be spent on any single roll.
+Emergency Dice can also be spent to save a
+character’s life when his vehicle is Overkilled.
+Rather than use the normal ejection procedure
+outlined in section 5.5.3, the player can opt to
+spend five Emergency Dice and escape
+automatically with no damage. No roll is
+involved — just delete the Emergency Dice
+from the character’s total.
+Emergency Dice are most often used in
+Cinematic Games. For this reason,
+Gamemasters of Cinematic Campaigns
+usually will give more XPs than usual (see
+above). They can also directly give Emergency
+Dice to the players, in addition to Experience
+Points.
+Design Notes: Small Rewards
+It is sometimes hard to reward amusing, interesting
+or well-roleplayed actions with the coarse XP
+system. The easiest way to do so is to use the
+“detailed XP” rule and give out small amounts of
+XPs (1-50) for small but interesting actions, such as
+inviting a lovely girl to dance at the ambassador’s
+ball, or grabbing a beer at the local tavern.
+The idea is that a character doing activities that
+a real person would do and find stimulant should
+be rewarded somehow, to make the game more
+believable and the characters more “human” (if
+applicable). Alternatively, keep a table of small
+“favors” for players (like a momentary Skill
+bonus, or an additional clue, for example) to
+reward this type of roleplaying behavior.
+Design Notes:
+XPs Distribution
+Gamemasters should encourage character
+growth without making them into demi-gods.
+Make sure the players put some XPs aside as
+Emergency Dice, which is probably the most
+tangible benefit of good play — they allow PCs
+to survive increasingly difficult situations. As a
+rule of thumb, about half the XPs received
+should be spent on Emergency Dice.
+ACTION: HEAVY GEAR
+
+4 3 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+ACTION: CORE COMMAND
+Attribute Improvement
+Improving the character’s Attributes is possible
+but very costly in Experience Points to reflect
+the time and deep commitment required.
+Raising one Attribute by one point costs 50
+XPs. An Attribute cannot be increased more
+than three times in this manner, although
+multiple Attributes can be increased up to
+three times each. Beyond the purely rule-
+oriented issues, the player should also come
+up with detailed background information on
+the process — perhaps his character spends
+his free nights at the gym or the library?
+Skill Improvement
+Skills are much easier to improve than
+Attributes — all that is required is patience and
+regular practice sessions. The base cost to
+improve a Skill by one level is the next level
+squared, in XPs. Likewise, the base cost to
+improve a Skill by one Cpx is the next Cpx
+squared, in XPs.
+New Skills cost one XP to gain, always
+starting at level one (gaining Cpx 1 for
+free, as usual). Ideally, there should be
+an in-game explanation — Skills don’t
+appear out of nowhere.
+Skills are improved one level at a time;
+levels cannot be skipped in order to save
+XPs. All new Skills must be purchased at
+level one first; it is recommended that the
+players develop a background element
+to how their character acquired the Skill.
+Hooks & Tips:
+Emergency Dice
+These represents your character’s true
+experience. Experience Points that are put in
+raising stats or buying new Skills represent
+training and techniques. The real bonus, though,
+comes from using Emergency Dice. That’s the
+experience that saves the skin of the pilot — he
+may not know all those fancy advanced
+maneuvers, but he’s got the timing down pat
+with what he does know. In the real world, real
+experience is essential to reach a certain level
+of expertise. Tutors cannot teach that.
+As an optional rule, Gamemasters could
+require that a number of Emergency Dice be
+spent before the Player can buy the next level
+for one of his character’s Skills. We recommend
+a number of EDs equal to (next Skill level x
+next Skill level). For example, to bring a Skill
+up to level 4, the Player should have used 16
+Emergency Dice with that Skill since he’s
+brought it up to level 3.
+Skill Improvement Costs
+LEVEL XP COST CPX XP COST
+1 1 1 Free
+2 4 2 4
+3 9 3 9
+4 16 4 16
+5 25 5 25
+6 36
+7 49
+8 64
+9 81
+10 100
+
+! 2. Chapter Two:
+Character Design
+!4 4
+!
+ 
+Chapter Two:
+Character Design
+2.6.3 Tutors
+Tutors reduce the XP cost of learning or improving
+a Skill. Anyone who has a Skill level greater than
+the Skill level of the character wishing to improve
+can serve as a tutor; only those possessing
+the Teaching Skill or a high level of Skill,
+however, will really make a difference.
+Hiring: Unless the tutor is another PC, it
+is likely that the tutor will have to be hired,
+often for a high fee. The suggested cost
+for one course is (tutor’s Skill level x Skill
+level), multiplied by 1000 credits (or
+equivalent, in goods or tasks to perform;
+credits being a generic monetary unit
+roughly equivalent to a modern dollar).
+Finding such a tutor may not always be
+easy, especially with high level ones.
+Time Required: The period of time
+needed to be taught is a number of
+months equal to the XP cost of learning
+the Skill minus the tutor’s Teaching Skill.
+A minimum of one week is required for the
+student to gain any benefits from the tutor’s
+teaching. The months above are 150-hour
+learning periods (about 40 hours per week).
+Alternatively, the learning period could be
+spread over multiple months or even years. A
+minimum of one hour per week must be
+maintained to gain any benefit to the character.
+In a boot camp-like environment, a number of
+these 150-hour “months” equal to (tutor’s
+Teaching Skill Cpx +1) can be squeezed into
+one real month. This sort of environment is
+highly oppressive — a Willpower or Psyche
+check against the Skill level being taught is
+made every month to prevent nervous
+breakdown. Few individuals willingly choose
+to undergo training of such intensity.
+Teaching XP Rebate: Once the tutelage is
+finished, the tutor makes a test. This Skill roll
+uses either the Teaching Skill or the Skill being
+taught, whichever is highest. This is modified
+by the Creativity Attribute of the tutor. The result
+is the number of XP points that are subtracted
+from the cost of learning or improving the Skill.
+If the roll is Fumbled, the cost is doubled due
+to the confusion induced by the tutor’s poor
+guidance. The cost of learning the Skill cannot
+be reduced below a minimal XP cost which is
+equal to the new level of the Skill.
+Hooks & Tips:
+Mentors and Teachers
+Tutors make excellent Gamemaster
+characters. They run the gamut from the tough
+drill sergeant that wakes up the rookies every
+morning with a yell loud enough to wake the
+dead, to the patient old scientist showing the
+intricacies of a complex molecule to his best
+students. And of course, one must not forget
+what is perhaps the best-known tutor character
+of all, the gruffy veteran pilot. He’ll take the
+player characters under his wing and teach
+them all he knows, then generally get killed in
+mid-game so they can become full-fledged
+heroes.
+ACTION: TRIBE 8
+
+4 5 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+ACTION: HEAVY GEAR
+2.6.4 Levels (Optional)
+Many roleplaying games assign “levels” to
+characters, to help show how experienced
+(and generally, how powerful) the characters
+are. While the Silhouette experience system
+doesn’t rely on Experience Levels, it is possible
+to assign some to characters. This remains
+entirely optional.
+Assigning levels are useful in a number of
+ways: it showcases the character’s progress;
+it allows a comparison of abilities at a glance;
+and it helps the Gamemaster assign proper
+opposition to the player characters. Some
+settings will use levels to give or deny access
+and equipment to the character, or use them
+as a mark of rank.
+To generate a character’s level, tally all the XPs
+he has received so far and compare them to
+the table. XPs that have been converted to
+Attributes, Skills or Emergency Dice all count
+— levels are based on the total XP ever earned
+by the character. As one can see, XP
+requirements for additional levels become
+exponential as one rises through the ranks.
+This will force characters to seek greater
+challenges (which provide more XPs) as they
+grow in power and influence.
+Character Levels
+LEVEL XP TOTAL
+1 0
+2 4
+3 9
+4 16
+5 25
+6 36
+7 49
+8 64
+9 81
+10 100
+The XP cost of additional levels is equal to (Level x Level).
+Design Notes: Ugh, Levels...
+Many gamers consider Levels and other
+experience markers to be somewhat primitive
+and artificial, harkening back to their early days
+as wet-behind-the-ears roleplayers. Still,
+artificial or not, Levels do provide several
+advantages: they offer a way to measure a
+character’s worth (and the kind of challenge
+he’s able to face), they allow some game
+balance to take place by putting restrictions
+on what a character can or cannot use and
+(probably their most useful side) they provide
+an incentive for continued play. Human beings
+are reward-driven: we always want to see
+what’s over the next hill, what kind of neat
+things we can acquire for our personal treasure
+horde. Often, the extra few XPs required to
+make it to the next level are the little push that
+will get people to play the next session... and
+go on brand new adventures.
+
+! 2. Chapter Two:
+Character Design
+!4 6
+!
+ 
+Chapter Two:
+Character Design
+Core Concepts:
+Chapter 2
+The followings are examples and further
+explanations of the core concepts introduced
+in Chapter Two.
+Step 1: Concept
+Lisa is taking part in a fantasy game. This game
+will be run using the Adventurous Reality
+Distortion Level. Each character is to be
+part of a fairly clearly defined archetype
+like Bruiser, Mage, Thief or Woodsman.
+Lisa decides she will be playing the
+“Woodsman” character and comes up
+with a few basic key character points.
+The character was a hunter who grew
+up in the country. (Lisa thinks it will be
+fun to play a bit of a “country bumpkin.”)
+He’s fairly fit and is exceptionally perceptive,
+with “eagle eyes.” He’s got a strong will, and
+is fairly quick to pick up new things. The
+character is good with a bow, good at hiding
+and sneaking and has a variety of skills that
+would prove useful in the woods. Lisa also
+thinks that the character should have a code
+of honor or be unlucky in love, but she’s not
+sure which would be more fun to play.
+It takes Lisa a bit to decide on Taran for her
+character’s name. Since the group wants to
+get playing right away, Lisa wants to start on
+the character’s attributes and skills. She’ll fill
+out the personal history and description a bit
+later.
+Step 2: Attributes
+See Attributes, section 2.1, for basic rules.
+Lisa isn’t very fond of buying Attributes and
+would really like to get on to picking her Skills,
+so she chose the ‘Quick Start’ Generation
+option (see section 2.1.2). This means she gets
+one Attribute at +2, four at +1, and the rest at
+0.
+Based on her character’s description, she
+assigns the +2 to Perception. She assigns the
++1’s to Agility, Fitness, Creativity and Willpower.
+Build, Knowledge, Psyche, Appearance and
+Influence are assigned 0’s (no particular
+bonus).
+Since Lisa has spent all of her Character
+Points, she doesn’t have to worry about
+whether she’ll use any extra CPs for
+Emergency Dice or for Skill Points. She writes
+Taran’s attributes down on the character sheet.
+Step 3: Skills
+See Skills, section 2.2, for basic rules.
+Lisa already has a few ideas about which skills
+Taran should have. She picks Notice right
+away, due his noted perception. He’s good with
+a bow, and is a hunter, so he should have
+Archery and Traps. He’s also a woodsman and
+she wants him to be good at sneaking and
+hiding, so she thinks that Athletics, Craft
+(Woodcraft), Stealth, Survival and Navigation
+would be good. He should be able to defend
+himself, so basic levels in Hand-to-Hand and
+Melee would be good. Both Defense and
+Combat Sense would be useful in situations
+outside of combat. She also thinks that Taran
+should know the basics of tending wounds and
+such, so she gives him Medicine.
+The total costs of the skills is currently 49. Lisa
+can still spend one more point, but wants to
+move on to Perks and Flaws before finalizing
+anything.
+Lisa writes down Taran’s skills on a spare sheet
+of paper, along with the costs.
+Taran’s Attributes
+AGI: +1 APP: 0
+BLD: 0 CRE: +1
+FIT: +1 INF: 0
+KNO: 0 PER: +2
+PSY: 0 WIL: +1
+
+4 7 "
+! 2. Chapter Two:
+Character Design
+!
+ 
+Chapter Two:
+Character Design
+Taran’s Skills
+Skill Lvl/Cpx Cost Total Cost
+Archery 2/2 4/4 8
+Combat Sense 2/1 4/0 4
+Craftf (Woodcraft) 2/1 4/0 4
+Defense 2/1 4/0 4
+Athletics 2/1 4/0 4
+Hand-to-Hand 1/1 1/0 1
+Navigation (Land) 1/1 1/0 1
+Medicine 1/1 1/0 1
+Melee 1/1 1/0 1
+Notice 2/1 4/0 4
+Stealth 2/2 4/4 8
+Survival 2/2 4/4 8
+Traps 1/1 1/0 1
+quickly speaks to her GM about the
+woods near the area the game is
+supposed to take place, and finds out
+that the Elves often frequent that area.
+With her Gamemaster’s approval, she
+spends her final Skill Point on Language
+(Elven) at level 1/1. Now that she’s spent
+all of her skill points, she writes her skills
+down on her character sheet.
+Step 5: Secondary
+Attributes
+See Secondary Attributes, section 2.3,
+for basic rules.
+Now all Lisa has to do is calculate
+Taran’s Secondary Attributes.
+Strength: Taran’s Bld is 0, and his Fit is +1.
+This averages out to +0.5. Since Str is rounded
+down, Taran’s Str is 0.
+Health: Taran has a Fit of +1, a Psy of 0, and a Wil of
++1. This averages out to +0.667. Hea is rounded
+off as normal, so Taran has a Hea of +1.
+Stamina: The total of Taran’s Bld and Hea is +1.
+This gives Taran a Sta of 30 ((5 x 1) + 25 = 30).
+Unarmed Damage: Since Taran’s Bld and Str
+are 0, and his Hand-to-Hand level is only 1,
+his total UD is 4.
+Armed Damage: AD is calculated the same
+as UD, but with Melee instead of Hand-to-
+Hand. This gives Taran an AD of 4.
+Flesh Wound Threshold: This is equal to Sta/
+2, so Taran has Flesh Wound Threshold of 15
+(30 / 2).
+Deep Wound Threshold: Equal to Sta, so it’s
+30 for Taran.
+Instant Death Threshold: Double Sta, so Taran
+has 60.
+System Shock: SS is equal to 5+ Hea, so Taran
+has a SS of 6.
+Lisa writes these down and talks to her GM
+about equipment. She is now ready to play.
+Step 4: Perks and Flaws
+This is an Optional Step — see Perks and
+Flaws, section 2.4.
+Lisa looks first at the Flaws, because they help
+define the character more, and she thinks
+they’re more fun to play. She looks at both
+Curse and Code of Honor, and decide that
+giving Taran a cursed love life would be more
+fun. She thinks that giving Taran the Quirk
+“Country Bumpkin” would be good.
+After looking at the Perks list, the only one that
+Lisa thinks would fit with the character concept
+is Acute Sense: Sight.
+Lisa talks to her GM, and he approves of the
+perks and Flaws. He assigns a value of 4 to
+Taran’s Curse, because while love does play
+a large role in the game, it won’t affect him all
+of the time.
+Lisa totals up the points for Taran’s Perks and
+Flaws and realizes she has 5 extra Skill Points
+to spend. She thinks that Taran’s Notice skill
+could be bumped up a bit, but doesn’t think
+he is a “Veteran” at noticing things. Instead,
+she spends 4 points and ups the complexity
+rating of his Notice skill, because he’s really
+good at noticing details like faint tracks. This
+brings his Notice skill up to 2/2 from 2/1. Lisa
+
+! A. Reference Section:
+Character Skills
+!214
+!
+ 
+Reference Section:
+Character Skills
+
+2 1 5 "
+! A. Reference Section:
+Character Skills
+!
+Reference Section:
+Character Skills
+
+! A. Reference Section:
+Character Skills
+!216
+!
+ 
+Reference Section:
+Character Skills
+Silhouette CORE
+Probabilities and Alternate Dice
+Probabilities for rolling six-sided dice in
+Silhouette. Additional Sixes adding +1 to the
+total:
+Skill
+0 1 2 3 4 5
+1 3.6% 16.7% 2.8% 50.0% 10.0% 0.0%
+2 25.0% 16.7% 8.3% 3.2% 1.2% 0.4%
+3 19.4% 16.7% 13.9% 8.8% 5.0% 2.7%
+4 13.9% 16.7% 19.4% 17.1% 13.5% 10.0%
+5 8.3% 16.7% 25.0% 28.2% 28.5% 27.0%
+6 2.8% 16.7% 27.8% 34.7% 38.6% 40.2%
+7 0.0% 0.0% 2.8% 6.9% 11.6% 16.1%
+8 0.0% 0.0% 0.0% 0.5% 1.5% 3.2%
+9 0.0% 0.0% 0.0% 0.0% 0.1% 0.3%
+10 0.0% 0.0% 0.0% 0.0% 0.0% 0.0%
+AVG 2.53 3.50 4.50 5.04 5.39 5.67
+Probabilities for rolling six-sided dice in
+Silhouette with additional Fives and Sixes
+adding +1 to the total. (Cinematic RDL rule):
+Skill
+0 1 2 3 4 5
+1 30.6% 16.7% 2.8% 0.5% 0.1% 0.0%
+2 25.0% 16.7% 8.3% 3.2% 1.2% 0.4%
+3 19.4% 16.7% 13.9% 8.8% 5.0% 2.7%
+4 13.9% 16.7% 19.4% 17.1% 13.5% 10.0%
+5 8.3% 16.7% 22.2% 22.2% 19.8% 16.5%
+6 2.8% 16.7% 30.6% 38.9% 42.0% 41.2%
+7 0.0% 16.7% 2.8% 8.8% 16.0% 22.6%
+8 0.0% 16.7% 0.0% 0.5% 2.4% 5.9%
+9 0.0% 16.7% 0.0% 0.0% 0.1% 0.7%
+10 0.0% 16.7% 0.0% 0.0% 0.0% 0.0%
+AVG 2.53 3.50 4.53 5.12 5.54 5.90
+Optional Rule: Adding +1 for multiples of the
+highest die.
+A house rule thatís been around for a while is
+to have multiples of the highest die add +1 to
+the total. This is similar to the Cinematic rule
+featured earlier. This has the effect of slightly
+increasing the average roll.
+Probabilities for six-sided dice, with multiples
+adding +1 to the total:
+Skill
+0 1 2 3 4 5
+1 30.6% 16.7% 2.8% 0.5% 0.1% 0.0%
+2 25.0% 16.7% 5.6% 1.4% 0.3% 0.1%
+3 19.4% 16.7% 13.9% 6.9% 2.9% 1.2%
+4 13.9% 16.7% 19.4% 15.7% 10.5% 6.4%
+5 8.3% 16.7% 25.0% 26.9% 24.6% 20.5%
+6 2.8% 16.7% 30.6% 40.7% 47.0% 49.7%
+7 0.0% 16.7% 2.8% 7.4% 12.9% 18.3%
+8 0.0% 16.7% 0.0% 0.5% 1.6% 3.5%
+9 0.0% 16.7% 0.0% 0.0% 0.1% 0.3%
+10 0.0% 16.7% 0.0% 0.0% 0.0% 0.0%
+AVG 2.53 3.50 4.61 5.21 5.60 5.89
+Optional Rule: Adding +1 for multiples of any
+die.
+Dice that come up the same value (not only
+6s) are counted as +1 to the die total for that
+number. Thus, a character rolling a 5 5 5 2
+would have a total score of (5+1+1)=7. A
+character rolling 2 2 2 6 would still have a score
+of 6, as it remains the highest possible value
+of the die roll (2+1+1 = 4 vs 6). This has the
+effect of raising the average die roll, while still
+requiring that multiple 6s be rolled for the
+highest successes. It also prevents a case
+where a player rolls 5 5 5 5, a very very small
+statistical chance (and thus ‘lucky’ roll) and
+gain nothing from it but a 5.
+Optional Rules: Using Eight or Ten Sided Dice
+Some people feel limited by the choice of the
+classic six-sided die, and prefer to use larger
+die types. Silhouette was designed to use six-
+sided dice, and as such using larger die types
+alters some things and requires the GM to
+make a few changes based on these changes
+and the feel of the campaign.
+Using Larger dice increases the randomness
+of tests and decreases the importance of
+Attributes and other modifiers. It also makes
+combat potentially more lethal, due to the
+possibility of a larger Margin of Success. The
+larger dice types result in higher rolls, thus
+requiring larger thresholds.
+
+2 1 7 "
+! A. Reference Section:
+Character Skills
+!
+Reference Section:
+Character Skills
+If you like using larger die types, but find the
+results too random, you can institute either of
+the optional dice rolling methods from the
+previous section. Either of them should reduce
+the randomness of larger die types
+Probabilities for rolling eight-sided dice in
+Silhouette. Additional Eights adding +1 to the
+total:
+Skill
+0 1 2 3 4 5
+1 23.4% 12.5% 1.6% 0.2% 0.0% 0.0%
+2 20.3% 12.5% 4.7% 1.4% 0.4% 10.0%
+3 17.2% 12.5% 7.8% 3.7% 1.6% 60.0%
+4 14.1% 12.5% 10.9% 7.2% 4.3% 2.4%
+5 10.9% 12.5% 14.1% 11.9% 9.0% 6.4%
+6 7.8% 12.5% 17.2% 17.8% 16.4% 14.2%
+7 4.7% 12.5% 20.3% 24.8% 27.0% 27.6%
+8 1.6% 12.5% 21.9% 28.7% 33.5% 36.6%
+9 0.0% 12.5% 1.6% 4.1% 7.2% 10.5%
+10 0.0% 12.5% 0.0% 0.2% 0.7% 1.5%
+11 0.0% 12.5% 0.0% 0.0% 0.0% 0.1%
+12 0.0% 12.5% 0.0% 0.0% 0.0% 0.0%
+AVG 3.19 4.50 5.83 6.51 6.94 7.25
+Probabilities for rolling ten-sided dice in
+Silhouette. Additional Tens adding +1 to the
+total:
+Skill
+0 1 2 3 4 5
+1 19.0% 10.0% 1.0% 0.1% 0.0% 0.0%
+2 17.0% 10.0% 3.0% 0.7% 0.2% 0.0%
+3 15.0% 10.0% 5.0% 1.9% 0.7% 0.2%
+4 13.0% 10.0% 7.0% 3.7% 1.8% 0.8%
+5 11.0% 10.0% 9.0% 6.1% 3.7% 2.1%
+6 9.0% 10.0% 11.0% 9.1% 6.7% 4.7%
+7 7.0% 10.0% 13.0% 12.7% 11.1% 9.0%
+8 5.0% 10.0% 15.0% 16.9% 17.0% 16.0%
+9 3.0% 10.0% 17.0% 21.7% 24.7% 26.3%
+10 1.0% 10.0% 18.0% 24.3% 29.2% 32.8%
+11 0.0% 10.0% 1.0% 2.7% 4.9% 7.3%
+12 0.0% 10.0% 0.0% 0.1% 0.4% 0.8%
+13 0.0% 10.0% 0.0% 0.0% 0.0% 0.0%
+14 0.0% 10.0% 0.0% 0.0% 0.0% 0.0%
+AVG 3.85 5.50 7.16 8.00 8.52 8.88
+To convert Thresholds from standard Silhouette
+for use with d8s or d10s, follow this chart. Note
+that the thresholds do not map neatly, and as
+such, the odds of beating a given threshold
+will vary between die types.
+Threshold Conversion
+d6 Type d8 d10
+1 Effortless 1 1
+2 Routine 2 3
+3 Easy 4 5
+4 Moderate 5 7
+5 Challenging 7 8
+6 Difficult 8 9
+7 Very Difficult 9 10
+8 Extremely Difficult 10 11
+10 Near Impossible 13 14
+12+ Pray for Divine intervention! 15+ 16+
+If you find that the amount of Damage being
+dealt is too high, you may wish to institute one
+or both of these options:
+* Maximum MoS equal to the number of sides
+on the die type used
+* Divide multiply Weapon DM’s by 0.75 (75%)
+for eight-sided dice, and by 0.6 (60%) for ten-
+sided dice.
+
+! A. Reference Section:
+Character Skills
+!218
+!
+ 
+Reference Section:
+Character Skills
+Silhouette CORE Character
+Creation Costs Reference
+Attributes
+CHARACTER POINTS
+Joe Average PC Major NPC
+Gritty 10 20 30
+Adventurous 10 30 50
+Cinematic 10 50 70
+Skills
+SKILL POINTS AVAILABLE
+Joe Average PC Major NPC
+Gritty 20 40 60
+Adventurous 20 50 80
+Cinematic 20 70 120
+Attributes
+SHORT NAME DESCRIPTION
+AGI Agility Physical prowess and co-ordination
+APP Appearance Physical comeliness
+BLD Build Physical size and mass
+CRE Creativity Mental innovation and quick thinking
+FIT Fitness Physical conditioning and endurance
+INF Influence Charisma and persuasiveness
+KNO Knowledge Education and logical thinking
+PER PerceptionAlertness and ability to discern details
+PSY Psyche Mental health, empathy, and luck
+WIL Willpower Mental endurance and conviction.
+Attribute Costs
+RATING COST DESCRIPTION WEIGHT EQUIV.
++5* 36 Unbelievable 180-250 kg
++4* 25 Superhuman 140-180 kg
++3 16 Exceptional 115-140 kg
++2 9 Superb 95-115 kg
++1 4 Good 80-95 kg
+0 1 Average 70-80 kg
+-1 0 Poor 60-70 kg
+-2 +1 Weak 50-60 kg
+-3 +4 Pathetic 40-50 kg
+-4* +9 Hopeless 25-40 kg
+-5* +16 Tragic 10-25 kg
+Values marked with a “*” fall outside Human norms.
+Any value marked as +X adds that value to
+the your CP total.
+Any CP unused after buying Attributes can be
+used as Skill Points OR as Emergency Dice.
+Skill Costs
+LEVEL COST ABILITY DESCRIPTION
+1 1 Rookie Basic Training
+2 4 Qualified Miminum to earn a living
+3 9 Veteran Professionals
+4 16 Elite Season Professionals
+5 25 Legendary The very best
+6+ Lvl x lvl Legendary Living Legends and heroes
+Specializations cost 5 per Specialization.
+Complexity Costs
+LEVEL COST TRAINING DESCRIPTION
+1 Free Basic Self taught or basic training
+2 4 Trained Full training
+3 9 Advanced Advanced Courses
+4 16 Expert Wide Field of knowledge
+5 25 Legendary Renowned expert
+Remember that all Skill Points must be spent,
+they do not turn into Emergency Dice.
+
+2 1 9 "
+! A. Reference Section:
+Character Skills
+!
+Reference Section:
+Character Skills
+Perks and Flaws (Optional)
+Perks and flaws are bought with Skill Points.
+Consult the Perks and Flaws table found on
+page 39.
+Step 5: Secondary Attributes
+Secondary Attributes
+Short Name Description
+STR Strength Raw physical Strength
+HEA Health Physical well being
+and resistance to disease
+STA Stamina Physical Endurance
+and wound resistance
+UD Unarmed Damage Damage inflicted in
+hand-to-hand combat
+AD Armed Damage Base damage in melee combat
+Calculating Secondary Att.
+STR (Build + Fitness)/2, round towards Zero
+HEA (Fitness + Psyche + Willpower)/3, round off
+STA (5 x (Build +Health)) + 25, minimum 1
+UD 3 + Strength + Build + Hand-to-Hand
+skill level, Minimum 1
+AD 3 + Strength + Build + Melee skill level,
+Minimum 1
+Flesh Wound Stamina / 2, round up
+Deep Wound Stamina
+Instant Death Stamina x 2
+System Shock 5 + Health, Minimum 1
+
+! A. Reference Section:
+Character Skills
+!220
+!
+ 
+Reference Section:
+Character Skills
+Silhouette CORE Generic Weapon & Armor List — Game Stats
+MELEE WEAPONS ACC PARRY DM BASE RANGE ROF NOTES
+2-Handed Sword -1 0 AD+18 Melee N/A 2-handed, Min +1 STR
+Bastard Sword/Katana 0 -1/0 AD+11/13 Melee N/A 1-handed/2-handed
+Battle-Ax 0 -1 AD+13 Melee N/A 2-handed
+Broadsword 0 0 AD+9 Melee N/A 2-handed
+Chainsaw -1 -2 AD+15 Melee N/A Fuel/batteries; run for 1d3 hours
+Claymore 0 -1 AD+16 Melee N/A 2-handed, Min +1 STR
+Club 0 -1 AD+3 Melee N/A Any large stick-like item
+Dagger/Knife 0 -1 AD+3 Throw 0 -1 ACC when thrown
+Fighting Stick 0 +1 AD+4 Melee N/A Can be used to Parry
+Flail/ Heavy Chain -1 -2 AD+10 Melee N/A Unwieldy, can become tangled
+Hatchet 0 0 AD+7 Throw 0 Can be thrown
+Javelin/Short Spear 0 0 AD+6 7+STR 0/1 Can be thrown
+Long Spear -1 +1 AD+12 Melee N/A Add +1m to reach
+Long Sword 0 -1 AD+11 Melee N/A 2-handed
+Mace 0 0 AD+7 Melee N/A Crushing damage
+Maul -1 -2 AD+16 Melee N/A 2-handed, Min +1 STR, crushing
+Nunchuka 0 +1 AD+8 Melee N/A Can be used to Parry
+Pick Ax -1 -1 AD+14 Melee N/A 2-handed
+Poleax -1 +1 AD+15 Melee N/A 2-handed
+Quarterstaff 0 +1 AD+7/+11 Melee N/A Wood/Metal, 2-handed
+Rapier +1 +1 AD+11 Melee N/A Piercing damage
+Short Sword 0 0 AD+7 Melee N/A Also represents Wakazashi
+Sickle 0 -2 AD+4 Melee N/A Cutting damage
+Throwing Knife 0 -1 AD+2 Throw 0 Can be thrown
+War Scythe -1 -1 AD+14 Melee N/A Unwieldy, requires room
+Warhammer 0 0 AD+9 Melee N/A Crushing damage
+Whip 0 -2 AD+3 Melee N/A Entangles. Thres. = MoS-1 to get free
+GUNS ACC DM BASE RANGE ROF AMMO NOTES
+Taser Pistol 0 3 4 0 30 Intensity 5 Elec. attack, bruise damage
+Revolver, Light 0 7 5 0 6 .22 caliber
+Revolver, Medium 0 14 6 0 6 .38 caliber
+Revolver, Heavy 0 23 7 0 5 .45+ caliber
+Pistol, Light 0 10 6 0 10 6mm
+Pistol, Medium 0 15 6 0 9 9mm
+Pistol, Heavy 0 24 7 0 8 .45+ caliber
+Rifle, Light 0 18 45 0 1 7.62mm
+Rifle, Medium 0 24 50 0 20 9mm
+Rifle, Heavy 0 28 60 0 10 .50 caliber
+Assault Rifle 0 28 65 1 40 7.5mm+
+Shotgun/Autoshotgun 0 28 7/6 0/1 10 12-Gauge
+Sniper Rifle/Laser +1 40 100/200 0 5 Affected by smoke
+SMG, Light 0 12 22 2 40 7.62 mm
+SMG, Medium 0 18 25 2 30 9mm
+SMG, Heavy 0 24 30 2 30 11mm+
+Laser pistol +1 8/17/26 9 0 30 Uses 1/4/9 ammo per shot, respectively
+Laser Rifle +1 26/35/44 120 0 10 Uses 1/2/3 ammo per shot, respectively
+
+2 2 1 "
+! A. Reference Section:
+Character Skills
+!
+Reference Section:
+Character Skills
+HEAVY WEAPONS ACC DM BASE RANGE ROF AMMO NOTES
+Anti-Armor Guided Missile +1 150 150 0 1 Guided, Indirect Fire
+Anti-Armor gun +1 70 150 0 5 .50 caliber+
+Chaingun 0 30 50 4 Belt 9mm or similar
+Aux. Grenade Launcher -1 Grenade 40 0 1 Indirect fire, fits on rifle
+Grenade Rifle 0 Grenade 50 0 5 Indirect fire
+Light Mortar -1 120 150 0 5 Indirect fire, Min Range 150
+Light Machine Gun 0 30 100 2 Belt 7.62mm
+Medium Machine Gun 0 32 125 3 Belt 7.5mm+
+Heavy Machine Gun 0 42 130 3 Belt .50 caliber+
+Rocket Launcher 0 140 50 0 1 Bazooka-type launcher
+SAM Launcher +1 70 250 0 1 Guided, Indirect Fire
+Grenades ACC DM Base Range RoF Area
+Concussion 0 30 Throw 0 9
+Fragmentation 0 26/14 Throw 0 8/30
+Incendiary 0 24/8 Throw 0 8/12
+Gas 0 5/Gas Throw 0 2/30
+Smoke 0 2/Smoke Throw 0 1/30
+The second number under ‘Area’ is the secondary damage area. Those within the primary damage area suffer both damages,
+those outside suffer only the second DM. Use the Drug/Disease rules for Gas effects.
+RANGED WEAPONS ACC DM BASE RANGE ROF AMMO NOTES
+Sling -1 7 Throw 0 N/A Needs a quick wind-up time
+Bola -1 7 6 0 N/A Entangles. Thresh. = MoS to get free
+Short Bow 0 7 5 0/1 N/A Small bow
+Recurve Bow 0 10 8 0/1 N/A Standard bow
+Long Bow 0 12 10 0/1 N/A Min +1 STR
+Modern Compound Bow 0 13 8 0/1 N/A Powerful but needs maintenance
+Crossbow 0 14 7 0/3 N/A Powerful but slow to reload
+Hand Crossbow 0 6 4 0/1 N/A Useful secondary weapon
+Repeating Crossbow -1 8 7 0 6 Cumbersome
+ARMOR VALUE ENC CONCEAL
+Light Flak Vest 15 0 Yes
+Light Flak Suit 20 0 Yes
+Medium Flak Vest 25 0 Somewhat
+Leather Armor 5 0 Somewhat
+Studded Leather 8 0 Somewhat
+Chain Mail 14 -1 No
+Plate 22 -2 No
+Futuristic Composite 32 -1 No
+SHIELD ACC PARRY DM ARMOR ENC.
+Buckler -1 +1 AD+1 11 0
+Round -2 +2 AD+3 13 0
+Heater/Kite -2 +2 AD+4 15 -1
+Tower -3 +3 AD+5 18 -1
+Modern Riot -2 +3 AD+5 20 0
+If the parry fails by the parry bonus or less, the attack hit the shield. Subtract the shield’s armor from the attack. If using the Armor
+Degradation optional rules, apply this to the shield as well.
+
+! A. Reference Section:
+Character Skills
+!222
+!
+ 
+Reference Section:
+Character Skills
+• ANIMAL HANDLING
+Attributes: INF (training), KNO (basic care)
+Specializations: Animal, Herding, Performing Tricks
+Possessed By: Farmers, Ranchers, Circus Performers
+The Animal Handling Skill measures the ability of a
+character to care for and train various animal species.
+The Skill includes knowledge of the animal’s preferred
+foods and daily habits, reproductive cycle and the basic
+signs of disease. Natural Sciences (Life) is needed to
+actually treat diseased animals, however.
+• ARCHERY
+Attributes: AGI (firing), PER (firing at Extreme range)
+Specializations: Longbow, Compound Bow, Crossbow, Sling
+Possessed By: Athletes, Hunters, Primitives
+The Archery Skill allows the character to use primitive
+missile weapons such as longbows, slings or crossbows.
+This is the primary ranged weapon Skill in historical and
+fantasy genres. In settings featuring firearms, this Skill
+might still be used for sport and historical events, but rarely
+for actual combat. Specialized arrowheads/projectiles can
+be used to make the weapons more versatile.
+• ATHLETICS
+Attributes: AGI (grabbing items), FIT (physical activities),
+KNO (evaluating moves)
+Specializations: Running, Football, Volleyball, Break Fall,
+Climbing, Swimming
+Possessed By: Athletes, Sports Enthusiasts, Soldiers
+Athletics represents the character’s ability to engage in
+sporting and physical activities of all kinds. It includes the
+necessary Skills and knowledge of the rules and
+regulations along with the physical training required by
+athletic activities. Athletics is also used for running, and
+climbing up and down a steep (more than 60 degrees)
+incline. SeeMovement, section 3.2, for more.
+A high Cpx in this Skill represents the ability to perform
+tumbling, balancing, or gymnastics. In some game genres,
+Acrobatics can be used in combat instead of Defense (see
+Chapter 7) — the ability to vault over a group of guards in
+an escape or tumble under a hail of bullets from an
+opponent’s gun are all highly desirable.
+• BUSINESS
+Attributes: INF (dealing with people), KNO (techniques)
+Specializations: Finance, Management, Foreign Trade,
+Accounting, Economics
+Possessed By: Businesspeople, Bankers, Accountants
+Business is the ability to manage the affairs of a business,
+corporation or nation. This could include anything from
+compiling product feasibility reports to the creation of
+marketing campaigns to promoting a product, whatever
+that product may be. A small number of Player Characters
+are likely to take this Skill based upon their background.
+They may find it useful in a political campaign, but in a
+more action-oriented one, its utility may be limited.
+• COMBAT SENSE
+Attributes: PER (applications), KNO (techniques)
+Specializations: Urban, Jungle, Marsh, Night-time,
+Ambushes
+Possessed By: Soldiers, Police, Criminals, Warzone
+Residents
+A character with Combat Sense is trained to be aware in
+dangerous situations, such as firefights. Combat Sense is
+used primarily to detect ambushes and for initiative
+purposes. This Skill is useful to the majority of characters
+who will take part in a high-adventure campaign, but
+characters in a political campaign will probably not need it.
+A high Complexity in this Skill represents the character’s
+expertise in small-unit tactics (a prime example is the
+positioning of troops while they are engaged with enemy
+forces). The Skill is useful to commanders of units of all
+sizes, and is one of the most important to soldiers who
+wish to rise in the ranks. See section 6.3 for advanced
+use of this Skill.
+• CRAFT (SPECIFIC)
+Attributes: varies, but usually CRE or KNO
+Specializations: Commercial, Specific sub-category
+Possessed By: Artisans, Metalsmiths, Cooks
+The Craft Skill covers the ability to produce useful and
+artistic creations with one’s hands. A specific craft must
+be chosen: it can include such things as cooking,
+grooming, jewelry, metalwork, woodcraft, weaving, etc.
+The market for fine items makes it lucrative to know one of
+these crafts (though only at high levels), and the ability to
+recognize the value of such crafts is in demand from many
+interested parties.
+Grooming, a character’s ability to improve the physical
+appearance of a person through the judicious use of
+clothing and grooming, is a special craft. The Margin of
+Success of a Grooming Skill test vs. 5 (fumbles are
+ignored) is added to the character’s Appearance Attribute.
+• DEFENSE
+Attributes: AGI (diving for cover or dodging), PER (spotting
+defensive positions)
+Specializations: Unarmed, Melee Attacks, Ranged Attacks
+Possessed By: Soldiers, Police, Criminals, Convenience
+Store Clerks
+The Defense Skill is a measure of how good the character
+is at avoiding incoming attacks, whether by making the
+best use of available cover (be it a lamp-post, a concrete
+wall, or another character) or actually dodging hand-to-
+hand or melee blows. Most player characters have this
+Skill to some degree.
+• DEMOLITION/TRAPS
+Attributes: CRE (charge placements), KNO (techniques,
+chemistry)
+Specializations: Mining, Military, Construction
+Possessed By: Military and Industrial Specialists, Terrorists
+
+2 2 3 "
+! A. Reference Section:
+Character Skills
+!
+Reference Section:
+Character Skills
+Demolition is the Skill concerned with setting and
+detonating explosive charges in such a way as to maximize
+damage done to the target, and either maximize or
+minimize the collateral damage caused by the explosion.
+The Skill encompasses the ability to deactivate these same
+charges. It also includes the knowledge required to
+produce various types of explosives from raw materials.
+The pre-modern version of this Skill allows one to set traps
+and disarm them.
+• DISGUISE
+Attributes: CRE (putting on), PER (spotting), KNO
+(techniques)
+Specializations: Specific Disguise, Theatrical Special
+Effects, Vehicles, Buildings
+Possessed By: Actors, Undercover Agents, FX Specialists,
+Rebels
+The Disguise Skill covers the physical aspects of changing
+the appearance of a person or item, including proper use
+of makeup, masks, and clothing. Actual impersonation or
+mimicry of a specific person or type of person also require
+the Performance Arts (Theatrics) Skill, however.
+The Skill also allows the user to disguise constructs, such
+as vehicles (Cpx 2), bunkers (Cpx 3) or even bases (Cpx
+4), from visual recognition: apply the MoS of the Disguise
+effort to the Threshold of any test to recognize the item or
+person for what it really is.
+• ETIQUETTE (SPECIFIC)
+Attributes: INF (interaction), PER (spotting faux-pas)
+Specializations: Military, Business, Aristocratic,
+Bureaucracy
+Possessed By: Sophisticates, Military Officers,
+Businessmen
+Etiquette reflects the character’s familiarity with proper
+methods of social interaction within formalized settings,
+such as military ceremonies, upper class gatherings or
+business meetings. Many politically-inclined characters
+will possess this Skill, regardless of their social standing.
+If a character attempts to use his Skill to interact in a related
+but unfamiliar milieu, a -2 penalty is imposed on the test.
+• FORGERY (SPECIFIC)
+Attributes: CRE (creating), PER (spotting), KNO
+(techniques)
+Specializations: Electronic, Written, Art, Counterfeiting
+Possessed By: Criminals, Spies, Police Experts
+The Forgery Skill is the character’s ability to accurately
+duplicate a variety of objects, such as official documents,
+works of art, money, and handwriting. It also encompasses
+the ability to recognize a forgery as such, and give an
+opinion as to the origin of the forgery based on the style
+and materials used in creating it. If a character attempts
+to use his Skill to work in a related but unfamiliar field, a -
+2 penalty is imposed on the test.
+• GAMBLING
+Attributes: PER (applications), KNO (techniques), CRE
+(cheating), PSY (raw luck)
+Specializations: Specific Game, Cheating, Bookkeeping
+Possessed By: Gamblers, Bookies, Suburban Husbands
+Gambling represents the character’s knowledge of the
+rules of games of chance. It further allows the character
+to estimate odds, cheat at most games (if required) and
+place bets on events. This Skill is one of the old standbys
+for many types of characters.
+• GUNNERY (SPECIFIC)
+Attributes: PER (applications), KNO (techniques)
+Specializations: Vehicle Model, Projectile Weapons,
+Missiles, Energy Weapons
+Possessed By: Combat Pilots, Combat Gunners
+Gunnery Skill is required to fire any non-portable weapons,
+such as those mounted on vehicles or installations. The
+specific areas of knowledge are: Mecha, Ground, Naval,
+Air and Space. If a character attempts to use his Skill to
+fire weapons on a vehicle type other than one with which
+he is familiar, a -2 penalty is imposed on the test.
+• HAND-TO-HAND
+Attributes: AGI (disarming), FIT (combat and blocking
+blows), KNO (evaluating moves)
+Specializations: Striking, Grappling, Tripping, Throwing
+Possessed By: Boxers, Martial Artists, Police, Soldiers
+The Hand-to-hand Skill measures the proficiency of a
+character in close-range combat using unarmed fighting
+techniques. A high Complexity rating in Hand-to-hand
+implies that the character is using some form of martial
+art, such as karate or boxing. Almost all military personnel
+receive basic training in this Skill, and many other
+individuals and professions find it necessary to learn some
+of the techniques involved.
+• HEAVY WEAPONS
+Attributes: PER (using weapons), KNO (maintenance)
+Specializations: Machineguns, Mortars, Grenade
+Launchers, Missiles
+Possessed By: Soldiers, Police, Criminals
+The Heavy Weapons Skill is a measure of the character’s
+proficiency with man-portable support weapons such as
+mortars, grenade launchers and missiles. The Skill
+includes basic knowledge of the maintenance procedures.
+This Skill is taught almost exclusively in military and para-
+military circles and is seldom shown to those not
+sanctioned to use it by the authorities. The pre-modern
+version of the Skill lets characters build and operate
+catapults, trebuchets and similar weapons.
+
+! A. Reference Section:
+Character Skills
+!224
+!
+ 
+Reference Section:
+Character Skills
+• INFORMATION WARFARE
+Attributes: INF (communicating), CRE (use, codebreaking),
+KNO (techniques, maintenance)
+Specializations: Sensors, ECM, Underwater Sensors,
+Comm Jamming
+Possessed By: Combat Pilots, Sensor Op Specialists,
+Explorers
+Information Warfare is a catch-all Skill that covers the
+myriad aspects of sensor operations, electronic counter-
+measures (ECM), and electronic counter-counter-measures
+(ECCM). This Skill is used for detection tests, electronic
+jamming, and other similar activities. It is required to
+operate and effectively counter communications devices.
+It is also used in the design and breaking of codes used
+for communications between two parties.
+• INTERROGATION
+Attributes: APP (flirt), BUI (physical intimidation), INF (wits),
+WIL (domination)
+Specializations: Casual Questioning, Torture, Specific Type
+of Informant
+Possessed By: Police Officers, Intelligence Experts
+Interrogation measures a character’s ability to extract
+information from an unwilling informant. Although such
+exchanges can be roleplayed, Gamemasters can use
+Opposed Action Tests with informants rolling either WIL
+or Interrogation, whichever is higher. A MoS of 4 or more
+indicates that the informant may not even realize he has
+revealed something of note.
+• INVESTIGATION
+Attributes: PER (applications), KNO (techniques)
+Specializations: Searching, Surveillance, Forensics
+Possessed By: Police, Private Detectives, Spies
+The Investigation Skill allows the character to collect
+information on people, places and events. This information
+can be gathered by any means not covered by the
+Streetwise or Computer Skills. Player Characters may want
+to have this Skill to one degree or another since it allows
+them to uncover facts about their antagonists which might
+otherwise remain hidden.
+• LANGUAGE (SPECIFIC)
+Attributes: CRE (applications), KNO (grammar and
+vocabulary)
+Specializations: Specific Dialect, Specific Jargon
+Possessed By: Travelers, Diplomats, Scholars
+This is the ability to communicate and be literate. The
+number of languages spoken doubles at each Cpx (Cpx
+1 is one language, Cpx 2 is two, Cpx 3 is four, and so on).
+All characters their native tongue has level two (standard)
+or three (if they are highly educated — KNO +1 or higher)
+at no cost. Some languages will not be available to all
+characters; players should check with their GMs about
+which languages their character can learn.
+When using social Skills in a foreign language, characters
+are limited to their Language level. For example, if the
+character has Language at level 1 (and knows Russian)
+plus Negotiation at 5, and tries to bribe a Kremlin guard to
+let him pass, he can only use Negotiation at level 1.
+• LEADERSHIP
+Attributes: INF (leading people), PER (evaluating morale
+and skills)
+Specializations: Military, Political, Business, Cult
+Possessed By: Military Officers and NCOs, Politicians,
+Businesspeople
+Leadership is the capacity to lead others, either by
+example or through inspiration. Any group which will see
+combat on a tactical scale will dearly need someone to
+guide its actions; entering battle without a well-defined
+leader only increases the chaos the group will experience.
+See section 6.3 for advanced use of this Skill.
+• MEDICINE
+Attributes: CRE (applications), KNO (techniques), INF
+(dealing with patients)
+Specializations: Combat, Aquatic, Sports, Neurology,
+Forensics, Surgery, Toxicology
+Possessed By: Soldiers, Lifeguards, Trainers, Paramedics,
+Physicians
+Medicine is the ability to diagnose and treat various
+pathological conditions, such as dangerous traumas,
+diseases and infections. The lowest levels (2/2 and below)
+are effectively First Aid: the ability to stabilize wounded
+peoples’ conditions so that they can be transported to
+more effective treatment.
+A higher Medicine Skill is required for any long term
+medical treatment such as aiding in recovery from disease,
+and for any type of serious internal surgery. A
+specializationmust be chosen before a character can go
+above Level or Complexity 3.
+• MELEE
+Attributes: AGI (striking targets), FIT (blocking melee
+weapons), KNO (evaluating moves)
+Specializations: Knives, Clubs, Fencing
+Possessed By: Soldiers, Police, Criminals, Martial Artists
+The Melee Skill reflects how good a character is at
+attacking and/or defending with close-combat weapons,
+such as knives, cudgels or swords. This type of weapon
+use is probably the most widespread of all since it involves
+relatively little training and mostly inexpensive weapons,
+yet increases the amount of damage dramatically.
+• NATURAL SCIENCES (SPECIFIC)
+Attributes: CRE (applications), KNO (techniques)
+Specializations: Various Fields of Study
+Possessed By: Professors, Students, Researchers,
+Designers
+
+2 2 5 "
+! A. Reference Section:
+Character Skills
+!
+Reference Section:
+Character Skills
+Natural Sciences is a catch-all Skill that includes any of
+the “hard” sciences dealing with the universe: earth
+(geology, meteorology, etc.), life (biology, virology, etc.)
+and physical (mathematics, physics, chemistry, etc.)
+sciences.
+A specializationmust be chosen before a character can
+go above Level or Complexity 3 in this Skill. If a character
+attempts to use his Skill in a field other than one with which
+he is familiar, a -2 penalty is imposed on the test.
+• NAVIGATION (SPECIFIC)
+Attributes: CRE (applications), KNO (techniques)
+Specializations: Night-time, Map and Compass, Star
+Position, Terrain Type
+Possessed By: Campers, Explorers, Pilots, Soldiers,
+Survivalists
+Navigation represents the character’s proficiency in the
+various techniques used to track one’s positions and
+movements. The specific areas of knowledge are: Sea,
+Land, Urban, Air, Space. If a character attempts to use
+his Skill to navigate in a terrain other than one with which
+he is familiar, a -2 penalty is imposed on the test.
+• NEGOTIATION
+Attributes: INF (interaction), BUI (intimidation), PER
+(evaluating progress), KNO (techniques)
+Specializations: Specific Commodity, Specific Culture,
+Barter
+Possessed By: Traders, Smugglers, Business people,
+Ambassadors
+Negotiation measures a character’s ability to influence the
+final decision in bargaining, or the price in a transactions
+(be it for cash, credit or barter). This is always an opposed
+Skill roll, with the MoS x 5% as the maximum discount
+possible when currency is involved. A Player’s roleplaying
+should always be weighed as powerfully as the die roll,
+and the specific circumstances of the deal should be kept
+in mind. There are many situations in which prices or
+positions are firmly fixed, and cannot be affected by
+haggling in any way.
+• NOTICE
+Attributes: PER (applications), KNO (observation
+techniques), PSY (human perception)
+Specializations: Specific Sense, Night-time, Forward
+Observing, Tracking
+Possessed By: Researchers, Soldiers, Police, Investigators
+Notice is the ability to perceive details that may be
+otherwise overlooked. This includes finding a clue hidden
+in a crime-scene, spotting a face among the crowd,
+reading the fine print on a legal document, etc.
+At higher levels, a careful observer may use the Skill to
+empathize with the person he is observing and can
+sometimes make prudent assumptions about the inner
+workings of the target. The pre-modern specialization of
+this Skill is Tracking, which can also be used for hunting.
+• PERSONAL FLIGHT DEVICE
+Attributes: AGI (release timing), FIT (freefall maneuvers),
+KNO (packing, evaluating equipment)
+Specializations: High-Altitude, High-Wind, Night-Time
+Possessed By: Skydivers, Paratroopers, Pilots
+The Personal Flight Device Skill allows the character to
+use and control a parachute or similar personal flight
+device, such as a hang-glider, jet pack or grav belt. It
+also includes the ability to prepare and pack parachutes,
+make minor repairs to equipment, and estimate wind
+speed and evaluate weather patterns that might affect the
+drop or flight.
+• PERFORMANCE ART (SPECIFIC)
+Attributes: CRE (creative process), FIT (art involving body),
+INF (acting), KNO (techniques)
+Specializations: improvised, performance, genre, tragedy,
+comedy
+Possessed By: Sophisticates, Professionals, Youth
+This is a catch-all Skill for performance art: the number of
+arts practiced doubles at each Cpx (Cpx 1 is one, Cpx 2
+is two, Cpx 3 is four, and so on). Each art is a separate
+field (theatrics/acting, danse, music, mime, singing, etc.).
+The Skill covers all aspects of live or recorded
+performance. This includes the ability to produce, direct,
+act or otherwise work in these media. If a character
+attempts to use his Skill to do a performance in a related
+but unfamiliar field, a -2 penalty is imposed on the test.
+The Treshold of Art tests is chosen by the player — this is
+the quality aimed for by the object or representation. A
+low Threshold indicates that the artist plans to do
+something correct, nothing more, while a high Treshold
+means the artist aims to create a masterpiece.
+Performance Arts (Theatrics) also allows an actor to
+impersonate someone else through the use of disguise,
+voice and mannerism mimicry, provided that the
+impersonator knows enough about the subject to make
+the act convincing.
+• PILOT (SPECIFIC)
+Attributes: AGI (control), PER (grabbing items, for mecha),
+KNO (using onboard systems)
+Specializations: Vehicle Model
+Possessed By: Combat Crew, Joe Average, etc.
+The Pilot Skill is the ability to control the movements of a
+vehicle. Although most modern characters are assumed to
+have a license and drive competently (unless from a fantasy
+background, which use Riding instead), to take a Skill in this
+is unusual except for characters who use such vehicles often.
+There are five areas of knowledge: Mecha (for humanoid
+or limbed vehicles), Ground (for wheeled, tracked and
+hover vehicles), Naval (for boats and subs), Air (ballons,
+aircraft) and Space. If a character attempts to use his Skill
+to control a vehicle type other than one with which he is
+familiar, a -2 penalty is imposed on the test.
+
+! A. Reference Section:
+Character Skills
+!226
+!
+ 
+Reference Section:
+Character Skills
+• RIDING
+Attributes: AGI (controlling animals), FIT (riding stunts),
+KNO (animal care)
+Specializations: Specific Animal, Racing, Dressage
+Possessed By: Equestrian Athletes, Ranchers
+The Riding Skill measures the character’s ability to control a
+riding animal (which have their own Riding modifiers, depending
+on their training — see section 6.2). It is used if any difficult type
+of maneuver is wanted from the mount. The Skill also includes
+a basic ability to care for the animal. Characters from fantasy
+background are assumed to be able to ride competently
+(modern and future characters use Pilot: Ground instead).
+• SEDUCTION
+Attributes: APP (first impression), INF (seduction), KNO
+(techniques)
+Specializations: Specific Sex, Eye Contact, Specific
+Seduction Style
+Possessed By: Con Artists, Fashion Models, Gigolos,
+Prostitutes
+Seduction measures a character’s ability to sway others by the
+judicious use of looks and sex-appeal. The Skill includes an
+understanding of what people find attractive and the ability to
+adapt to different preferences. It is possible to get any desired
+information from a seductee before any serious things occur,
+but beware: sometimes, the roles of the people involved are
+reversed, and the seducer may become the seductee.
+• SLEIGHT-OF-HAND
+Attributes: AGI (grabbing items), PER (spotting/evaluating
+moves)
+Specializations: Pickpocket, “Magic” Tricks, Shoplifting
+Possessed By: Petty Criminals, Stage Magicians, Spies
+The Sleight-of-hand Skill is a measure of how good the
+character is at the subtle hand movements required by
+activities like pickpocketing or stage magic. Abilities such
+as palming and concealing small objects upon one’s
+person are covered by this Skill.
+• SMALL ARMS
+Attributes: AGI (combat), KNO (maintenance), PER (sniping)
+Specializations: Pistols, Rifles, SMGs
+Possessed By: Soldiers, Police, Criminals, Hunters
+The Small Arms Skill is a measure of the character’s
+proficiency with man-portable firearms such as pistols,
+rifles, and submachine guns. The Skill includes basic
+knowledge of the maintenance procedures. This is another
+popular weapon-related Skill, and many small arms are
+available in most modern and future settings (though at
+various levels of legality).
+• SOCIAL SCIENCES (SPECIFIC)
+Attributes: CRE (applications), KNO (techniques), INF
+(dealing with people)
+Specializations: Various Fields of Study
+Possessed By: Professors, Students, Researchers
+Social Sciences is a catch-all Skill that includes any of the
+“humanities” sciences dealing with people and societies:
+anthropology, history, law, linguistics, literature, sociology,
+political science, philosophy, or psychology (the latter
+being high-Level/Cpx in Social Sciences).
+A specializationmust be chosen before a character can
+go above Level or Complexity 3 in this Skill. If a character
+attempts to use his Skill in a field other than one with which
+he is familiar, a -2 penalty is imposed on the test.
+• STEALTH
+Attributes: AGI (move silently), CRE (hide), PER (spotting),
+KNO (evaluating moves)
+Specializations: Urban, Indoors, Jungle, Woodlands,
+Nighttime, Desert, Winter
+Possessed By: Thieves, Spies, Soldiers, Police,
+Commandos, Hunters, Snipers
+The Stealth Skill is the ability to go undetected, be it by
+human observers or by electronic surveillance devices. It
+also represents a character’s proficiency at using make-
+up, special clothing, and netting to conceal himself or other
+objects by matching the texture and color scheme of the
+surrounding terrain. The Skill allows the user to set
+ambushes or to dissimulate himself from his ennemies.
+He can also hide constructs, such as vehicles (Cpx 2),
+bunkers (Cpx 3) or even bases (Cpx 4), from visual
+detection: apply the MoS of the camouflage effort to the
+Threshold of any test to spot the concealed item or person.
+• STREETWISE
+Attributes: INF (interaction with people), PER (spotting
+opportunities), KNO (contacts)
+Specializations: Gangs, Organized Crime, Homeless,
+Prostitutes, Getting Item (Specify)
+Possessed By: Urban Residents, Gang Members,
+Criminals
+Streetwise is a catch-all Skill for interacting with the
+“shadier” elements of society and includes basic
+knowledge of the underground of a city the character is
+familiar with. Obtaining illicit drugs, purchasing illegal
+firearms or just finding out what is going on through non-
+standard channels, are all activities which Streetwise
+encompasses.
+• SURVIVAL (SPECIFIC)
+Attributes: CRE (creating), PER (spotting), KNO
+(techniques)
+Specializations: Jungle, Desert, Winter, Urban, Foraging,
+Shelter
+Possessed By: Soldiers, Campers, Survivalists
+The Survival Skill allows the character to survive in hostile
+environments, such as jungles or deserts. Survival includes
+hunting, foraging, and obtaining shelter and water (space
+survival, being very different, is covered in the Zero-G Skill).
+The number of environments known doubles at each Cpx
+(Cpx 1 is one, Cpx 2 is two, Cpx 3 is four, and so on). If a
+character attempts to use his Skill to survive in an unfamiliar
+terrain, a -2 penalty is imposed on the test.
+
+2 2 7 "
+! A. Reference Section:
+Character Skills
+!
+Reference Section:
+Character Skills
+• TEACHING
+Attributes: CRE (teaching), KNO (techniques)
+Specializations: Any other skill
+Possessed By: Professors, Combat Instructors
+Teaching is the Skill of transmitting knowledge and
+expertise to others in a clear and coherent fashion. It is a
+Skill which few Player Characters who are not from an
+instructional background possess, since most PCs spend
+their lives learning Skills necessary for their chosen
+profession and are generally ready to retire by the time
+they are interested in passing their knowledge along. See
+Experience, section 2.5, for advanced use of this Skill.
+• TECHNICAL SCIENCES (SPECIFIC)
+Attributes: CRE (applications), KNO (techniques)
+Specializations: Various Fields of Study
+Possessed By: Professors, Students, Researchers,
+Designers
+Technical Sciences is a catch-all Skill that includes any of
+the sciences dealing with the technical abilities required
+to operate, repair, maintain and create any equipment of
+the specified type not covered elsewhere in the Skill
+descriptions. This includes computer (system use,
+maintenance, programming, system admin, neural nets),
+electronics (electronic devices, security systems, lasers)
+and mechanics (all mechanical and structural devices —
+automotive, industrial, locks, hydraulics).
+A specializationmust be chosen before a character can
+go above Level or Complexity 3 in this Skill. If a character
+attempts to use his Skill in a field other than one with which
+he is familiar, a -2 penalty is imposed on the test.
+• TINKER
+Attributes: CRE (creating), PER (spotting opportunities),
+KNO (techniques)
+Specializations: Vehicles, Weapons, Appliances,
+Computers
+Possessed By: Inventors, Technicians, Hobbyists
+The Tinker Skill allows a character to build or modify
+machinery under time constraints (jury-rig a temporary
+repair), poor conditions (lack of proper tools) or to modify
+equipment in novel and desperate ways (install a car
+engine to power a boat). Items built or modified using this
+Skill, rather than the proper Technical Skill(s), will only last
+as long as needed, and then fall apart; if used by anyone
+else, they also fall apart. A new Tinker test against the
+creation Threshold must be made whenever the item is
+pushed or takes damage; if failed, the item suffers a
+malfunction that requires one full-round action to fix. If
+Fumbled, the item falls apart.
+• THROWING
+Attributes: AGI (striking targets), KNO (evaluating
+distances)
+Specializations: Knives, Javelins, Balls, Grenades, Darts
+Possessed By: Soldiers, Game Players, Athletes
+The Throwing Skill is the ability to accurately throw an
+object at a target. It is the Skill used when throwing
+grenades and other offensive weapons. The sports and
+activities which use this Skill are too numerous and varied
+to mention.
+• TRIVIA/LORE (SPECIFIC)
+Attributes: varies, but usually KNO
+Specializations: Specific sub-category of the Trivia/Lore
+category
+Possessed By: Gamers, Fans, Socialites
+The Trivia (Lore, for pre-modern settings) Skill covers the
+ability to recall knowledge on a very specific topic. A field
+of knowledge must be chosen: it can include such things
+as games, medieval history, cars, etc. A successful Skill
+test produces a bit of obscure yet useful information
+relevant to the situation at hand.
+• VISUAL ART (SPECIFIC)
+Attributes: CRE (creative process), KNO (techniques)
+Specializations: improvised, medium
+Possessed By: Sophisticates, Professionals, Youth
+This is a catch-all Skill for visual art: the number of arts
+practiced doubles at each Cpx (Cpx 1 is one, Cpx 2 is
+two, Cpx 3 is four, and so on). Each art is a separate field
+under the same Skill (calligraphy, painting, drawing,
+sculpting, pottery, etc.). If a character attempts to use his
+Skill to do a performance in a related but unfamiliar field,
+a -2 penalty is imposed on the test.
+The Treshold of Art tests is chosen by the player — this is
+the quality aimed for by the object or representation. A
+low Threshold indicates that the artist plans to do
+something correct, nothing more, while a high Treshold
+means the artist aims to create a masterpiece.
+• ZERO-G
+Attributes: FIT (moving about), KNO (evaluating moves,
+suit procedures)
+Specializations: Rapid Movements, Delicate Movements,
+Melee, Ranged Combat
+Possessed By: Anyone living in space
+Zero-G reflects the ability of the character to move about
+and perform actions in weightless or micro-gravity (under
+0.1 g) environments. The Skill includes basic knowledge
+of vacuum suit procedures; in an emergency, a person
+with this Skill can instruct another individual in the
+rudimentary use of the suit. It also includes space survival
+techniques, such as how to work an airlock, patch a hole
+or use an emergency evacuation pod.
+For combat in weightless or micro-gravity (under 0.1 g)
+environments, the lowest Skill level of either Zero-G or the
+usual combat Skill (Hand-to-Hand, Melee, Throwing,
+Archery or Small Arms) is used. The changes in balance,
+momentum and a host of other details will turn a deadly
+warrior into a slowly drifting corpse without proper training.
+
+! B. Reference Section:
+Character Perks
+!228
+!
+ 
+Reference Section:
+Character Perks
+• ACCELERATED HEALING
+Thanks to some natural vigor, the character heals faster
+than other people. The normal healing rules are used (see
+section 3.5), but the character needs only three-quarters
+of the required time. Accelerated Healing has no
+downside.
+• ACUTE SENSES (SPECIFIC)
+Hearing: The character has excellent hearing and tends
+to notice faint or high-pitched sounds more readily than
+other people. He gets a +1 modifier for Notice checks
+based on hearing. The downside is that sudden loud
+noises (like a nearby explosion) can momentarily deafen
+a character.
+Sight: The character has sharp eyes and tends to notice
+faraway or small items more readily than other people. He
+gets a +1 modifier for Notice checks based on vision. The
+downside is that sudden bright lights (stepping out of a
+dim area into sunlight) can momentarily blind a character.
+Smell/Taste: The character has a sharp nose or palate
+and can readily identify odors and tastes. He gets a +1
+modifier for Notice checks based on smell or taste.
+• AMBIDEXTROUS
+The character can use either hand for tasks requiring
+manual dexterity without the “Using Off Hand” penalty,
+though he may not attack twice per action. Ambidextrous
+has no downside.
+• ANIMAL COMPANION
+The character has a faithful pet, steed or companion. This
+animal is both well trained and emotionally bonded to the
+character, meaning it will stay by his side other than
+(perhaps) the occasional romp through the neighborhood.
+The downside of an Animal Companion is responsibility:
+pets must be fed, walked and housed. Cost depends on
+the animal’s size (1 for a small pet like a ferret, 2 for a
+medium one like a dog, 4 for a large one like a gorilla) and
+intelligence (1 if untrainable, 2 if capable of obeying basic
+commands, 4 if trained and intelligent).
+• ANIMAL KINSHIP
+The character has a “touch’” with animals. Domesticated
+animals will respond well to training and instructions,
+granting the character a +1 to all Animal Handling or Riding
+Skill tests. Wild animals are less likely to attack the
+character and may respond to some basic commands
+once the character makes a basic connection with the
+beast (specific details are left to the Gamemaster).
+• AUTHORITY
+The character represents the authorities. He could be a
+policeman, a secret agent, a Military Police agent, etc.
+The effect of this Perk depends largely on the
+circumstances — policemen have no extra authority
+outside their jurisdiction. The potential downside of
+Authority is responsability: the character will likely be
+subject to a code of conduct, have to report for duty or
+follow orders.
+• COMMON SENSE
+The character always considers the outcomes of his
+actions first. The Gamemaster gives the player a warning
+when the character is about to do something foolish, even
+if there is no indication of danger. The GM does not have
+to give any details. Common sense has no downside.
+• CONNECTIONS
+The character has one or more useful connections. These
+can be close allies who would be willing to help the
+character no matter what, or more casual acquaintances
+who are especially useful. This Perk does not cover casual,
+personal relationships (such as a lover, friends and
+neighbors) unless they are particularly useful or dedicated.
+Allies are connections who are willing and able to help
+the character, even in dire circumstances, without asking
+for much in return (at least not immediately). Examples
+include a brother who is also a police sergeant.
+Contacts are connections who will not necessarily go out of
+their way to help the character without promise of
+recompense. They generally provide useful information or
+equipment, but will not come to the rescue at their own risk.
+Typical contacts include a snitch, a smuggler or a forger.
+The potential downside of Connections is reciprocity.
+Contacts will expect either to be paid in cash or by being
+owed favors. Allies are less demanding, but are likely to
+call for help when they need it. Turning down an allies call
+for help is a sure way tolose that ally.
+• DOUBLE JOINTED
+The character’s entire body can contort and flex in
+seemingly impossible ways. The character can fit into
+spaces half the size of what regular people can, as well
+as being able to easily slip out of restraints unless special
+precautions are taken (+1 to escape tests).
+• FAKE IDENTITY
+The character has more than one identity. He has a
+complete, fully-detailed life on the side, with separate
+dwelling, job and identification papers. People attempting
+to track the cover identity back to the character will find it
+very difficult to do. The potential downside of Fake Identity
+is maintenance. The character needs to spend time and
+money keeping his alter ego current, doing such things
+as making bank transactions, subscribing to newspapers
+or even making appearances as that person.
+• FAMOUS
+The character is famous. He can be a well-known artist or
+a political figure. In certain situations, famous will work for
+the character — people will readily help him or provide
+access to restricted areas. Fame’s potential downside is
+
+2 2 9 "
+! B. Reference Section:
+Character Perks
+!
+Reference Section:
+Character Perks
+• LONGEVITY
+The character’s lifespan is longer than that of a normal
+person’s — past mid-life, he will always look and feel like
+someone half his age. Longevity’s only downside is the
+envy of others and outliving friends and loved-ones.
+• LUCKY
+The character is exceptionally lucky. Once per session,
+the Player may elect to reroll a Fumble. Alternatively, he
+can choose to switch the modifier of a single die roll once
+per session,after the test has been made — for example,
+turning a -3 into a +3.
+• MACHINE-TOUCH
+The character is exceptionally good with machines and
+has an uncanny understanding of their workings. Any task
+to repair machinery and devices is considered to be
+Complexity 1, regardless of the device.
+• PERFECT PITCH
+The character always knows if something is in tune and
+gains a +1 bonus to any musical or sound-related task.
+• PHOTOGRAPHIC MEMORY
+The character has an excellent memory. Whenever a
+Knowledge roll is made to recall information previously
+seen, heard or read, the rating of the Perk is added to the
+dice roll. The downside is that traumatic events can also
+be recalled: a character with the Flashback Flaw will have
+a Threshold of 5 instead of 4.
+• PROPERTY
+The character owns a substantial and useful piece of
+property. This could include a one-of-a-kind weapon, a
+nightclub, a ship, or a mansion used as a headquarters.
+This Perk should only be used for key story props and
+settings — the owner of a lavish cruise boat should have
+this Perk, but an accountant with a condo and car does
+not need it. The downside of property is upkeep: ships,
+dwellings and clubs must be maintained and staffed, and
+items can be stolen or confiscated.
+1 or 2 point objects are small items: a leading-edge high-
+powered computer for a hacker, or a tricked-out rifle for a
+hitman. Higher costs are for bigger items: 3 (small vehicle)
+to 6 (nightclub, etc.) to 9 (large estate).
+• QUICK LEARNER
+The character learns quite rapidly and can gain extra
+benefit from tutors who try and impart their knowledge
+upon them. Quick Learners subtract one from the number
+of months of tutelage required to learn a Skill from a tutor,
+although the minimum remains one week. Those teaching
+a Quick Learner also get a +1 bonus to their Teaching
+Skill test to reduce the XP cost of a Skill increase. Quick
+Learner has no downside.
+lack of anonymity. The character may be recognized
+wherever he goes (Notice vs. 8 - cost of Perk), and may
+be watched by the press and other interested parties. This
+can make subtlety or stealth very difficult.
+• FAVOR
+Someone important or a powerful group owes the
+character one or more favors. This debt is real and known
+by both the character and the indebted party and is likely
+to be honored, all things being equal. The character may
+call in this debt when convenient, although story elements
+may limit his opportunity to do so. The downside of a Favor
+is resentment: if the character is not careful, the indebted
+party may feel he is being taken advantage of.
+Financial Debts Debts of Honor Point Cost
+20,000 credits key favor 1
+50,000 credits multiple favors 2
+75,000 credits major boon 3
+150,000 credits multiple boons 4
+500,000 credits life boon 5
+• IMMUNITY
+The character is immune to one, and only one, specific
+drug, poison or disease that shows up in the setting. This
+Perk can be acquired: it is possible to build an immunity
+to toxins or diseases. Immunity only has a downside if it is
+a beneficial drug the character is immune to.
+• INFLUENCE
+The character is either a recognized authority or carries
+significant prestige in a certain social, geopolitical or
+professional sphere. Although this is not a guarantee that
+the character will get his way all the time, his opinion will
+be listened to (+1 to INF tests for each 2 points of Perk),
+and he can find others to support him if need be. Typical
+areas of influence include: a city, the military, big business,
+the media and a government. Influence’s downside is
+notoriety: others in the same field may seek the character
+out or target him.
+• INTUITION
+The character gets uncanny hunches and bursts of
+inspiration, and the Gamemaster can allow the player to
+make CRE rolls whenever he thinks the character might
+get one, even if there are no obvious clues present.
+Fumbled CRE rolls for Intuition result in extremely poor
+guesses, and are Intuition’s only downside.
+• LIGHT SLEEPER
+The character sleeps lightly and awakens at the slightest
+noise. He cannot be surprised when sleeping and always
+gets a normal defense roll. Light Sleeper has no downside,
+other than that it may be difficult to get a good night’s
+sleep in a noisy environment.
+
+! B. Reference Section:
+Character Perks
+!230
+!
+ 
+Reference Section:
+Character Perks
+• RADIATION RESISTANCE
+The character is exceptionally resistant to radiation
+poisoning. When making Health tests for status, he gets a
++1 modifier to his dice roll.
+• RANK
+The character is a recognized member of a powerful
+military, paramilitary or civilian organization. This station
+will give him authority in certain circles as well as access
+to resources, contacts and equipment.
+Military Rank indicates membership in an organized
+military force with authority from a nation. Paramilitary Rank
+indicates membership in a force that wields armed might
+and is organized along military lines, but does not serve
+as the main defense force of a nation (such as police or
+militia). Para-military forces may or may not operate with
+government authority. Civilian Rank indicates membership
+in an organized and powerful non-military organization,
+such as a powerful zaibatsu, a government department
+or an organized crime family. Civilian Rank is categorized
+according to generic stations and should be purchased
+only if membership confers a real benefit. Note that military
+rank has a fixed cost, but civilian and paramilitary rank is
+provided with a cost range depending on the power and
+influence of the group.
+The potential downside of Rank is responsibility. Members
+of the military or other powerful groups have to follow
+codes of conduct, abide by regulations and follow orders
+from superiors.
+Rank Military PM/Civilian
+Enlisted/Member 2 0-2
+Junior Nco/Veteran Member 4 2-4
+Senior Nco/Lieutenant 6 4-6
+Junior Officer/Assistant-Director 8 6-8
+Senior Officer/Director 10 8-10
+General Officer/Senior Director 12 10-12
+• SENSE OF DIRECTION
+The character seems to have a compass in his head. He
+always knows where he is located and never seems to
+get lost. In space, characters with the 3D Sense of
+Direction can always figure their orientation in relation to
+a spacecraft, station or nearest celestial body. Sense of
+Direction has no downside.
+• SENSE OF TIME
+The character always knows what time it is and always
+know how much time has passed from any one event to
+another.
+• STRONG IMMUNE SYSTEM
+Characters with a Strong Immune System are especially
+resistant to diseases and the effects of drugs. These
+characters get a +1 to Health tests made against the
+contagion and virulence of diseases, as well as the
+Potency of a drug or toxin (seeDisease, section 6.3). A
+Strong Immune System has no inherent downside other
+than the fact that the character will also resist beneficial
+drugs, such as analgesics.
+• SUBORDINATES
+The character has one or more faithful servants. These
+subordinates are professionally bound to serve the
+character in a well-defined way, but do so above and
+beyond the call of duty. The player and Gamemaster
+should develop the conditions of servitude as well as the
+identities of all subordinates; they need not be fully statted
+out, but core competences should be determined. Typical
+subordinates include: menservants, bodyguards, and
+executive assistants. The downside of Subordinates is
+responsibility: they must often be paid and they may
+legitimately ask for assistance from time to time.
+• THICK-SKINNED
+The character has a high pain Threshold, allowing him to
+resist injuries that would put lesser people out of
+commission. Thick-skinned characters add five points to
+their Stamina and recalculate their damage Thresholds
+accordingly. Thick-Skinned has no downside.
+• WEALTHY
+The character has money. Lots of it. Exactly how much
+depends on the characteristic’s rating. The rating is
+multiplied by 10,000 to know how many credits the
+character can get within the hour, provided he is within
+communication range of a financial institution (any light
+speed delays, if proper for the campaign, are added to
+the hour). Each use of Wealth temporarily reduces the
+rating by one for a full week, and further uses will continue
+to reduce the rating and “reset the clock” for recuperating
+wealth.
+For example, a character with level 3 Wealth draws 30,000
+credits on Monday, so his Wealth is reduced to 2. The
+next Thursday he withdraws another 20,000 credits (his
+new maximum). This means his Wealth is considered 1
+until the following Thursday, when it climbs to 2. It will return
+to level 3 the Thursday after that. Optionally, characters
+can have non-renewable Wealth that indicates a fixed
+amount of cash that isn’t making money for itself. The
+Wealth reduction from spending in this case is permanent.
+The potential downside of Wealth is responsibility. The
+wealthy must maintain their fortunes, taking at least some
+interest in their holdings. Tax audits and lawsuits may also
+be targeted at wealthy characters.
+
+2 3 1 "
+! C. Reference Section:
+Character Flaws
+Reference Section:
+Character Flaws
+• ADDICTION
+The character is psychologically or physically addicted
+to something. It might be drugs, it might be adrenaline, it
+might even be sex, but he needs regular doses of it. The
+character is considered eitherdependent oraddicted to
+a drug. Characters “addicted” to an activity (sex, danger,
+etc.) are considered dependent on that activity, with a
+Dependence Rating of 5. For more details seeAddiction,
+section 6.3. Note that a character can be both addicted
+and dependent on the same drug.
+This Flaw also covers any kind of physical or mental
+deficiency (such as ulcers, heart condition, severe
+depression or paranoid schizophrenia) that must be
+controlled through regular use of medication. Failure to
+take regular doses can lead to symptoms similar (in terms
+of game modifiers) to an addict going through withdrawal.
+The player and Gamemaster can decide whether this
+version of the Flaw is permanent or if it can be cured.
+• AGE
+The character is either unusually young or old, which may
+impose limits on his freedom of movement and on how
+seriously others take his opinions. Young characters are
+considered to be teenagers (13-16 years for humans) or
+younger, and will have a great deal of trouble being taken
+seriously by adults, may have to attend school and may
+not be able to get into adult establishments like bars. Old
+characters are considered senior citizens (65+ for
+humans), may also have problems with respect and may
+have health problems. The potential upside of Age is
+attitudes: juvenile misbehavior may be forgiven, and older
+characters may benefit from some respect from the young.
+Young characters may have a maximum BLD and KNO of
+0 and may not have any Skills beyond Level or Cpx 3. Old
+characters may have a maximum AGI and FIT of 0.
+• AMNESIAC
+The character has no recollection of his life up to a few
+days or weeks ago. This Flaw should be severely
+monitored by the Gamemaster, because it can easily play
+havoc with a campaign. The potential upside of Amnesia
+is unknown allies or even Skills (which can be paid out of
+the XPs given for the session). Some friends from the
+character’s past life may be willing to help them, although
+some enemies may well be close behind.
+• ANIMAL ANTIPATHY
+Something about the character is disturbing to animals,
+both domestic and wild. Domesticated animals are less
+likely to respond to commands or stay calm in his presence
+and he suffers a -1 penalty to Animal handling and Riding
+tests. Wild animals are more likely to attack the character
+and, even if they don’t attack, will respond aggressively
+to his presence. Animal Antipathy has no upside;
+characters with this Flaw may have one Animal Companion
+(for some reason, the Antipathy does not work against that
+one particular animal).
+• BAD LUCK
+The character is constantly plagued by bad luck. Once
+per game, an opponent may reroll a Fumble. Alternatively,
+the Gamemaster can choose to switch the result of a die
+roll once — for example, turning a +3 into a -3. The
+Gamemaster, however, may not use this to hurt or kill the
+character outright, only to make his life miserable.
+• BELIEFS
+The character strongly believes something that is generally
+not accepted and can expose him to ridicule in the
+mainstream: the Earth is hollow and contain alien artifacts,
+there are ghost ships sailing in uncharted oceans, etc.
+This belief could even be dangerous, leading the character
+to take huge risks, such has heading out for a “hollow
+asteroid ship” with no supplies. The only upside is that
+the character may attract allies who share his convictions,
+although having delusional conspiracy theorists as allies
+is at best a mixed blessing.
+• BLOODLUST
+The character is either inherently mean and vicious or
+suffers from a lack of control due to desensitization or
+dehumanizing training. When in combat, he will attempt
+to kill his opponent by any means possible. He’ll never
+accept surrender, nor will he surrender or retreat himself.
+When prisoners must be taken, they live only as long as
+they are useful. Characters suffering from Bloodlust who
+wish to overcome their deadly instincts must pass a WIL
+test against a Threshold of 5.
+• CODE OF HONOR
+The character lives by a code of honor. The player and
+Gamemaster should define this code in terms of how
+stringent it is and how seriously the character takes it.
+Note that “honor” can mean many things to many people,
+so it may take some time to decide exactly what this code
+entails. A Code of Honor’s potential upside is respect:
+characters who behave in a consistently honorable manner
+— especially when it puts them at a disadvantage — may
+gain the trust and admiration of other honorable people.
+• CRIMINAL BACKGROUND
+At some point in his past, the character committed a
+criminal act. He may have done some prison time or gotten
+away free, but the incident continues to haunt him in some
+way. This could entail a criminal record making it hard to
+get a job or respect or “old friends” continuously appearing
+in awkward situations. Criminal Background’s potential
+upside is contacts: at times these “old friends” can be
+somewhat useful.
+
+! C. Reference Section:
+Character Flaws
+!232
+!
+ 
+Reference Section:
+Character Flaws
+• CURSE
+The character is under a curse, whether real or imagined.
+Regardless, it should affect the character in tangible ways.
+This characteristic is more akin to a tragic destiny than to
+a supernatural “hex.” The player should choose one
+particular aspect of the character’s life (love life, job,
+friendships, finances, etc.) that continuously refuses to
+“work out.” Curse cannot be tied to any Skill tests.
+• DEBT
+The character owes someone a substantial debt, which
+can include money but also debts of honor or patronage.
+The person to whom the character is indebted may be
+tolerant or demanding, but the debt is a recurrent drain
+on the character’s time or resources. The potential upside
+of a debt is a contact: the person who the character owes
+may be able to be of some help occasionally, although it
+usually means ending up further in debt.
+Financial Debts Debts of Honor Point Cost
+20,000 credits key favor -1
+50,000 credits multiple favors -2
+75,000 credits major boon -3
+150,000 credits multiple boons -4
+500,000 credits life boon -5
+• DEDICATED
+The character is dedicated to a certain cause. He will
+follow its ideals whenever possible. The more extreme form
+of this characteristic is fanaticism. Dedication’s potential
+upsides are contacts and respect. Others dedicated to
+the same cause (or who respect the cause) may be willing
+to help a truly dedicated character, although they may
+also expect such help themselves.
+• DEPENDENT
+The character must take care of someone: an adopted
+child, a relative, etc. This responsibility includes care,
+protection and friendship and should be quite demanding
+on the character’s schedule. A Dependent’s potential
+upside is aid: the other character may be helpful in certain
+situations.
+CP/SP* total Cost
+20/30 -1
+10/30 -2
+10/20 -3
+5/10 -4
+*Character Points/Skill Points
+• DESTITUTE: The character doesn’t have much money
+and has no secure source of income. Characters who
+obtain such a source during play will find forgotten debts
+catching up with them until they pay off this Flaw in XPs.
+Poor characters cannot afford anything except the basics
+without passing Streetwise tests or making arrangements
+through roleplaying.
+• FLASHBACKS
+The character has sudden flashbacks of his past,
+especially in stressful situations. The Player and
+Gamemaster should define just what these flashbacks are
+and what trauma they stem from. Specific triggers fro the
+flashbacks can also be chosen. Characters experiencing
+flashbacks must make a WIL or PSY test against a
+Threshold of 4 to act. Flashbacks have no upside.
+• GOAL
+The character has a powerful, all consuming goal to which
+he is dedicated to the point of obsession. The player and
+Gamemaster should define this goal, making sure that it
+is largely unattainable, giving the character a strong
+motivation. This is mostly a roleplaying Flaw, but
+Gamemasters may request WIL tests if a character wishes
+to do something that would hinder reaching the goal (such
+as letting a bad guy go free to help a friend).
+• HEAVY SLEEPER
+The character sleeps like a brick and is very hard to
+awaken, and has a tendancy to oversleep. Heavy Sleepers
+must make PER or Notice tests with a -3 penalty to see if
+they awake in a dangerous situation.
+• INFAMOUS
+The character has a bad reputation. It may or may not be
+deserved, but it sticks to the character like the proverbial
+bad penny. Infamous can denote unpleasant reputations
+(e.g. a notorious cheat) or something more terrifying (e.g.
+an underworld assassin). Infamy’s potential upside is fear:
+those with terrible reputations may be intimidating.
+• INSOMNIAC
+The character cannot go to sleep or is plagued by constant
+nightmares. He is constantly tired (if using the Fatigue
+rules, add an additional -1 per missed night of sleep).
+Optionally, the Gamemaster may impose a -1 penalty for
+actions that require endurance and prolonged
+concentration.
+• LAME
+The character has a medical problem in one or both legs.
+This condition may be temporary, the result of an accident
+for example, or it may be permanent, if the character cannot
+have his legs fixed for any number of reasons. The character
+suffers a -1 modifier to movement-related Skill checks, and
+cannot perform activities that require jogging or faster
+movement.
+• LIAR
+The character generally does not tell the truth. Whenever
+he speaks, he will lie if it is practical or gets him off the
+hook. A more serious version of this is the full-blown
+mythomaniac, who cannot tell the truth and keeps
+inventing stories about himself and the people around him.
+
+2 3 3 "
+! C. Reference Section:
+Character Flaws
+!
+Reference Section:
+Character Flaws
+• MECHANICAL INEPTITUDE
+The character is “all thumbs” when it comes to mechanical
+or electronic devices. Any task to use or repair machinery
+and devices is considered to be Complexity 3, regardless
+of the device.
+• MOTION SICKNESS
+The character gets sick and nauseous when exposed to
+feelings of movement, such as when riding in a car or
+floating in free fall. Whenever the character finds himself
+in such an environment, he gets a penalty equal to the
+rating of this Flaw to all tests.
+• NEMESIS
+The character has a long-time enemy or rival. Whenever
+they meet, they engage in contest of wit or plain combat.
+If the character gets rid of his Nemesis, another one will
+pop up to replace him until the point cost is paid back (a
+vengeful lover? younger sibling?). The player and
+Gamemaster should cooperate to create the Nemesis and
+determine how the rivalry began. Nemesis’ potential upside
+is allies: then enemy of your enemy may be your friend.
+• OBLIGATION
+The character is under some kind of obligation. He may
+have a steady job and be required to show up on schedule,
+or he can have to obey certain persons. The Player and
+the Gamemaster should cooperate to define the scope of
+the obligations and the reasons why the character is under
+orders. Note that characters who have the Authority or
+Rank Perks cannot purchase Obligation tied to the same
+employment that confers these benefits — the obligations
+are just part of the territory. They can, however, have other
+Obligations. Obligations have a potential upside in
+contacts: superiors and fellow employees can occasionally
+be of help.
+• ONE-ARMED
+The character is missing an arm. This condition may be
+temporary, the result of an accident for example, or it may
+be permanent, if the character cannot have it replaced
+for any number of reasons. The character suffers a -1
+modifier to any manipulation-related Skill checks, and
+cannot perform activities that require both hands.
+• PARANOID
+The character believes that some people are in league to
+cause him harm. Anything bad that comes to him is
+automatically the result of this conspiracy. Anyone refusing
+to believe in said conspiracy is automatically part of it and
+probably out to get the character — or so he thinks.
+• PHOBIA
+The character has an unreasonable fear of something. It
+might be a certain item, a situation, a color, or an animal.
+Mild Phobias mean that the character suffers a -1 action
+penalty when in the presence of the object of his phobia,
+due to nervousness and distraction.Severe Phobias mean
+that the character must pass a WIL test against a Threshold
+of 4 to function at all in the presence of the object; even
+then, he suffers a -1 action penalty. Gamemasters can
+adjust the cost of the Perk to -1/-3 for uncommon objects
+of Phobia (water in a desert-based campaign, for example).
+• POOR SENSES (SPECIFIC)
+Hearing: The character has especially poor hearing
+(although he is not deaf). He has trouble distinguishing
+sounds that are faint or muffled. The character suffers a -
+1 penalty to all Notice tests related to hearing.
+Sight: The character has especially poor eyesight
+(although he is not blind). He has trouble noticing details
+until they are literally right in front of him. The character
+suffers a -1 penalty to all Notice tests related to vision.
+Sense of Smell/Taste: The character has trouble noticing
+odors or tastes unless they are very strong. The character
+suffers a -1 penalty to all Notice tests related to smell or
+taste. This has no upside, though the character can eat
+really bad food.
+Blind/Deaf: It is possible the character cannot hear or see
+at all. This condition may be temporary, the result of an
+accident for example, or it may be permanent, if the
+character cannot have his eyes or ears replaced for any
+number of reasons. The character suffers a -2 modifier to
+his general Notice checks, and cannot perform activities
+that require hearing (if Deaf) or sight (if Blind).
+• QUIRK
+A quirk is a small personality Flaw or habit that poses only
+minor limitations on actions. Quirks are intended as
+roleplaying aids to reward players for giving their
+characters some life. This should not be abused, however,
+so players receive extra Skill Points only for their first two
+Quirks. Common Quirks are listed below, but
+Gamemasters and players should feel free to add others
+as long as they are not severely limiting. Note that Quirks
+can include good habits (such as always giving to charity
+or taking in strangers) as long as they are mildly
+inconvenient for the character. At the Gamemaster’s
+discretion, characters who wish to suppress their Quirk
+temporarily (e.g. cowards who must run into danger) must
+pass a WIL test against a Threshold of 5.
+Common Quirks include: afraid of heights, can’t swim,
+cowardice, cruelty, curiosity, gluttony, greed, intolerance,
+lacking a sense of humor, laziness, miserly compulsion,
+overconfidence, pacifism, pride, selfishness,
+squeamishness, stubbornness, vengeance fixations, and
+miscellaneous good or bad habits.
+• RADIATION VULNERABILITY
+The character is exceptionally vulnerable to radiation
+poisoning. When making Health checks for status, he gets
+a -1 modifier to his dice roll.
+
+! C. Reference Section:
+Character Flaws
+!234
+!
+ 
+Reference Section:
+Character Flaws
+• SECRET
+The character has a dark secret in his past. The Player
+and Gamemaster should decide on the nature of the
+secret, but there should always be a good reason why
+this element must be kept hidden. It could be a criminal
+past (Criminal Background represents aknown criminal
+past), a past indiscretion, a current illicit affair, or any
+number of other damaging information. If the secret is
+revealed and the player does not pay the XP to remove it,
+then another level to the secret, or a different secret
+altogether must be chosen.
+• SICKLY
+The character has a serious ailment that impairs him in
+some way. The player and Gamemaster should define the
+illness and its symptoms. An important (if medically
+inaccurate) distinction is between degenerative and
+chronic diseases. Degenerative diseases (such as cancer)
+will only get worse if untreated, while chronic disease are
+stable but debilitating.
+• SLOW HEALING
+The character heals more slowly than other people. The
+normal healing rules are used (see section 3.5.6), but the
+character needs 50% more time to heal.
+• SLOW LEARNER
+The character has a hard time learning in a structured or
+academic environment. He still benefits from teachers, but
+less than most. A Slow Learner must add one to the
+number of months required to learn a Skill with a tutor (the
+time can still be reduced to one week by skilled teachers,
+however). Those teaching Slow Learners also suffer a -1
+penalty to their Teaching Skill test to reduce XP cost.
+• SOCIAL STIGMA
+The character is part of a social group that has a bad
+reputation. People will shun him and, in the more extreme
+case, try to harm him. The Gamemaster and player should
+cooperate to define the stigmatized group and the nature
+of the stigma.
+To eliminate this Flaw, the character must spent
+appropriate XPs, but also either prove he is no longer a
+part of the group or somehow end the stigma toward the
+group. Stigma’s potential upside is contacts: other
+members of the stigmatized group may be willing to
+cooperate for mutual benefit.
+• SPLIT PERSONALITY
+The character has two or more personalities. They are
+usually different aspects of the same person, though only
+one is in control at any time. What triggers the switch
+from one personality to the other is highly variable and
+depends on the individual. In general, stress is the most
+common trigger, but the sudden appearance of a person,
+object or situation can also serve as a trigger.
+Each personality has its own set of mental Attributes (CRE,
+INF, KNO, WIL, PSY) and its own Perks and Flaws. Ideally,
+all personalities should have the same point cost, but the
+Gamemaster may diverge from this in specific cases (if
+needed for plot purposes, for example). Player and
+Gamemaster should cooperate to create all the identities.
+• THIN-SKINNED
+The character has a low pain threshold, putting him out of
+commission on even the lightest injuries. Thin-skinned
+characters subtract five points from their Stamina and
+recalculate their Damage Thresholds accordingly.
+• WANTED
+Somebody is currently chasing the character. Whether or not
+this is justified, the character will have to face relentless, often
+heavily armed pursuers that appear at the worst time
+(Gamemaster’s choice). The player and the Gamemaster
+should cooperate to define the hunters and the reason for
+the hunt.
+Wanted usually indicates a group hunting the character or
+an individual doing so for professional reasons — a personal
+enemy is covered by the Nemesis Flaw. Especially
+masochistic players can combine Wanted and Nemesis (the
+latter usually, but not always, being the leader of the hunter
+group). Wanted’s potential upside is allies: others hunted by
+the same group may be helpful while on the run.
+• WEAK IMMUNE SYSTEM
+Characters with a Weak Immune System are especially
+vulnerable to diseases and the effects of drugs. These
+characters get a -1 penalty to Health tests made against the
+contagion and virulence of diseases, as well as the Potency
+of a drug or toxin (seeDisease, section 6.3). A Weak Immune
+System has no inherent upside other than the fact that the
+character will also be less resistant to beneficial drugs such
+as analgesics.

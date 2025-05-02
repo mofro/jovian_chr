@@ -15,12 +15,16 @@ export default class SkillManager {
      * @param {number} maxSkillPoints - Maximum skill points
      */
     constructor(skillsData, perksFlawsData, maxSkillPoints) {
-        this.skillsData = skillsData;
-        this.perksFlawsData = perksFlawsData;
+        this.skillsData = skillsData.skillsData || { categories: [], skills: [] }; // Fallback to empty data
+        this.perksFlawsData = perksFlawsData || {};
         this.maxSkillPoints = maxSkillPoints || 50; // Default to adventurous game
-        
+
+        console.log('SkillManager Constructor - skillsData:', this.skillsData);
+        console.log('SkillManager Constructor - skillsData.skills:', this.skillsData.skills);
+
         // Initialize character skills from the skills data
         this.characterSkills = this.initializeCharacterSkills();
+        console.log('SkillManager Constructor - Initialized character skills:', this.characterSkills);
     }
 
     /**
@@ -28,25 +32,34 @@ export default class SkillManager {
      * @returns {Array} Initialized character skills
      */
     initializeCharacterSkills() {
-        // Ensure we have skills data
+        console.log('skills data: ', this.skillsData);
         if (!this.skillsData || !this.skillsData.skills || !Array.isArray(this.skillsData.skills)) {
-            console.error('Invalid skills data');
+            console.error('Invalid skills data: skillsData.skills must be an array.');
             return [];
         }
-        
-        // Create character skills from skills data
-        return this.skillsData.skills.map(skill => ({
-            id: skill.id,
-            name: skill.name,
-            category: skill.category,
-            description: skill.description,
-            complex: skill.complex || false,
-            level: 0,
-            complexity: 1, // All skills start with complexity 1 for free
-            specializations: [],
-            cost: 0, // Initial cost is 0
-            relatedAttributes: skill.relatedAttributes || []
-        }));
+
+        console.log('Made it into initializeCharacterSkills: ', this.skillsData.skills);
+        return this.skillsData.skills
+            .filter(skill => {
+                // Validate required fields
+                if (!skill.id || !skill.name || !skill.category) {
+                    console.error(`Invalid skill entry: Missing required fields.`, skill);
+                    return false;
+                }
+                return true;
+            })
+            .map(skill => ({
+                id: skill.id,
+                name: skill.name,
+                category: skill.category || 'General',
+                description: skill.description || '',
+                complex: skill.complex || false,
+                level: 0,
+                complexity: 1, // All skills start with complexity 1 for free
+                specializations: [],
+                cost: 0, // Initial cost is 0
+                relatedAttributes: skill.relatedAttributes || []
+            }));
     }
 
     /**
@@ -57,7 +70,7 @@ export default class SkillManager {
         if (!this.skillsData || !this.skillsData.categories) {
             return [];
         }
-        
+        console.log('CATEGORIES!: ',...this.skillsData.categories);
         return [...this.skillsData.categories];
     }
 
@@ -176,11 +189,11 @@ export default class SkillManager {
         const used = this.characterSkills.reduce((total, skill) => {
             return total + this.calculateSkillCost(skill);
         }, 0);
-        
+
         return {
             used,
             max: this.maxSkillPoints,
-            remaining: this.maxSkillPoints - used
+            remaining: Math.max(0, this.maxSkillPoints - used)
         };
     }
 
@@ -190,6 +203,151 @@ export default class SkillManager {
      * @returns {boolean} Whether the skill can be increased
      */
     canIncreaseSkillLevel(skillId) {
+        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
+        if (skillIndex === -1) {
+            return false;
+        }
+        
+        const skill = this.characterSkills[skillIndex];
+        
+        // Maximum skill level is 5
+        if (skill.level >= 5) {
+            return false;
+        }
+        
+        // Calculate the cost of increasing the level
+        const currentCost = this.calculateSkillCost(skill);
+        
+        // Create a copy of the skill with the increased level
+        const increasedSkill = { ...skill, level: skill.level + 1 };
+        const increasedCost = this.calculateSkillCost(increasedSkill);
+        
+        // Calculate additional cost
+        const additionalCost = increasedCost - currentCost;
+        
+        // Get current skill points
+        const points = this.getSkillPoints();
+        
+        // Check if we have enough points
+        return points.remaining >= additionalCost;
+    }
+
+    /**
+     * Increase a skill's level
+     * @param {string} skillId - Skill ID
+     * @returns {boolean} Whether the increase was successful
+     */
+    increaseSkillLevel(skillId) {
+        if (!this.canIncreaseSkillLevel(skillId)) {
+            return false;
+        }
+        
+        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
+        if (skillIndex === -1) {
+            return false;
+        }
+        
+        // Increase the level
+        this.characterSkills[skillIndex].level++;
+        
+        // Recalculate cost
+        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
+        
+        return true;
+    }
+
+    /**
+     * Decrease a skill's level
+     * @param {string} skillId - Skill ID
+     * @returns {boolean} Whether the decrease was successful
+     */
+    decreaseSkillLevel(skillId) {
+        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
+        if (skillIndex === -1) {
+            return false;
+        }
+        
+        const skill = this.characterSkills[skillIndex];
+
+        // Can't decrease below 0
+        if (skill.level <= 0) {
+            return false;
+        }
+        
+        // Decrease the level
+        this.characterSkills[skillIndex].level--;
+        
+        // Recalculate cost
+        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
+        
+        return true;
+    }
+
+    /**
+     * Check if a skill complexity can be increased
+     * @param {string} skillId - Skill ID
+     * @returns {boolean} Whether the complexity can be increased
+     */
+    canIncreaseSkillComplexity(skillId) {
+        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
+        if (skillIndex === -1) {
+            return false;
+        }
+        
+        const skill = this.characterSkills[skillIndex];
+        
+        // Maximum complexity is 5
+        if (skill.complexity >= 5) {
+            return false;
+        }
+        
+        // Calculate the cost of increasing the complexity
+        const currentCost = this.calculateSkillCost(skill);
+        
+        // Create a copy of the skill with the increased complexity
+        const increasedSkill = { ...skill, complexity: skill.complexity + 1 };
+        const increasedCost = this.calculateSkillCost(increasedSkill);
+        
+        // Calculate additional cost
+        const additionalCost = increasedCost - currentCost;
+        
+        // Get current skill points
+        const points = this.getSkillPoints();
+        
+        // Check if we have enough points
+        return points.remaining >= additionalCost;
+    }
+
+    /**
+     * Increase a skill's complexity
+     * @param {string} skillId - Skill ID
+     * @returns {boolean} Whether the increase was successful
+     */
+    increaseSkillComplexity(skillId) {
+        if (!this.canIncreaseSkillComplexity(skillId)) {
+            return false;
+        }
+        
+        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
+        if (skillIndex === -1) {
+            return false;
+        }
+        
+        // Increase the complexity
+        this.characterSkills[skillIndex].complexity++;
+        
+        // Recalculate cost
+        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
+        
+        return true;
+    }
+
+    /**
+     * Decrease a skill's complexity
+     * @param {string} skillId - Skill ID
+     * @returns {boolean} Whether the decrease was successful
+     */
+    decreaseSkillComplexity(skillId) {
         const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
         if (skillIndex === -1) {
             return false;
@@ -310,149 +468,4 @@ export default class SkillManager {
     resetSkills() {
         this.characterSkills = this.initializeCharacterSkills();
     }
-}[skillIndex];
-        
-        // Can't decrease below 0
-        if (skill.level <= 0) {
-            return false;
-        }
-        
-        // Decrease the level
-        this.characterSkills[skillIndex].level--;
-        
-        // Recalculate cost
-        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
-        
-        return true;
-    }
-
-    /**
-     * Check if a skill complexity can be increased
-     * @param {string} skillId - Skill ID
-     * @returns {boolean} Whether the complexity can be increased
-     */
-    canIncreaseSkillComplexity(skillId) {
-        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
-        if (skillIndex === -1) {
-            return false;
-        }
-        
-        const skill = this.characterSkills[skillIndex];
-        
-        // Maximum complexity is 5
-        if (skill.complexity >= 5) {
-            return false;
-        }
-        
-        // Calculate the cost of increasing the complexity
-        const currentCost = this.calculateSkillCost(skill);
-        
-        // Create a copy of the skill with the increased complexity
-        const increasedSkill = { ...skill, complexity: skill.complexity + 1 };
-        const increasedCost = this.calculateSkillCost(increasedSkill);
-        
-        // Calculate additional cost
-        const additionalCost = increasedCost - currentCost;
-        
-        // Get current skill points
-        const points = this.getSkillPoints();
-        
-        // Check if we have enough points
-        return points.remaining >= additionalCost;
-    }
-
-    /**
-     * Increase a skill's complexity
-     * @param {string} skillId - Skill ID
-     * @returns {boolean} Whether the increase was successful
-     */
-    increaseSkillComplexity(skillId) {
-        if (!this.canIncreaseSkillComplexity(skillId)) {
-            return false;
-        }
-        
-        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
-        if (skillIndex === -1) {
-            return false;
-        }
-        
-        // Increase the complexity
-        this.characterSkills[skillIndex].complexity++;
-        
-        // Recalculate cost
-        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
-        
-        return true;
-    }
-
-    /**
-     * Decrease a skill's complexity
-     * @param {string} skillId - Skill ID
-     * @returns {boolean} Whether the decrease was successful
-     */
-    decreaseSkillComplexity(skillId) {
-        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
-        if (skillIndex === -1) {
-            return false;
-        }
-        
-        const skill = this.characterSkills[skillIndex];
-        
-        // Maximum skill level is 5
-        if (skill.level >= 5) {
-            return false;
-        }
-        
-        // Calculate the cost of increasing the level
-        const currentCost = this.calculateSkillCost(skill);
-        
-        // Create a copy of the skill with the increased level
-        const increasedSkill = { ...skill, level: skill.level + 1 };
-        const increasedCost = this.calculateSkillCost(increasedSkill);
-        
-        // Calculate additional cost
-        const additionalCost = increasedCost - currentCost;
-        
-        // Get current skill points
-        const points = this.getSkillPoints();
-        
-        // Check if we have enough points
-        return points.remaining >= additionalCost;
-    }
-
-    /**
-     * Increase a skill's level
-     * @param {string} skillId - Skill ID
-     * @returns {boolean} Whether the increase was successful
-     */
-    increaseSkillLevel(skillId) {
-        if (!this.canIncreaseSkillLevel(skillId)) {
-            return false;
-        }
-        
-        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
-        if (skillIndex === -1) {
-            return false;
-        }
-        
-        // Increase the level
-        this.characterSkills[skillIndex].level++;
-        
-        // Recalculate cost
-        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
-        
-        return true;
-    }
-
-    /**
-     * Decrease a skill's level
-     * @param {string} skillId - Skill ID
-     * @returns {boolean} Whether the decrease was successful
-     */
-    decreaseSkillLevel(skillId) {
-        const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
-        if (skillIndex === -1) {
-            return false;
-        }
-        
-        const skill = this.characterSkills
+}

@@ -5,7 +5,9 @@
     "Physical",
     "Social",
     "Knowledge",
-    "Space Operations"
+    "Space Operations",
+    "Artistic",
+    "Survival"
   ],
   "skills": [
     {
@@ -16,6 +18,15 @@
       "description": "The ability to care for and train various animal species. Includes knowledge of preferred foods, daily habits, and basic signs of disease.",
       "relatedAttributes": ["INF", "KNO"],
       "specializations": ["Animal Type", "Herding", "Performing Tricks"]
+    },
+    {
+      "id": "archery",
+      "name": "Archery",
+      "category": "Combat",
+      "complex": false,
+      "description": "The ability to use bows and crossbows effectively in combat.",
+      "relatedAttributes": ["AGI", "PER"],
+      "specializations": ["Longbow", "Crossbow", "Compound Bow"]
     },
     {
       "id": "athletics",
@@ -31,7 +42,7 @@
       "name": "Business",
       "category": "Knowledge",
       "complex": true,
-      "description": "The ability to manage business affairs, including finance, management, economics and accounting.",
+      "description": "The ability to manage business affairs, including finance, management, economics, and accounting.",
       "relatedAttributes": ["INF", "KNO"],
       "specializations": ["Finance", "Management", "Foreign Trade", "Accounting", "Economics"]
     },
@@ -44,7 +55,7 @@
       "relatedAttributes": ["PER", "KNO"],
       "specializations": ["Urban", "Space", "Zero-G", "Night-time", "Ambushes"]
     },
-    {
+{
       "id": "communications",
       "name": "Communications",
       "category": "Technical",
@@ -56,7 +67,7 @@
     {
       "id": "craft",
       "name": "Craft",
-      "category": "Technical",
+      "category": "Artistic",
       "complex": false,
       "description": "The ability to produce useful and artistic creations with one's hands.",
       "relatedAttributes": ["CRE", "KNO"],
@@ -72,24 +83,60 @@
       "specializations": ["Unarmed", "Melee Attacks", "Ranged Attacks", "Zero-G Combat"]
     },
     {
-      "id": "electronic-warfare",
-      "name": "Electronic Warfare",
+      "id": "demolition-traps",
+      "name": "Demolition/Traps",
       "category": "Technical",
       "complex": true,
-      "description": "The ability to operate and counter electronic systems, including ECM and ECCM.",
-      "relatedAttributes": ["KNO", "CRE"],
-      "specializations": ["Sensors", "ECM", "Communications Jamming", "Countermeasures"]
+      "description": "The ability to set, disarm, and handle explosives and traps.",
+      "relatedAttributes": ["KNO", "PER"],
+      "specializations": ["Explosives", "Traps", "Disarming"]
     },
     {
-      "id": "exo-pilot",
-      "name": "Exo Pilot",
-      "category": "Space Operations",
+      "id": "disguise",
+      "name": "Disguise",
+      "category": "Social",
+      "complex": false,
+      "description": "The ability to alter one's appearance to avoid recognition.",
+      "relatedAttributes": ["CRE", "INF"],
+      "specializations": ["Makeup", "Costumes", "Impersonation"]
+    },
+    {
+      "id": "etiquette",
+      "name": "Etiquette",
+      "category": "Social",
+      "complex": false,
+      "description": "The ability to behave appropriately in social situations.",
+      "relatedAttributes": ["INF", "KNO"],
+      "specializations": ["High Society", "Military", "Corporate", "Street"]
+    },
+    {
+      "id": "forgery",
+      "name": "Forgery",
+      "category": "Technical",
       "complex": true,
-      "description": "The ability to pilot Exo-Armor (mecha) suits used in Jovian space.",
-      "relatedAttributes": ["AGI", "PER"],
-      "specializations": ["Wyvern", "Pathfinder", "Retaliator", "Syreen", "Vindicator"]
+      "description": "The ability to create or detect forged documents and items.",
+      "relatedAttributes": ["CRE", "PER"],
+      "specializations": ["Documents", "Art", "Currency"]
     },
     {
+      "id": "gambling",
+      "name": "Gambling",
+      "category": "Social",
+      "complex": false,
+      "description": "The ability to play games of chance and bluff effectively.",
+      "relatedAttributes": ["PER", "INF"],
+      "specializations": ["Poker", "Dice Games", "Card Counting"]
+    },
+    {
+      "id": "gunnery",
+      "name": "Gunnery",
+      "category": "Combat",
+      "complex": true,
+      "description": "The ability to operate mounted or vehicle-based weapon systems.",
+      "relatedAttributes": ["PER", "KNO"],
+      "specializations": ["Tanks", "Aircraft", "Naval Guns", "Exo-Armor"]
+    },
+{
       "id": "gunnery-exo",
       "name": "Gunnery (Exo)",
       "category": "Space Operations",
@@ -100,10 +147,10 @@
     },
     {
       "id": "hand-to-hand",
-      "name": "Hand-to-hand",
+      "name": "Hand-to-Hand Combat",
       "category": "Combat",
       "complex": false,
-      "description": "Proficiency in close-range unarmed combat techniques.",
+      "description": "Close-quarters combat training.",
       "relatedAttributes": ["AGI", "FIT"],
       "specializations": ["Striking", "Grappling", "Tripping", "Throwing"]
     },
@@ -112,7 +159,7 @@
       "name": "Investigation",
       "category": "Knowledge",
       "complex": false,
-      "description": "The ability to collect information on people, places and events.",
+      "description": "The ability to collect information on people, places, and events.",
       "relatedAttributes": ["PER", "KNO"],
       "specializations": ["Searching", "Surveillance", "Forensics"]
     },
@@ -125,7 +172,7 @@
       "relatedAttributes": ["CRE", "KNO"],
       "specializations": ["English", "Chinese", "Russian", "Spanish", "Japanese"]
     },
-    {
+{
       "id": "leadership",
       "name": "Leadership",
       "category": "Social",
@@ -137,13 +184,13 @@
     {
       "id": "medicine",
       "name": "Medicine",
-      "category": "Knowledge",
+      "category": "Technical",
       "complex": true,
-      "description": "The ability to diagnose and treat various pathological conditions.",
-      "relatedAttributes": ["CRE", "KNO", "INF"],
-      "specializations": ["Combat Medicine", "Zero-G Medicine", "Surgery", "Toxicology"]
+      "description": "The ability to diagnose and treat injuries and illnesses.",
+      "relatedAttributes": ["KNO", "PER"],
+      "specializations": ["First Aid", "Surgery", "Pharmacology"]
     },
-    {
+{
       "id": "melee",
       "name": "Melee",
       "category": "Combat",
@@ -238,11 +285,11 @@
       "name": "Stealth",
       "category": "Physical",
       "complex": false,
-      "description": "The ability to go undetected and move silently.",
+      "description": "The ability to move silently and avoid detection.",
       "relatedAttributes": ["AGI", "PER"],
-      "specializations": ["Urban", "Space Station", "Ship Interior", "EVA"]
+      "specializations": ["Urban", "Wilderness", "Zero-G"]
     },
-    {
+{
       "id": "streetwise",
       "name": "Streetwise",
       "category": "Social",
@@ -263,13 +310,13 @@
     {
       "id": "survival",
       "name": "Survival",
-      "category": "Physical",
+      "category": "Survival",
       "complex": false,
-      "description": "The ability to survive in hostile environments.",
-      "relatedAttributes": ["KNO", "CRE"],
-      "specializations": ["Space", "Low Gravity", "Vacuum", "Emergency Protocols"]
+      "description": "The ability to endure and thrive in harsh environments.",
+      "relatedAttributes": ["FIT", "KNO"],
+      "specializations": ["Desert", "Arctic", "Jungle", "Space"]
     },
-    {
+{
       "id": "technical-sciences",
       "name": "Technical Sciences",
       "category": "Technical",
@@ -282,10 +329,10 @@
       "id": "zero-g",
       "name": "Zero-G",
       "category": "Space Operations",
-      "complex": false,
-      "description": "The ability to move and function in zero or micro-gravity environments.",
+      "complex": true,
+      "description": "The ability to move and perform actions in weightless or micro-gravity environments.",
       "relatedAttributes": ["FIT", "KNO"],
-      "specializations": ["Movement", "Combat", "EVA Operations", "Emergency Procedures"]
+      "specializations": ["Rapid Movements", "Delicate Movements", "Melee", "Ranged Combat"]
     }
   ]
 }

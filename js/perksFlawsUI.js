@@ -21,19 +21,19 @@ export default class PerksFlawsUI {
         this.container = container;
         this.perksFlawsManager = new PerksFlawsManager(perksFlawsData, maxFlawPoints);
         this.onUpdateCallback = onUpdate;
-        
+
         // Tab state
         this.activeTab = 'perks'; // 'perks' or 'flaws'
-        
+
         // Filter and search state
         this.perkCategory = 'all';
         this.flawCategory = 'all';
         this.perkSearchQuery = '';
         this.flawSearchQuery = '';
-        
+
         // Create UI elements
         this.createUI();
-        
+
         // Update UI with initial state
         this.updateUI();
     }
@@ -52,7 +52,7 @@ export default class PerksFlawsUI {
             </div>
         `;
         this.container.appendChild(header);
-        
+
         // Create tabs
         const tabs = document.createElement('div');
         tabs.className = 'perks-flaws-tabs';
@@ -61,31 +61,31 @@ export default class PerksFlawsUI {
             <button id="flaws-tab" class="tab-btn">Flaws</button>
         `;
         this.container.appendChild(tabs);
-        
+
         // Add event listeners for tabs
         const perksTab = tabs.querySelector('#perks-tab');
         const flawsTab = tabs.querySelector('#flaws-tab');
-        
+
         perksTab.addEventListener('click', () => {
             this.activeTab = 'perks';
             perksTab.classList.add('active');
             flawsTab.classList.remove('active');
             this.updateUI();
         });
-        
+
         flawsTab.addEventListener('click', () => {
             this.activeTab = 'flaws';
             flawsTab.classList.add('active');
             perksTab.classList.remove('active');
             this.updateUI();
         });
-        
+
         // Create content container
         const content = document.createElement('div');
         content.className = 'perks-flaws-content';
         this.container.appendChild(content);
         this.contentContainer = content;
-        
+
         // Create selected perks and flaws summary
         const summary = document.createElement('div');
         summary.className = 'perks-flaws-summary';
@@ -133,7 +133,7 @@ export default class PerksFlawsUI {
      */
     updateContentContainer() {
         this.contentContainer.innerHTML = '';
-        
+
         if (this.activeTab === 'perks') {
             this.renderPerksContent();
         } else {
@@ -397,24 +397,24 @@ export default class PerksFlawsUI {
     createFlawItem(flaw) {
         const item = document.createElement('div');
         item.className = 'perks-flaws-item';
-        
+
         // Check if flaw is already selected
         const isSelected = this.perksFlawsManager.getCharacterFlaws().some(f => f.id === flaw.id);
         if (isSelected) {
             item.classList.add('selected');
         }
-        
+
         // Create header
         const header = document.createElement('div');
         header.className = 'item-header';
-        
+
         const nameEl = document.createElement('h4');
         nameEl.className = 'item-name';
         nameEl.textContent = flaw.name;
-        
+
         const valueEl = document.createElement('div');
         valueEl.className = 'item-value';
-        
+
         // Handle flaws with variable values
         if (typeof flaw.value === 'object') {
             let valueOptions = '';
@@ -425,10 +425,67 @@ export default class PerksFlawsUI {
         } else {
             valueEl.textContent = `Value: ${flaw.value} SP`;
         }
-        
+
         header.appendChild(nameEl);
         header.appendChild(valueEl);
         item.appendChild(header);
-        
+
         // Create description
-        
+        if (flaw.description) {
+            const description = document.createElement('div');
+            description.className = 'item-description';
+            description.textContent = flaw.description;
+            item.appendChild(description);
+        }
+
+        // Create controls
+        const controls = document.createElement('div');
+        controls.className = 'item-controls';
+
+        // Add/Remove button
+        const actionBtn = document.createElement('button');
+        actionBtn.className = `action-btn ${isSelected ? 'remove-btn' : 'add-btn'}`;
+        actionBtn.textContent = isSelected ? 'Remove' : 'Add';
+
+        actionBtn.addEventListener('click', () => {
+            if (isSelected) {
+                this.perksFlawsManager.removeFlaw(flaw.id);
+            } else {
+                let selectedValue = null;
+                if (typeof flaw.value === 'object') {
+                    const select = controls.querySelector('.value-select');
+                    selectedValue = parseInt(select.value);
+                }
+                this.perksFlawsManager.addFlaw(flaw.id, selectedValue);
+            }
+            this.updateUI();
+
+            // Call onUpdate callback if provided
+            if (this.onUpdateCallback) {
+                this.onUpdateCallback();
+            }
+        });
+
+        controls.appendChild(actionBtn);
+        item.appendChild(controls);
+
+        return item;
+    }
+
+    /**
+     * Update the selected perks and flaws summary
+     */
+    updateSelectedSummary() {
+        // Implementation for updating the selected perks and flaws summary
+    }
+
+    /**
+     * Update the points display
+     */
+    updatePointsDisplay() {
+        const points = this.perksFlawsManager.calculatePointsAdjustment();
+        document.getElementById('perks-cost').textContent = `${points.perksCost} SP`;
+        document.getElementById('flaws-points').textContent = `${points.flawsPoints} SP`;
+        document.getElementById('net-adjustment').textContent = `${points.netAdjustment} SP`;
+    }
+}

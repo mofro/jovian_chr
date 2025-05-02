@@ -88,6 +88,9 @@
                     <div id="attributes-container">
                         <!-- This will be populated by AttributesUI -->
                     </div>
+                    <div class="attributes-container">
+                        <!-- Attributes UI will be rendered here -->
+                    </div>
                 </div>
                 
                 <!-- Secondary Traits Tab -->
@@ -95,12 +98,18 @@
                     <div id="secondary-traits-container">
                         <!-- This will be populated by SecondaryTraitsUI -->
                     </div>
+                    <div class="secondary-traits-container">
+                        <!-- Secondary traits UI will be rendered here -->
+                    </div>
                 </div>
                 
                 <!-- Skills Tab -->
                 <div class="tab-pane" id="skills-tab">
                     <div id="skills-container">
                         <!-- This will be populated by SkillsUI -->
+                    </div>
+                    <div class="skills-container">
+                        <!-- Skills UI will be rendered here -->
                     </div>
                 </div>
                 
@@ -129,6 +138,11 @@
                 <button id="export-character" class="button secondary">Export</button>
                 <button id="import-character" class="button secondary">Import</button>
             </div>
+            
+            <div class="points-tracker">
+                <div>Skill Points:</div>
+                <div id="skill-points-display">0/50</div>
+            </div>
         </div>
         
         <footer class="main-footer">
@@ -138,3 +152,5 @@
     
     <!-- Main JavaScript -->
     <script type="module" src="js/app.js"></script>
+</body>
+</html>
