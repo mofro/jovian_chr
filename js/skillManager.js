@@ -3,6 +3,22 @@
  * Data management for skills in the Jovian Chronicles Character Creator
  */
 
+// Static Skills Store
+class SkillsStore {
+    constructor(skillsData) {
+        this.staticSkills = skillsData.skills || [];
+        this.categories = skillsData.categories || [];
+    }
+
+    getStaticSkills() {
+        return [...this.staticSkills]; // Return a copy to prevent modification
+    }
+
+    getCategories() {
+        return [...this.categories]; // Return a copy to prevent modification
+    }
+}
+
 /**
  * SkillManager Class
  * Handles the data and logic for skills management
@@ -15,16 +31,12 @@ export default class SkillManager {
      * @param {number} maxSkillPoints - Maximum skill points
      */
     constructor(skillsData, perksFlawsData, maxSkillPoints) {
-        this.skillsData = skillsData.skillsData || { categories: [], skills: [] }; // Fallback to empty data
+        this.skillsStore = new SkillsStore(skillsData); // Use SkillsStore
         this.perksFlawsData = perksFlawsData || {};
         this.maxSkillPoints = maxSkillPoints || 50; // Default to adventurous game
 
-        console.log('SkillManager Constructor - skillsData:', this.skillsData);
-        console.log('SkillManager Constructor - skillsData.skills:', this.skillsData.skills);
-
-        // Initialize character skills from the skills data
+        // Initialize character skills from the static skills store
         this.characterSkills = this.initializeCharacterSkills();
-        console.log('SkillManager Constructor - Initialized character skills:', this.characterSkills);
     }
 
     /**
@@ -32,34 +44,20 @@ export default class SkillManager {
      * @returns {Array} Initialized character skills
      */
     initializeCharacterSkills() {
-        console.log('skills data: ', this.skillsData);
-        if (!this.skillsData || !this.skillsData.skills || !Array.isArray(this.skillsData.skills)) {
-            console.error('Invalid skills data: skillsData.skills must be an array.');
-            return [];
-        }
+        const staticSkills = this.skillsStore.getStaticSkills();
 
-        console.log('Made it into initializeCharacterSkills: ', this.skillsData.skills);
-        return this.skillsData.skills
-            .filter(skill => {
-                // Validate required fields
-                if (!skill.id || !skill.name || !skill.category) {
-                    console.error(`Invalid skill entry: Missing required fields.`, skill);
-                    return false;
-                }
-                return true;
-            })
-            .map(skill => ({
-                id: skill.id,
-                name: skill.name,
-                category: skill.category || 'General',
-                description: skill.description || '',
-                complex: skill.complex || false,
-                level: 0,
-                complexity: 1, // All skills start with complexity 1 for free
-                specializations: [],
-                cost: 0, // Initial cost is 0
-                relatedAttributes: skill.relatedAttributes || []
-            }));
+        return staticSkills.map(skill => ({
+            id: skill.id,
+            name: skill.name,
+            category: skill.category || 'General',
+            description: skill.description || '',
+            complex: skill.complex || false,
+            level: 0,
+            complexity: 1, // All skills start with complexity 1 for free
+            specializations: [],
+            cost: 0, // Initial cost is 0
+            relatedAttributes: skill.relatedAttributes || []
+        }));
     }
 
     /**
@@ -67,11 +65,7 @@ export default class SkillManager {
      * @returns {Array} List of categories
      */
     getCategories() {
-        if (!this.skillsData || !this.skillsData.categories) {
-            return [];
-        }
-        console.log('CATEGORIES!: ',...this.skillsData.categories);
-        return [...this.skillsData.categories];
+        return this.skillsStore.getCategories();
     }
 
     /**

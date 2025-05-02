@@ -3,6 +3,22 @@
  * Data management for perks and flaws in the Jovian Chronicles Character Creator
  */
 
+// Static Perks & Flaws Store
+class PerksFlawsStore {
+    constructor(perksFlawsData) {
+        this.staticPerks = perksFlawsData.perks || [];
+        this.staticFlaws = perksFlawsData.flaws || [];
+    }
+
+    getStaticPerks() {
+        return [...this.staticPerks]; // Return a copy to prevent modification
+    }
+
+    getStaticFlaws() {
+        return [...this.staticFlaws]; // Return a copy to prevent modification
+    }
+}
+
 /**
  * PerksFlawsManager Class
  * Handles the data and logic for perks and flaws management
@@ -14,12 +30,32 @@ export default class PerksFlawsManager {
      * @param {number} maxFlawPoints - Maximum allowed flaw points (usually 12, or 20 for Cinematic games)
      */
     constructor(perksFlawsData, maxFlawPoints = 12) {
-        this.perksFlawsData = perksFlawsData;
-        this.maxFlawPoints = maxFlawPoints;
-        
+        this.perksFlawsStore = new PerksFlawsStore(perksFlawsData); // Use PerksFlawsStore
+
         // Initialize character perks and flaws
-        this.characterPerks = [];
-        this.characterFlaws = [];
+        this.characterPerks = this.initializeCharacterPerks();
+        this.characterFlaws = this.initializeCharacterFlaws();
+        this.maxFlawPoints = maxFlawPoints;
+    }
+
+    initializeCharacterPerks() {
+        const staticPerks = this.perksFlawsStore.getStaticPerks();
+        return staticPerks.map(perk => ({
+            id: perk.id,
+            name: perk.name,
+            description: perk.description || '',
+            cost: perk.cost || 0
+        }));
+    }
+
+    initializeCharacterFlaws() {
+        const staticFlaws = this.perksFlawsStore.getStaticFlaws();
+        return staticFlaws.map(flaw => ({
+            id: flaw.id,
+            name: flaw.name,
+            description: flaw.description || '',
+            benefit: flaw.benefit || 0
+        }));
     }
 
     /**
@@ -27,10 +63,7 @@ export default class PerksFlawsManager {
      * @returns {Array} Available perks
      */
     getAvailablePerks() {
-        if (!this.perksFlawsData || !this.perksFlawsData.perks) {
-            return [];
-        }
-        return [...this.perksFlawsData.perks];
+        return this.perksFlawsStore.getStaticPerks();
     }
 
     /**
@@ -38,10 +71,7 @@ export default class PerksFlawsManager {
      * @returns {Array} Available flaws
      */
     getAvailableFlaws() {
-        if (!this.perksFlawsData || !this.perksFlawsData.flaws) {
-            return [];
-        }
-        return [...this.perksFlawsData.flaws];
+        return this.perksFlawsStore.getStaticFlaws();
     }
 
     /**
@@ -49,13 +79,11 @@ export default class PerksFlawsManager {
      * @returns {Array} Perk categories
      */
     getPerkCategories() {
-        if (!this.perksFlawsData || !this.perksFlawsData.perks) {
-            return [];
-        }
+        const staticPerks = this.perksFlawsStore.getStaticPerks();
         
         // Extract unique categories
         const categories = new Set();
-        this.perksFlawsData.perks.forEach(perk => {
+        staticPerks.forEach(perk => {
             if (perk.category) {
                 categories.add(perk.category);
             }
@@ -69,13 +97,11 @@ export default class PerksFlawsManager {
      * @returns {Array} Flaw categories
      */
     getFlawCategories() {
-        if (!this.perksFlawsData || !this.perksFlawsData.flaws) {
-            return [];
-        }
+        const staticFlaws = this.perksFlawsStore.getStaticFlaws();
         
         // Extract unique categories
         const categories = new Set();
-        this.perksFlawsData.flaws.forEach(flaw => {
+        staticFlaws.forEach(flaw => {
             if (flaw.category) {
                 categories.add(flaw.category);
             }
@@ -174,7 +200,7 @@ export default class PerksFlawsManager {
         }
         
         // Find the perk in the available perks
-        const perk = this.perksFlawsData.perks.find(p => p.id === perkId);
+        const perk = this.perksFlawsStore.getStaticPerks().find(p => p.id === perkId);
         if (!perk) {
             return false;
         }
@@ -217,7 +243,7 @@ export default class PerksFlawsManager {
         }
         
         // Find the flaw in the available flaws
-        const flaw = this.perksFlawsData.flaws.find(f => f.id === flawId);
+        const flaw = this.perksFlawsStore.getStaticFlaws().find(f => f.id === flawId);
         if (!flaw) {
             return false;
         }

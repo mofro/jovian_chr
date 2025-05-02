@@ -74,6 +74,7 @@ class JovianCharacterCreator {
         this.createPerksFlawsUI = this.createPerksFlawsUI.bind(this);
         this.createSecondaryTraitsUI = this.createSecondaryTraitsUI.bind(this);
         this.setupEventListeners = this.setupEventListeners.bind(this);
+        this.setupTabNavigation = this.setupTabNavigation.bind(this);
 
         // Initialize the application
         this.init();
@@ -132,13 +133,13 @@ class JovianCharacterCreator {
     async loadData() {
         try {
             const skillsResponse = await fetch('data/skills.json');
-            this.skillsData = await skillsResponse.json();
+            const skillsData = await skillsResponse.json();
 
-            console.log('Loaded skills data:', this.skillsData); // Debugging skills data
-
-            if (!this.skillsData || !Array.isArray(this.skillsData.skills)) {
+            if (!skillsData || !Array.isArray(skillsData.skills)) {
                 throw new Error('Invalid skills data format');
             }
+
+            this.skillsData = skillsData; // Ensure skillsData is correctly assigned
 
             const perksFlawsResponse = await fetch('data/perks-flaws.json');
             this.perksFlawsData = await perksFlawsResponse.json();
@@ -160,6 +161,7 @@ class JovianCharacterCreator {
         console.log('PerksFlawsUI initialized.');
         this.createSecondaryTraitsUI();
         console.log('SecondaryTraitsUI initialized.');
+        this.setupTabNavigation();
     }
 
     /**
@@ -432,7 +434,7 @@ class JovianCharacterCreator {
     }
 
     createManagers() {
-        console.log('Skills data in createManagers():', this.skillsData); // Debugging skills data
+        // console.log('Skills data in createManagers():', this.skillsData); // Debugging skills data
 
         if (!this.skillsData || !Array.isArray(this.skillsData.skills)) {
             console.error('Invalid skills data: skillsData.skills must be an array.');
@@ -487,9 +489,10 @@ class JovianCharacterCreator {
         }
 
         console.log('Skills data:', this.skillsData); // Debugging skills data
+        // console.log('Debug: skillsData before passing to SkillsUI:', this.skillsData);
 
         this.skillsUI = new SkillsUI(skillsContainer, {
-            skillsData: this.skillsData.skillsData,
+            skillsData: this.skillsData.skills, // Corrected to pass the skills array directly
             maxSkillPoints: this.gameSettings[this.character.setting].skillPoints,
             onUpdate: () => {
                 const points = this.skillsUI.skillManager.getSkillPoints();
@@ -503,7 +506,7 @@ class JovianCharacterCreator {
         });
 
         console.log('SkillsUI initialized:', this.skillsUI);
-        console.log('Skills stuff:', this.skillsData); // Debugging duplicate
+        // console.log('Skills stuff:', this.skillsData); // Debugging duplicate
     }
 
     createPerksFlawsUI() {
@@ -544,6 +547,43 @@ class JovianCharacterCreator {
         });
 
         console.log('SecondaryTraitsUI initialized:', this.secondaryTraitsUI);
+    }
+
+    setupTabNavigation() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        console.log('Tab buttons:', tabButtons);
+        console.log('Tab panes:', tabPanes);
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and panes
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                // Add active class to the clicked button and corresponding pane
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                const targetPane = document.getElementById(`${tabId}-tab`);
+                if (targetPane) {
+                    targetPane.classList.add('active');
+                } else {
+                    console.error(`Tab pane with ID '${tabId}-tab' not found.`);
+                }
+
+                // Trigger updates for the corresponding UI component
+                if (tabId === 'attributes' && this.attributesUI) {
+                    this.attributesUI.update();
+                } else if (tabId === 'skills' && this.skillsUI) {
+                    this.skillsUI.update();
+                } else if (tabId === 'perks-flaws' && this.perksFlawsUI) {
+                    this.perksFlawsUI.updateUI();
+                } else if (tabId === 'secondary-traits' && this.secondaryTraitsUI) {
+                    this.secondaryTraitsUI.update();
+                }
+            });
+        });
     }
 }
 

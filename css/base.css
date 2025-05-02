@@ -5,18 +5,18 @@
     --primary-color: #1a2d5d;
     --primary-light: #41548f;
     --primary-dark: #0d1a36;
-    --secondary-color: #07101b;
-    /* --secondary-color: #e2e8f0; */
+    --secondary-color: #e2e8f0;
     --accent-color: #38a169;
     --warn-color: #dd6b20;
     --error-color: #e53e3e;
     --text-color: #333;
     --light-text: #f7fafc;
     --border-color: #cbd5e0;
-    /* --bg-color: #f5f7fa; */
-    --bg-color: #26282a;
-    --card-color: #828080;
-    /* --card-color: #fff; */
+    --bg-color: #f5f7fa;
+    --card-color: #fff;
+    /* --secondary-color: #07101b; */
+    /* --bg-color: #26282a; */
+    /* --card-color: #828080; */
 }
 
 /* Reset & Base Styles */
