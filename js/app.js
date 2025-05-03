@@ -3,10 +3,11 @@
  * Main application script for the Jovian Chronicles Character Creator
  */
 
+import SkillManager from './skillManager.js';
 import SkillsUI from './skillsUI.js';
 import AttributesUI from './attributesUI.js';
 import AttributeManager from './attributeManager.js';
-import SkillManager from './skillManager.js';
+
 import PerksFlawsUI from './perksFlawsUI.js';
 import SecondaryTraitsUI from './secondaryTraitsUI.js'; // Added import for SecondaryTraitsUI
 import PointManager from './pointManager.js';
@@ -568,6 +569,7 @@ class JovianCharacterCreator {
         console.log('AttributesUI initialized:', this.attributesUI);
     }
 
+    // In createSkillsUI method:
     createSkillsUI() {
         const skillsContainer = document.querySelector('.skills-container');
         if (!skillsContainer) {
@@ -575,23 +577,24 @@ class JovianCharacterCreator {
             return;
         }
 
-        console.log('Initializing SkillsUI with SkillsStore:', this.managers.skills.skillsStore); // Debugging log
-
         this.skillsUI = new SkillsUI(skillsContainer, {
-            skillsStore: this.managers.skills.skillsStore, // Pass the SkillsStore directly
+            skillsData: this.skillsData, // Pass the raw data, not nested
             maxSkillPoints: this.gameSettings[this.character.setting].skillPoints,
             onUpdate: () => {
-                const points = this.skillsUI.skillsStore.getSkillPoints();
-                this.character.points.skillPoints.used = points.used;
+                if (this.skillsUI && this.skillsUI.skillManager) {
+                    const points = this.skillsUI.skillManager.getSkillPoints();
+                    this.character.points.skillPoints.used = points.used;
 
-                if (this.managers.secondaryTraits) {
-                    const skillsForTraits = this.skillsUI.skillsStore.getSkillsForTraits();
-                    this.managers.secondaryTraits.updateSkills(skillsForTraits);
+                    // Update secondary traits if they exist
+                    if (this.secondaryTraitsUI) {
+                        const skillsForTraits = this.skillsUI.skillManager.getSkillsForTraits();
+                        this.secondaryTraitsUI.setSkillsManager(this.skillsUI.skillManager);
+                    }
                 }
             }
         });
 
-        console.log('SkillsUI initialized:', this.skillsUI);
+        console.log('SkillsUI initialized');
     }
 
     createPerksFlawsUI() {
