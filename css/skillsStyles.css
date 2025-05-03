@@ -24,7 +24,7 @@
 }
 
 .points {
-    background-color: var(--secondary-color, #333e63);
+    background-color: var(--primary-light, #333e63);
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
@@ -151,7 +151,7 @@
 .skill-category {
     font-size: 0.8rem;
     background-color: var(--secondary-color, #333e63);
-    color: white;
+    color: var(--primary-light);
     padding: 3px 8px;
     border-radius: 12px;
 }
