@@ -109,23 +109,29 @@ class JovianCharacterCreator {
         try {
             // Load skills data
             const skillsResponse = await fetch('data/skills.json');
+            if (!skillsResponse.ok) {
+                throw new Error(`Failed to load skills data. Status: ${skillsResponse.status}`);
+            }
             this.skillsData = await skillsResponse.json();
-    
-            console.log('Loaded skills data:', this.skillsData);
     
             if (!this.skillsData || !Array.isArray(this.skillsData.skills)) {
                 throw new Error('Invalid skills data format');
             }
+            
+            console.log('Loaded skills data successfully.');
     
             // Load perks and flaws data
             const perksFlawsResponse = await fetch('data/perks-flaws.json');
+            if (!perksFlawsResponse.ok) {
+                throw new Error(`Failed to load perks and flaws data. Status: ${perksFlawsResponse.status}`);
+            }
             this.perksFlawsData = await perksFlawsResponse.json();
             
-            console.log('Loaded perks and flaws data:', this.perksFlawsData);
-    
             if (!this.perksFlawsData || !Array.isArray(this.perksFlawsData.perks) || !Array.isArray(this.perksFlawsData.flaws)) {
                 throw new Error('Invalid perks and flaws data format');
             }
+            
+            console.log('Loaded perks and flaws data successfully.');
     
             return true;
         } catch (error) {
@@ -155,7 +161,8 @@ class JovianCharacterCreator {
         const skillsContainer = document.querySelector('#skills-tab');
         if (skillsContainer) {
             this.skillsUI = new SkillsUI(skillsContainer, {
-                skillsData: this.skillsData,
+                skillsData: this.skillsData, // Pass the whole data object
+                perksFlawsData: this.perksFlawsData,
                 maxSkillPoints: this.characterState.getSkillPoints().max,
                 onUpdate: (skills, usedPoints) => {
                     this.characterState.updateSkills(skills, usedPoints);

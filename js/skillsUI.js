@@ -14,7 +14,7 @@ export default class SkillsUI {
      * Initialize the SkillsUI
      * @param {HTMLElement} container - Container element for the skills UI
      * @param {Object} config - Configuration object
-     * @param {Object} config.skillsStore - Skills store instance
+     * @param {Object} config.skillsData - Skills data object containing categories and skills arrays
      * @param {number} config.maxSkillPoints - Maximum skill points
      * @param {function} config.onUpdate - Callback when skills change
      */

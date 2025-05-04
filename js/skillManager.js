@@ -3,36 +3,10 @@
  * Data management for skills in the Jovian Chronicles Character Creator
  */
 
-// Static Skills Store
-export class SkillsStore {
-    constructor(skillsData) {
-        console.log('SkillsStore constructor called with:', skillsData); // Debugging log
-        console.log('SkillsStore constructor received skillsData:', skillsData); // Debugging log
-
-        if (!skillsData || !skillsData.skills) {
-            console.error('Invalid skillsData passed to SkillsStore:', skillsData); // Debugging log
-            this.staticSkills = [];
-            this.categories = [];
-            return;
-        }
-
-        // Correctly access the top-level structure of skillsData
-        this.staticSkills = skillsData.skills || []; // Access the correct property
-        this.categories = skillsData.categories || []; // Access the correct property
-
-        console.log('SkillsStore initialized with staticSkills:', this.staticSkills, 'and categories:', this.categories); // Debugging log
-    }
-
-    getStaticSkills() {
-        console.log('Fetching static skills:', this.staticSkills); // Debugging log
-        return [...this.staticSkills]; // Return a copy to prevent modification
-    }
-
-    getCategories() {
-        console.log('Fetching categories:', this.categories); // Debugging log
-        return [...this.categories]; // Return a copy to prevent modification
-    }
-}
+/**
+ * File: js/skillManager.js
+ * Data management for skills in the Jovian Chronicles Character Creator
+ */
 
 /**
  * SkillManager Class
@@ -41,45 +15,77 @@ export class SkillsStore {
 export default class SkillManager {
     /**
      * Initialize the SkillManager
-     * @param {Object} skillsStore - Skills store instance
-     * @param {number} maxSkillPoints - Maximum skill points
-     * @param {Object} pointManager - Point manager instance
+     * @param {Object} skillsData - Skills data object containing categories and skills arrays
+     * @param {Object} perksFlawsData - Perks and flaws data (optional)
+     * @param {number} maxSkillPoints - Maximum skill points (default: 50)
      */
     constructor(skillsData, perksFlawsData, maxSkillPoints) {
-        // Handle the case where skillsData might be nested or null
-        if (!skillsData) {
-            this.skillsData = { categories: [], skills: [] };
-        } else if (skillsData.skillsData) {
-            // Handle the double nesting issue
-            this.skillsData = skillsData.skillsData;
-        } else {
-            this.skillsData = skillsData;
-        }
-        
+        // Normalize and validate skillsData
+        this.skillsData = this.normalizeSkillsData(skillsData);
         this.perksFlawsData = perksFlawsData || {};
         this.maxSkillPoints = maxSkillPoints || 50; // Default to adventurous game
-    
-        // Remove debugging logs
-        // console.log('SkillManager Constructor - skillsData:', this.skillsData);
         
         // Initialize character skills from the skills data
         this.characterSkills = this.initializeCharacterSkills();
     }
     
+    /**
+     * Normalize skills data to a consistent structure
+     * @param {Object} data - Input skills data (potentially inconsistently structured)
+     * @returns {Object} Normalized skills data with categories and skills arrays
+     */
+    normalizeSkillsData(data) {
+        // Handle null or undefined data
+        if (!data) {
+            return { categories: [], skills: [] };
+        }
+        
+        // Handle double nesting (when data.skillsData exists)
+        if (data.skillsData) {
+            return this.normalizeSkillsData(data.skillsData);
+        }
+        
+        // Handle case where data is already correctly structured
+        if (Array.isArray(data.skills)) {
+            return {
+                categories: Array.isArray(data.categories) ? data.categories : [],
+                skills: data.skills
+            };
+        }
+        
+        // Handle case where data might be just the skills array
+        if (Array.isArray(data)) {
+            return {
+                categories: [],
+                skills: data
+            };
+        }
+        
+        // Fallback for unexpected formats
+        console.warn('Unexpected skills data format:', data);
+        return { categories: [], skills: [] };
+    }
+    
+    /**
+     * Initialize character skills from skills data
+     * @returns {Array} Array of character skills with default values
+     */
     initializeCharacterSkills() {
-        // Validate that we have skills data with a proper structure
-        console.log('Initializing character skills with skillsData:', this.skillsData); // Debugging log
-        if (!this.skillsData || !this.skillsData.skills || !Array.isArray(this.skillsData.skills)) {
+        // Deep validation of skills data structure
+        if (!this.skillsData || 
+            !this.skillsData.skills || 
+            !Array.isArray(this.skillsData.skills) || 
+            this.skillsData.skills.length === 0) {
             console.warn('Invalid or missing skills data. Using empty skills array.');
             return [];
         }
-    
+        
         // Map skills data to character skills format with validation
         return this.skillsData.skills
             .filter(skill => {
                 // Validate required fields
                 if (!skill.id || !skill.name) {
-                    console.warn(`Skipping invalid skill entry: Missing required fields.`);
+                    console.warn(`Skipping invalid skill entry: Missing required fields.`, skill);
                     return false;
                 }
                 return true;
@@ -94,7 +100,8 @@ export default class SkillManager {
                 complexity: 1, // All skills start with complexity 1 for free
                 specializations: [],
                 cost: 0, // Initial cost is 0
-                relatedAttributes: skill.relatedAttributes || []
+                relatedAttributes: Array.isArray(skill.relatedAttributes) ? 
+                    skill.relatedAttributes : []
             }));
     }
 
@@ -104,7 +111,6 @@ export default class SkillManager {
      */
     getCategories() {
         // First check if we have categories in the data structure
-        console.log('Fetching categories from skillsData:', this.skillsData); // Debugging log
         if (this.skillsData && Array.isArray(this.skillsData.categories)) {
             return [...this.skillsData.categories];
         }
@@ -525,18 +531,18 @@ export default class SkillManager {
         return true;
     }
 
-    /**
+   /**
      * Get skills data needed for secondary traits calculation
      * @returns {Object} Skills data for traits
      */
     getSkillsForTraits() {
-        // Find the hand-to-hand and melee skills
+        // Find the hand-to-hand and melee skills with validation
         const handToHand = this.characterSkills.find(skill => skill.id === 'hand-to-hand');
         const melee = this.characterSkills.find(skill => skill.id === 'melee');
         
         return {
-            handToHand: handToHand ? { level: handToHand.level } : { level: 0 },
-            melee: melee ? { level: melee.level } : { level: 0 }
+            handToHand: handToHand ? { level: handToHand.level || 0 } : { level: 0 },
+            melee: melee ? { level: melee.level || 0 } : { level: 0 }
         };
     }
 
