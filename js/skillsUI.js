@@ -431,4 +431,42 @@ export default class SkillsUI {
     update() {
         this.updateSkillList();
     }
+
+    /**
+     * Set character skills
+     * @param {Array} skills - Character skills array
+     */
+    setCharacterSkills(skills) {
+        if (!skills || !Array.isArray(skills)) return;
+        this.skillManager.setCharacterSkills(skills);
+        this.update();
+    }
+
+    /**
+     * Set maximum skill points
+     * @param {number} max - Maximum skill points
+     */
+    setMaxSkillPoints(max) {
+        this.skillManager.setMaxSkillPoints(max);
+        this.update();
+    }
+
+    /**
+     * Reset all skills to initial state
+     */
+    resetSkills() {
+        if (this.skillManager) {
+            this.skillManager.resetSkills();
+            this.update();
+        }
+    }
+
+    /**
+     * Get the skill manager instance
+     * @returns {SkillManager} The skill manager
+     */
+    getSkillManager() {
+        return this.skillManager;
+    }
+
 }

@@ -207,4 +207,21 @@ export default class AttributesUI {
     setMaxCharacterPoints(max) {
         this.attributeManager.setMaxCharacterPoints(max);
     }
+
+    /**
+     * Set attribute values from data
+     * @param {Object} attributes - Attributes data
+     */
+    setAttributeValues(attributes) {
+        if (!attributes) return;
+        this.attributeManager.setAttributesFromData(attributes);
+    }
+
+    /**
+     * Update the maximum character points
+     * @param {number} max - New maximum character points
+     */
+    setMaxCharacterPoints(max) {
+        this.attributeManager.setMaxCharacterPoints(max);
+    }
 }

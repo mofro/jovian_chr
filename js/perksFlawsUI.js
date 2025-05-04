@@ -628,4 +628,49 @@ export default class PerksFlawsUI {
             netAdjustment.textContent = `${points.netAdjustment} SP`;
         }
     }
+
+    /**
+     * Set character perks and flaws
+     * @param {Array} perks - Character perks
+     * @param {Array} flaws - Character flaws
+     */
+    setCharacterPerksFlaws(perks, flaws) {
+        this.perksFlawsManager.setCharacterPerksFlaws(perks, flaws);
+        this.updateUI();
+    }
+
+    /**
+     * Set maximum flaw points
+     * @param {number} max - Maximum flaw points
+     */
+    setMaxFlawPoints(max) {
+        this.perksFlawsManager.maxFlawPoints = max;
+        this.updateUI();
+    }
+
+    /**
+     * Get the current perks, flaws, and points adjustment
+     * @returns {Object} Perks, flaws, and points adjustment
+     */
+    getPerksFlawsData() {
+        const perks = this.perksFlawsManager.getCharacterPerks();
+        const flaws = this.perksFlawsManager.getCharacterFlaws();
+        const pointsAdjustment = this.perksFlawsManager.calculatePointsAdjustment();
+        
+        return {
+            perks,
+            flaws,
+            pointsModifier: pointsAdjustment.netAdjustment
+        };
+    }
+
+    /**
+     * Reset all perks and flaws
+     */
+    resetPerksFlaws() {
+        if (this.perksFlawsManager) {
+            this.perksFlawsManager.resetPerksFlaws();
+            this.updateUI();
+        }
+    }
 }

@@ -3,15 +3,12 @@
  * Main application script for the Jovian Chronicles Character Creator
  */
 
-import SkillManager from './skillManager.js';
-import SkillsUI from './skillsUI.js';
+import { eventBus } from './eventBus.js';
+import { CharacterState } from './characterState.js';
 import AttributesUI from './attributesUI.js';
-import AttributeManager from './attributeManager.js';
-
+import SkillsUI from './skillsUI.js';
 import PerksFlawsUI from './perksFlawsUI.js';
-import SecondaryTraitsUI from './secondaryTraitsUI.js'; // Added import for SecondaryTraitsUI
-import PointManager from './pointManager.js';
-import { SkillsStore } from './skillManager.js';
+import SecondaryTraitsUI from './secondaryTraitsUI.js';
 
 // Game settings with power levels
 const gameSettings = {
@@ -38,53 +35,25 @@ const gameSettings = {
 // Main application class
 class JovianCharacterCreator {
     constructor() {
-        this.managers = {}; // Initialize managers object
-        this.skillsData = null; // Placeholder for skills data
+        // Initialize event bus
+        this.eventBus = eventBus;
+        
+        // Initialize central character state
+        this.characterState = new CharacterState(this.eventBus, gameSettings);
+        
+        // Store loaded data
+        this.skillsData = null;
         this.perksFlawsData = null;
-        // Assign gameSettings to this.gameSettings
-        this.gameSettings = gameSettings;
-    
-        // Initialize character object with default values
-        this.character = {
-            setting: 'adventurous', // Default to 'adventurous' setting
-            attributes: {},
-            skills: [],
-            perksFlaws: {
-                perks: [],
-                flaws: []
-            },
-            points: {
-                characterPoints: {
-                    used: 0,
-                    max: 30 // Default for 'adventurous' setting
-                },
-                skillPoints: {
-                    used: 0,
-                    max: 50 // Default for 'adventurous' setting
-                },
-                perksFlawsModifier: 0 // Initialize to 0
-            },
-            secondaryTraits: {}
-        };
-
-        // // Initialize PointManager with default values for the 'adventurous' setting
-        // this.pointManager = new PointManager({
-        //     characterPoints: this.gameSettings.adventurous.characterPoints,
-        //     skillPoints: this.gameSettings.adventurous.skillPoints
-        // });
-
-        // Bind methods to ensure correct `this` context
+        
+        // Bind methods to ensure correct context
         this.init = this.init.bind(this);
         this.loadData = this.loadData.bind(this);
         this.initUI = this.initUI.bind(this);
-        this.createManagers = this.createManagers.bind(this);
-        this.createAttributesUI = this.createAttributesUI.bind(this);
-        this.createSkillsUI = this.createSkillsUI.bind(this);
-        this.createPerksFlawsUI = this.createPerksFlawsUI.bind(this);
-        this.createSecondaryTraitsUI = this.createSecondaryTraitsUI.bind(this);
-        this.setupEventListeners = this.setupEventListeners.bind(this);        this.setupTabNavigation = this.setupTabNavigation.bind(this);
+        this.setupEventListeners = this.setupEventListeners.bind(this);
         this.setupTabNavigation = this.setupTabNavigation.bind(this);
-   
+        this.showMessage = this.showMessage.bind(this);
+        this.updateSecondaryTraits = this.updateSecondaryTraits.bind(this);
+        
         // Initialize the application
         this.init();
     }
@@ -101,9 +70,6 @@ class JovianCharacterCreator {
             if (!dataLoaded) {
                 throw new Error('Failed to load required data.');
             }
-
-            // Initialize managers
-            this.createManagers();
 
             // Initialize UI components
             this.initUI();
@@ -169,16 +135,91 @@ class JovianCharacterCreator {
     }
 
     initUI() {
-        console.log('Initializing UI components...');
-        this.createAttributesUI();
-        console.log('AttributesUI initialized.');
-        this.createSkillsUI();
-        console.log('SkillsUI initialized.');
-        this.createPerksFlawsUI();
-        console.log('PerksFlawsUI initialized.');
-        this.createSecondaryTraitsUI();
-        console.log('SecondaryTraitsUI initialized.');
+        // Initialize attributes UI
+        const attributesContainer = document.querySelector('#attributes-tab');
+        if (attributesContainer) {
+            this.attributesUI = new AttributesUI(attributesContainer, {
+                maxCharacterPoints: this.characterState.getCharacterPoints().max,
+                onUpdate: (attributes, usedPoints) => {
+                    this.characterState.updateAttributes(attributes, usedPoints);
+                }
+            });
+            
+            // Subscribe to attribute events
+            this.eventBus.subscribe('attributes:updated', data => {
+                this.updateSecondaryTraits();
+            });
+        }
+        
+        // Initialize skills UI
+        const skillsContainer = document.querySelector('#skills-tab');
+        if (skillsContainer) {
+            this.skillsUI = new SkillsUI(skillsContainer, {
+                skillsData: this.skillsData,
+                maxSkillPoints: this.characterState.getSkillPoints().max,
+                onUpdate: (skills, usedPoints) => {
+                    this.characterState.updateSkills(skills, usedPoints);
+                }
+            });
+            
+            // Subscribe to skills events
+            this.eventBus.subscribe('skills:updated', data => {
+                this.updateSecondaryTraits();
+            });
+        }
+        
+        // Initialize perks & flaws UI
+        const perksFlawsContainer = document.querySelector('#perks-flaws-tab');
+        if (perksFlawsContainer) {
+            const maxFlawPoints = gameSettings[this.characterState.getState().setting].flawPoints;
+            
+            this.perksFlawsUI = new PerksFlawsUI(perksFlawsContainer, this.perksFlawsData, maxFlawPoints, 
+                (perks, flaws, pointsModifier) => {
+                    this.characterState.updatePerksFlaws(perks, flaws, pointsModifier);
+                }
+            );
+            
+            // Subscribe to perks/flaws events
+            this.eventBus.subscribe('perksFlaws:updated', data => {
+                if (this.skillsUI) {
+                    this.skillsUI.setMaxSkillPoints(data.adjustedSkillPoints.max);
+                }
+            });
+        }
+        
+        // Initialize secondary traits UI
+        const secondaryTraitsContainer = document.querySelector('#secondary-traits-tab');
+        if (secondaryTraitsContainer) {
+            this.secondaryTraitsUI = new SecondaryTraitsUI(secondaryTraitsContainer, {
+                attributesManager: this.attributesUI?.getAttributeManager(),
+                skillsManager: this.skillsUI?.getSkillManager(),
+                onUpdate: (traits) => {
+                    this.characterState.updateSecondaryTraits(traits);
+                }
+            });
+            
+            // Subscribe to armor updates
+            this.eventBus.subscribe('armor:updated', armorPoints => {
+                if (this.secondaryTraitsUI) {
+                    this.secondaryTraitsUI.getTraitsManager().setArmorPoints(armorPoints);
+                }
+            });
+        }
+        
         this.setupTabNavigation();
+    }
+
+    updateSecondaryTraits() {
+        if (this.secondaryTraitsUI) {
+            const attributesManager = this.attributesUI?.getAttributeManager();
+            const skillsManager = this.skillsUI?.getSkillManager();
+            
+            if (attributesManager && skillsManager) {
+                this.secondaryTraitsUI.setAttributesManager(attributesManager);
+                this.secondaryTraitsUI.setSkillsManager(skillsManager);
+                this.secondaryTraitsUI.update();
+            }
+        }
     }
 
     /**
@@ -190,35 +231,130 @@ class JovianCharacterCreator {
         if (settingCards.length) {
             settingCards.forEach(card => {
                 card.addEventListener('click', () => {
+                    const setting = card.dataset.setting;
+                    
                     // Update selected class
                     settingCards.forEach(c => c.classList.remove('selected'));
                     card.classList.add('selected');
                     
                     // Update character setting
-                    const setting = card.dataset.setting;
-                    this.character.setting = setting;
-                    
-                    // Update skill points if SkillsUI is initialized
-                    if (this.skillsUI) {
-                        this.skillsUI.setCharacterData({
-                            maxSkillPoints: gameSettings[setting].skillPoints
-                        });
-                    }
+                    this.characterState.changeGameSetting(setting);
                 });
+            });
+            
+            // Subscribe to setting changes
+            this.eventBus.subscribe('setting:changed', data => {
+                if (this.attributesUI) {
+                    this.attributesUI.setMaxCharacterPoints(data.characterPoints);
+                }
+                
+                if (this.skillsUI) {
+                    this.skillsUI.setMaxSkillPoints(data.skillPoints);
+                }
+                
+                if (this.perksFlawsUI) {
+                    const maxFlawPoints = gameSettings[data.setting].flawPoints;
+                    this.perksFlawsUI.setMaxFlawPoints(maxFlawPoints);
+                }
             });
         }
         
         // Save character button
         const saveBtn = document.getElementById('save-character');
         if (saveBtn) {
-            saveBtn.addEventListener('click', () => this.saveCharacter());
+            saveBtn.addEventListener('click', () => {
+                // Get character name
+                const nameInput = document.getElementById('character-name');
+                const name = nameInput ? nameInput.value.trim() : "";
+                
+                if (!name) {
+                    this.showMessage("Please enter a character name", "error");
+                    return;
+                }
+                
+                // Update basic info
+                this.characterState.updateBasic({
+                    name: name,
+                    concept: document.getElementById('character-concept')?.value || '',
+                    faction: document.getElementById('character-faction')?.value || ''
+                });
+                
+                // Save character
+                if (this.characterState.saveCharacter()) {
+                    this.showMessage(`Character "${name}" saved successfully`, "success");
+                    this.loadSavedCharacters();
+                } else {
+                    this.showMessage(`Error saving character "${name}"`, "error");
+                }
+            });
         }
         
         // Load character button
         const loadBtn = document.getElementById('load-character');
         if (loadBtn) {
-            loadBtn.addEventListener('click', () => this.loadSelectedCharacter());
+            loadBtn.addEventListener('click', () => {
+                const select = document.getElementById('load-character-select');
+                if (!select || !select.value) {
+                    this.showMessage("Please select a character to load", "warning");
+                    return;
+                }
+                
+                if (this.characterState.loadSavedCharacter(select.value)) {
+                    this.showMessage(`Character "${select.value}" loaded successfully`, "success");
+                } else {
+                    this.showMessage(`Error loading character "${select.value}"`, "error");
+                }
+            });
         }
+        
+        // Reset character button
+        const resetBtn = document.getElementById('reset-character');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to reset the character? All unsaved changes will be lost.')) {
+                    this.characterState.resetCharacter();
+                    this.showMessage('Character reset to default values', 'info');
+                }
+            });
+        }
+        
+        // Subscribe to character reset
+        this.eventBus.subscribe('character:reset', () => {
+            // Update all UI components
+            if (this.attributesUI) this.attributesUI.resetAttributes();
+            if (this.skillsUI) this.skillsUI.resetSkills();
+            if (this.perksFlawsUI) this.perksFlawsUI.resetPerksFlaws();
+            this.updateSecondaryTraits();
+            
+            // Reset form fields
+            document.getElementById('character-name').value = '';
+            document.getElementById('character-concept').value = '';
+            document.getElementById('character-faction').value = '';
+        });
+        
+        // Subscribe to character loaded
+        this.eventBus.subscribe('character:loaded', state => {
+            // Update UI elements with loaded data
+            document.getElementById('character-name').value = state.basic.name || '';
+            document.getElementById('character-concept').value = state.basic.concept || '';
+            document.getElementById('character-faction').value = state.basic.faction || '';
+            
+            // Update game setting
+            const settingCards = document.querySelectorAll('.setting-card');
+            settingCards.forEach(card => {
+                if (card.dataset.setting === state.setting) {
+                    card.click(); // Trigger click to update UI
+                }
+            });
+            
+            // These will be updated through events
+            if (this.attributesUI) this.attributesUI.setAttributeValues(state.attributes);
+            if (this.skillsUI) this.skillsUI.setCharacterSkills(state.skills);
+            if (this.perksFlawsUI) this.perksFlawsUI.setCharacterPerksFlaws(
+                state.perksFlaws.perks, 
+                state.perksFlaws.flaws
+            );
+        });
     }
 
     /**
@@ -317,17 +453,17 @@ class JovianCharacterCreator {
         }
         
         // Get saved characters
-        const savedCharacters = JSON.parse(localStorage.getItem('jovianChroniclesCharacters') || '[]');
+        const savedCharacters = this.characterState.getSavedCharacters();
         
         // Add options for each saved character
-        savedCharacters.forEach((character, index) => {
+        savedCharacters.forEach(character => {
             const option = document.createElement('option');
-            option.value = index;
+            option.value = character.name;
             option.textContent = character.name;
             
             // Add faction if available
-            if (character.basic && character.basic.faction) {
-                option.textContent += ` (${character.basic.faction})`;
+            if (character.faction) {
+                option.textContent += ` (${character.faction})`;
             }
             
             selectElement.appendChild(option);
@@ -366,6 +502,7 @@ class JovianCharacterCreator {
      * Update UI components from character data
      */
     updateUIFromCharacter() {
+        console.info('Updating UI from character data');
         // Update basic info
         const nameInput = document.getElementById('character-name');
         const conceptInput = document.getElementById('character-concept');
@@ -442,221 +579,6 @@ class JovianCharacterCreator {
     showError(message) {
         this.showMessage(message, "error");
     }
-    changeGameSetting(setting) {
-        if (!this.gameSettings[setting]) return;
-    
-        this.character.setting = setting;
-    
-        // Update character points
-        const newCharacterPoints = this.gameSettings[setting].characterPoints;
-        this.managers.attributes.setMaxCharacterPoints(newCharacterPoints);
-    
-        // Update skill points
-        const newSkillPoints = this.gameSettings[setting].skillPoints;
-        
-        // Adjust skill points by the perks/flaws modifier
-        const adjustedSkillPoints = newSkillPoints + this.character.points.perksFlawsModifier;
-        this.managers.skills.setMaxSkillPoints(adjustedSkillPoints);
-    
-        // Update flaws points max if perksFlawsUI exists
-        if (this.perksFlawsUI && this.perksFlawsUI.getPerksFlawsManager()) {
-            const flawPointsMax = this.gameSettings[setting].flawPoints || 12;
-            this.perksFlawsUI.getPerksFlawsManager().maxFlawPoints = flawPointsMax;
-        }
-    
-        // Notify UI components
-        this.updateUI();
-    }
-
-    updateUI() {
-        if (this.attributesUI) this.attributesUI.update();
-        if (this.skillsUI) this.skillsUI.update();
-        if (this.perksFlawsUI) this.perksFlawsUI.update();
-        if (this.secondaryTraitsUI) this.secondaryTraitsUI.update();
-
-        // Update points display
-        const skillPointsDisplay = document.getElementById('skill-points-display');
-        if (skillPointsDisplay) {
-            skillPointsDisplay.textContent = `${this.pointManager.getRemainingPoints('skill')}/${this.pointManager.totalSkillPoints}`;
-        }
-
-        const perksFlawsPointsDisplay = document.getElementById('perks-flaws-points-display');
-        if (perksFlawsPointsDisplay) {
-            const adjustment = this.perksFlawsUI.perksFlawsManager.calculatePointsAdjustment();
-            perksFlawsPointsDisplay.textContent = `Net Adjustment: ${adjustment.netAdjustment} SP`;
-        }
-    }
-
-    async createManagers() {
-        if (!this.skillsData) {
-            console.error('createManagers: skillsData is undefined. Ensure loadData completed successfully.');
-            return;
-        }
-
-        console.log('createManagers: this.skillsData:', this.skillsData); // Debugging log
-        console.log('createManagers: this.skillsData before SkillsStore initialization:', this.skillsData); // Debugging log
-        console.log('Initializing SkillsStore with this.skillsData:', this.skillsData); // Debugging log
-
-        // Initialize SkillsStore
-        const skillsStore = new SkillsStore(this.skillsData);
-
-        console.log('createManagers: Initialized SkillsStore:', skillsStore); // Debugging log
-        console.log('createManagers: SkillsStore instance:', skillsStore); // Debugging log
-        console.log('createManagers: SkillsStore instance before passing to SkillManager:', skillsStore); // Debugging log
-
-        // Pass SkillsStore to SkillManager
-        this.managers.skills = new SkillManager({
-            skillsStore: skillsStore,
-            maxSkillPoints: this.gameSettings[this.character.setting].skillPoints,
-            pointManager: this.pointManager,
-            onUpdate: () => {
-                const skillsForTraits = this.managers.skills.getSkillsForTraits();
-                this.managers.secondaryTraits.updateSkills(skillsForTraits);
-
-                const points = this.managers.skills.getSkillPoints();
-                this.character.points.skillPoints.used = points.used;
-
-                const adjustedMax = this.character.points.skillPoints.max + this.character.points.perksFlawsModifier;
-                if (adjustedMax !== points.max) {
-                    this.managers.skills.setMaxSkillPoints(adjustedMax);
-                }
-            }
-        });
-
-        // Load perks and flaws data
-        try {
-            const perksFlawsResponse = await fetch('./data/perks-flaws.json');
-            this.perksFlawsData = await perksFlawsResponse.json();
-            
-            // Initialize perks and flaws UI
-            const perksFlawsContainer = document.getElementById('perks-flaws-container');
-            
-            this.perksFlawsUI = new PerksFlawsUI(perksFlawsContainer, this.perksFlawsData, 12, () => {
-                // Update skill points based on perks/flaws adjustment
-                const points = this.perksFlawsUI.getPerksFlawsManager().calculatePointsAdjustment();
-                this.character.points.perksFlawsModifier = points.netAdjustment;
-                
-                const adjustedMax = this.character.points.skillPoints.max + this.character.points.perksFlawsModifier;
-                if (this.managers.skills) {
-                    this.managers.skills.setMaxSkillPoints(adjustedMax);
-                }
-            });
-            
-        } catch (error) {
-            console.error('Error loading perks and flaws data:', error);
-        }
-    }
-
-    createAttributesUI() {
-        const attributesContainer = document.querySelector('.attributes-container');
-        if (!attributesContainer) {
-            console.error('Attributes container not found in the DOM.');
-            return;
-        }
-
-        this.attributesUI = new AttributesUI(attributesContainer, {
-            maxCharacterPoints: this.gameSettings[this.character.setting].characterPoints,
-            onUpdate: (attributes, usedPoints) => {
-                this.character.attributes = attributes;
-                this.character.points.characterPoints.used = usedPoints;
-
-                if (this.managers.secondaryTraits) {
-                    this.managers.secondaryTraits.updateAttributes(attributes);
-                }
-            }
-        });
-
-        console.log('AttributesUI initialized:', this.attributesUI);
-    }
-
-    // In createSkillsUI method:
-    createSkillsUI() {
-        const skillsContainer = document.querySelector('.skills-container');
-        if (!skillsContainer) {
-            console.error('Skills container not found in the DOM.');
-            return;
-        }
-
-        this.skillsUI = new SkillsUI(skillsContainer, {
-            skillsData: this.skillsData, // Pass the raw data, not nested
-            maxSkillPoints: this.gameSettings[this.character.setting].skillPoints,
-            onUpdate: () => {
-                if (this.skillsUI && this.skillsUI.skillManager) {
-                    const points = this.skillsUI.skillManager.getSkillPoints();
-                    this.character.points.skillPoints.used = points.used;
-
-                    // Update secondary traits if they exist
-                    if (this.secondaryTraitsUI) {
-                        const skillsForTraits = this.skillsUI.skillManager.getSkillsForTraits();
-                        this.secondaryTraitsUI.setSkillsManager(this.skillsUI.skillManager);
-                    }
-                }
-            }
-        });
-
-        console.log('SkillsUI initialized');
-    }
-
-    createPerksFlawsUI() {
-        const perksFlawsContainer = document.querySelector('#perks-flaws-container');
-        if (!perksFlawsContainer) {
-            console.error('Perks & Flaws container not found in the DOM.');
-            return;
-        }
-    
-        // Clear any existing content
-        perksFlawsContainer.innerHTML = '';
-    
-        // Check if perksFlawsData is loaded
-        if (!this.perksFlawsData) {
-            console.error('Perks & Flaws data not loaded.');
-            return;
-        }
-    
-        // Set max flaw points based on game setting
-        const maxFlawPoints = this.character.setting === 'cinematic' ? 20 : 12;
-    
-        // Create the UI component
-        this.perksFlawsUI = new PerksFlawsUI(
-            perksFlawsContainer, 
-            this.perksFlawsData, 
-            maxFlawPoints, 
-            () => {
-                // Update skill points based on perks and flaws adjustment
-                const pointsAdjustment = this.perksFlawsUI.perksFlawsManager.calculatePointsAdjustment();
-                this.character.points.perksFlawsModifier = pointsAdjustment.netAdjustment;
-    
-                // Update skill points max in the skills manager
-                if (this.managers.skills) {
-                    const adjustedMax = this.character.points.skillPoints.max + this.character.points.perksFlawsModifier;
-                    this.managers.skills.setMaxSkillPoints(adjustedMax);
-                }
-    
-                console.log('Perks & Flaws updated:', pointsAdjustment);
-            }
-        );
-    
-        console.log('PerksFlawsUI initialized successfully');
-    }
-
-    createSecondaryTraitsUI() {
-        const secondaryTraitsContainer = document.querySelector('.secondary-traits-container');
-        if (!secondaryTraitsContainer) {
-            console.error('Secondary traits container not found in the DOM.');
-            return;
-        }
-
-        this.secondaryTraitsUI = new SecondaryTraitsUI(secondaryTraitsContainer, {
-            attributesManager: this.managers.attributes,
-            skillsManager: this.managers.skills,
-            onUpdate: () => {
-                const traits = this.secondaryTraitsUI.getSecondaryTraits();
-                console.log('Updated secondary traits:', traits);
-            }
-        });
-
-        console.log('SecondaryTraitsUI initialized:', this.secondaryTraitsUI);
-    }
 
     setupTabNavigation() {
         const tabButtons = document.querySelectorAll('.tab-button');
@@ -693,6 +615,24 @@ class JovianCharacterCreator {
                 }
             });
         });
+    }
+
+    updateActiveTab(tabId) {
+        // Update tab-specific content
+        switch(tabId) {
+            case 'attributes':
+                if (this.attributesUI) this.attributesUI.update();
+                break;
+            case 'skills':
+                if (this.skillsUI) this.skillsUI.update();
+                break;
+            case 'perks-flaws':
+                if (this.perksFlawsUI) this.perksFlawsUI.update();
+                break;
+            case 'secondary-traits':
+                if (this.secondaryTraitsUI) this.secondaryTraitsUI.update();
+                break;
+        }
     }
 }
 

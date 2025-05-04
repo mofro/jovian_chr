@@ -248,6 +248,22 @@ export default class SkillManager {
     }
 
     /**
+     * Set the maximum skill points
+     * @param {number} maxPoints - Maximum skill points
+     */
+    setMaxSkillPoints(maxPoints) {
+        if (!maxPoints || isNaN(maxPoints)) {
+            console.error('Invalid maxSkillPoints value:', maxPoints);
+            return;
+        }
+        
+        this.maxSkillPoints = maxPoints;
+        
+        // Recalculate the points
+        this.getSkillPoints();
+    }
+
+    /**
      * Check if a skill level can be increased
      * @param {string} skillId - Skill ID
      * @returns {boolean} Whether the skill can be increased
@@ -522,6 +538,22 @@ export default class SkillManager {
             handToHand: handToHand ? { level: handToHand.level } : { level: 0 },
             melee: melee ? { level: melee.level } : { level: 0 }
         };
+    }
+
+    /**
+     * Set the maximum skill points
+     * @param {number} maxPoints - Maximum skill points
+     */
+    setMaxSkillPoints(maxPoints) {
+        if (!maxPoints || isNaN(maxPoints)) {
+            console.error('Invalid maxSkillPoints value:', maxPoints);
+            return;
+        }
+        
+        this.maxSkillPoints = maxPoints;
+        
+        // Recalculate the points
+        this.getSkillPoints();
     }
 
     /**
