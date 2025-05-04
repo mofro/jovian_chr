@@ -25,38 +25,46 @@ export default class SecondaryTraitsManager {
     calculateSecondaryTraits(attributes, skills = {}) {
         // Return empty object if attributes are not provided
         if (!attributes) {
+            console.warn('Cannot calculate secondary traits: Missing attribute data');
             return {};
         }
         
         // Create secondary traits object
         const traits = {};
         
+        // Use safe attribute access with default values
+        const safeGet = (obj, key, defaultValue = 0) => {
+            return obj && typeof obj[key] !== 'undefined' ? obj[key] : defaultValue;
+        };
+        
         // Calculate Strength: (Build + Fitness) / 2, rounded towards zero
-        traits.STR = Math.trunc((attributes.BLD + attributes.FIT) / 2);
+        traits.STR = Math.trunc((safeGet(attributes, 'BLD') + safeGet(attributes, 'FIT')) / 2);
         
         // Calculate Health: (Fitness + Psyche + Willpower) / 3, rounded to nearest integer
-        traits.HLT = Math.round((attributes.FIT + attributes.PSY + attributes.WIL) / 3);
+        traits.HLT = Math.round(
+            (safeGet(attributes, 'FIT') + safeGet(attributes, 'PSY') + safeGet(attributes, 'WIL')) / 3
+        );
         
         // Calculate Stamina: (5 × (Build + Health)) + 25, minimum 1
-        traits.STA = Math.max(1, (5 * (attributes.BLD + traits.HLT)) + 25);
+        traits.STA = Math.max(1, (5 * (safeGet(attributes, 'BLD') + traits.HLT)) + 25);
         
         // Get Hand-to-Hand skill level if available
         let handToHandLevel = 0;
-        if (skills.handToHand) {
-            handToHandLevel = skills.handToHand.level || 0;
+        if (skills && skills.handToHand) {
+            handToHandLevel = safeGet(skills.handToHand, 'level');
         }
         
         // Calculate Unarmed Damage: 3 + Strength + Build + Hand-to-Hand Skill level, minimum 1
-        traits.UD = Math.max(1, 3 + traits.STR + attributes.BLD + handToHandLevel);
+        traits.UD = Math.max(1, 3 + traits.STR + safeGet(attributes, 'BLD') + handToHandLevel);
         
         // Get Melee skill level if available
         let meleeLevel = 0;
-        if (skills.melee) {
-            meleeLevel = skills.melee.level || 0;
+        if (skills && skills.melee) {
+            meleeLevel = safeGet(skills.melee, 'level');
         }
         
         // Calculate Armed Damage: 3 + Strength + Build + Melee Skill level, minimum 1
-        traits.AD = Math.max(1, 3 + traits.STR + attributes.BLD + meleeLevel);
+        traits.AD = Math.max(1, 3 + traits.STR + safeGet(attributes, 'BLD') + meleeLevel);
         
         // Calculate Wound Thresholds
         traits.fleshWound = Math.ceil(traits.STA / 2);
@@ -73,8 +81,6 @@ export default class SecondaryTraitsManager {
         // Calculate System Shock: 5 + Health, minimum 1
         traits.systemShock = Math.max(1, 5 + traits.HLT);
         
-        // Store and return secondary traits
-        this.secondaryTraits = traits;
         return traits;
     }
 

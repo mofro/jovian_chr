@@ -314,25 +314,23 @@ export default class SkillManager {
         if (skillIndex === -1) {
             return false;
         }
-
+    
         const skill = this.characterSkills[skillIndex];
-
+        
         // Check if there are enough points to increase the skill level
+        if (!this.canIncreaseSkillLevel(skillId)) {
+            return false;
+        }
+    
+        // Calculate cost before and after increase
         const currentCost = this.calculateSkillCost(skill);
         const increasedSkill = { ...skill, level: skill.level + 1 };
         const increasedCost = this.calculateSkillCost(increasedSkill);
-        const additionalCost = increasedCost - currentCost;
-
-        if (this.pointManager.getRemainingPoints('skill') < additionalCost) {
-            console.error('Not enough skill points to increase level');
-            return false;
-        }
-
-        // Increase the level and update points
+    
+        // Increase the level and update cost
         this.characterSkills[skillIndex].level++;
         this.characterSkills[skillIndex].cost = increasedCost;
-        this.pointManager.addPoints('skill', additionalCost);
-
+    
         return true;
     }
 
@@ -346,24 +344,23 @@ export default class SkillManager {
         if (skillIndex === -1) {
             return false;
         }
-
+    
         const skill = this.characterSkills[skillIndex];
-
+    
         // Can't decrease below 0
         if (skill.level <= 0) {
             return false;
         }
-
-        // Decrease the level and update points
+    
+        // Calculate cost before and after decrease
         const currentCost = this.calculateSkillCost(skill);
         const decreasedSkill = { ...skill, level: skill.level - 1 };
         const decreasedCost = this.calculateSkillCost(decreasedSkill);
-        const refundedPoints = currentCost - decreasedCost;
-
+    
+        // Decrease the level and update cost
         this.characterSkills[skillIndex].level--;
         this.characterSkills[skillIndex].cost = decreasedCost;
-        this.pointManager.removePoints('skill', refundedPoints);
-
+    
         return true;
     }
 

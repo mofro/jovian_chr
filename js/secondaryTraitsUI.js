@@ -206,10 +206,17 @@ export default class SecondaryTraitsUI {
         if (this.skillsManager) {
             skills = this.skillsManager.getSkillsForTraits();
         }
-        
+            
+        // Validate that we have at least attributes data
+        if (!attributes) {
+            console.warn('Cannot update secondary traits: Missing attribute data');
+            return;
+        }
+
         // Calculate secondary traits
-        const traits = this.traitsManager.calculateSecondaryTraits(attributes, skills);
+        const traits = this.traitsManager.calculateSecondaryTraits(attributes, skills || {});
         if (!traits || Object.keys(traits).length === 0) {
+            console.warn('Secondary traits calculation returned empty result');
             return;
         }
         

@@ -212,7 +212,7 @@ export default class PerksFlawsManager {
         // Handle variable costs
         let finalCost = perk.cost;
         
-        if (typeof perk.cost === 'object') {
+        if (typeof perk.cost === 'object' && perk.cost !== null) {
             // For variable costs, validate the selected cost
             if (selectedCost === null) {
                 console.error(`Selected cost is required for variable cost perk ${perkId}`);
@@ -224,8 +224,8 @@ export default class PerksFlawsManager {
                 parseInt(selectedCost) : selectedCost;
                 
             // Validate the selected cost is one of the valid options
-            const validCosts = Object.values(perk.cost);
-            if (!validCosts.includes(costValue)) {
+            const validCosts = Object.values(perk.cost).filter(c => c !== undefined && c !== null);
+            if (validCosts.length === 0 || !validCosts.includes(costValue)) {
                 console.error(`Invalid cost ${costValue} for perk ${perkId}. Valid costs: ${validCosts.join(', ')}`);
                 return false;
             }
@@ -233,9 +233,9 @@ export default class PerksFlawsManager {
             finalCost = costValue;
         }
         
-        // Create a copy of the perk with selected cost and additional data
+        // Create a deep copy of the perk with selected cost and additional data
         const characterPerk = { 
-            ...perk,
+            ...JSON.parse(JSON.stringify(perk)), // Deep copy to avoid reference issues
             selectedCost: finalCost,
             ...additionalData
         };
@@ -293,7 +293,7 @@ export default class PerksFlawsManager {
         // Handle variable values
         let finalValue = flaw.value;
         
-        if (typeof flaw.value === 'object') {
+        if (typeof flaw.value === 'object' && flaw.value !== null) {
             // For variable values, validate the selected value
             if (selectedValue === null) {
                 console.error(`Selected value is required for variable value flaw ${flawId}`);
@@ -312,8 +312,8 @@ export default class PerksFlawsManager {
             }
             
             // Validate the selected value is one of the valid options
-            const validValues = Object.values(flaw.value);
-            if (!validValues.includes(valueNum)) {
+            const validValues = Object.values(flaw.value).filter(v => v !== undefined && v !== null);
+            if (validValues.length === 0 || !validValues.includes(valueNum)) {
                 console.error(`Invalid value ${valueNum} for flaw ${flawId}. Valid values: ${validValues.join(', ')}`);
                 return false;
             }
@@ -321,9 +321,9 @@ export default class PerksFlawsManager {
             finalValue = valueNum;
         }
         
-        // Create a copy of the flaw with selected value and additional data
+        // Create a deep copy of the flaw with selected value and additional data
         const characterFlaw = { 
-            ...flaw,
+            ...JSON.parse(JSON.stringify(flaw)), // Deep copy to avoid reference issues
             selectedValue: finalValue,
             ...additionalData
         };
@@ -332,8 +332,8 @@ export default class PerksFlawsManager {
         const currentPoints = this.getFlawPoints().used;
         
         // Calculate the value of the new flaw
-        const newFlawValue = typeof finalValue === 'object' ? 
-            Math.abs(Object.values(finalValue)[0] || 0) : 
+        const newFlawValue = typeof finalValue === 'string' ? 
+            Math.abs(parseInt(finalValue)) : 
             Math.abs(finalValue || 0);
         
         // Check if adding this flaw would exceed the maximum allowed flaw points

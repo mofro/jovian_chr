@@ -189,6 +189,7 @@ class JovianCharacterCreator {
             // Subscribe to perks/flaws events
             this.eventBus.subscribe('perksFlaws:updated', data => {
                 if (this.skillsUI) {
+                    // Update the skill points based on the adjusted maximum
                     this.skillsUI.setMaxSkillPoints(data.adjustedSkillPoints.max);
                 }
             });

@@ -129,6 +129,17 @@ export default class PerksFlawsUI {
         this.updateContentContainer();
         this.updateSelectedSummary();
         this.updatePointsDisplay();
+        
+        // Get updated data for the callback
+        if (this.onUpdateCallback) {
+            const perksFlawsData = this.getPerksFlawsData();
+            // Make sure we're passing valid data
+            this.onUpdateCallback(
+                perksFlawsData.perks || [],
+                perksFlawsData.flaws || [],
+                perksFlawsData.pointsModifier || 0
+            );
+        }
     }
 
     /**
@@ -653,14 +664,14 @@ export default class PerksFlawsUI {
      * @returns {Object} Perks, flaws, and points adjustment
      */
     getPerksFlawsData() {
-        const perks = this.perksFlawsManager.getCharacterPerks();
-        const flaws = this.perksFlawsManager.getCharacterFlaws();
-        const pointsAdjustment = this.perksFlawsManager.calculatePointsAdjustment();
+        const perks = this.perksFlawsManager.getCharacterPerks() || [];
+        const flaws = this.perksFlawsManager.getCharacterFlaws() || [];
+        const pointsAdjustment = this.perksFlawsManager.calculatePointsAdjustment() || { netAdjustment: 0 };
         
         return {
             perks,
             flaws,
-            pointsModifier: pointsAdjustment.netAdjustment
+            pointsModifier: pointsAdjustment.netAdjustment || 0
         };
     }
 

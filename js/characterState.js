@@ -122,19 +122,20 @@ export class CharacterState {
      * @param {number} pointsModifier - Net skill points adjustment
      */
     updatePerksFlaws(perks, flaws, pointsModifier) {
-        this.state.perksFlaws.perks = [...perks];
-        this.state.perksFlaws.flaws = [...flaws];
-        this.state.points.perksFlawsModifier = pointsModifier;
+        // Ensure we have valid arrays to spread
+        this.state.perksFlaws.perks = perks ? [...perks] : [];
+        this.state.perksFlaws.flaws = flaws ? [...flaws] : [];
+        this.state.points.perksFlawsModifier = pointsModifier || 0;
         
         // Calculate adjusted skill points max
         const baseMax = this.gameSettings[this.state.setting].skillPoints;
-        const adjustedMax = baseMax + pointsModifier;
+        const adjustedMax = baseMax + (pointsModifier || 0);
         this.state.points.skillPoints.max = adjustedMax;
         
         this.eventBus.publish('perksFlaws:updated', {
             perks: this.state.perksFlaws.perks,
             flaws: this.state.perksFlaws.flaws,
-            pointsModifier: pointsModifier,
+            pointsModifier: this.state.points.perksFlawsModifier,
             adjustedSkillPoints: this.state.points.skillPoints
         });
     }
