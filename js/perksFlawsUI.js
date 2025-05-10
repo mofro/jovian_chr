@@ -22,6 +22,9 @@ export default class PerksFlawsUI {
         this.perksFlawsManager = new PerksFlawsManager(perksFlawsData, maxFlawPoints);
         this.onUpdateCallback = onUpdate;
 
+        // First, clear the container to prevent duplication
+        this.container.innerHTML = '';
+
         // Tab state
         this.activeTab = 'perks'; // 'perks' or 'flaws'
 
@@ -126,12 +129,24 @@ export default class PerksFlawsUI {
         this.updateContentContainer();
         this.updateSelectedSummary();
         this.updatePointsDisplay();
+        
+        // Get updated data for the callback
+        if (this.onUpdateCallback) {
+            const perksFlawsData = this.getPerksFlawsData();
+            // Make sure we're passing valid data
+            this.onUpdateCallback(
+                perksFlawsData.perks || [],
+                perksFlawsData.flaws || [],
+                perksFlawsData.pointsModifier || 0
+            );
+        }
     }
 
     /**
      * Update the content container based on active tab
      */
     updateContentContainer() {
+        // Clear existing content
         this.contentContainer.innerHTML = '';
 
         if (this.activeTab === 'perks') {
@@ -313,7 +328,7 @@ export default class PerksFlawsUI {
         const costEl = document.createElement('div');
         costEl.className = 'item-cost';
         
-        // Handle perks with variable costs (e.g., Rank, Wealth)
+        // Handle perks with variable costs (like Military Rank or Animal Companion)
         if (typeof perk.cost === 'object') {
             let costOptions = '';
             for (const [key, value] of Object.entries(perk.cost)) {
@@ -364,17 +379,25 @@ export default class PerksFlawsUI {
         actionBtn.className = `action-btn ${isSelected ? 'remove-btn' : 'add-btn'}`;
         actionBtn.textContent = isSelected ? 'Remove' : 'Add';
         
-        actionBtn.addEventListener('click', () => {
+        actionBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent any default behavior
+            console.log(`Button clicked for perk: ${perk.name}, action: ${isSelected ? 'remove' : 'add'}`);
+            
             if (isSelected) {
-                this.perksFlawsManager.removePerk(perk.id);
+                const success = this.perksFlawsManager.removePerk(perk.id);
+                console.log(`Removed perk ${perk.id}: ${success ? 'success' : 'failed'}`);
             } else {
                 let selectedCost = null;
                 if (typeof perk.cost === 'object') {
                     const select = controls.querySelector('.cost-select');
-                    selectedCost = parseInt(select.value);
+                    selectedCost = select ? parseInt(select.value) : Object.values(perk.cost)[0];
+                    console.log(`Selected cost for ${perk.name}: ${selectedCost}`);
                 }
-                this.perksFlawsManager.addPerk(perk.id, selectedCost);
+                const success = this.perksFlawsManager.addPerk(perk.id, selectedCost);
+                console.log(`Added perk ${perk.id} with cost ${selectedCost}: ${success ? 'success' : 'failed'}`);
             }
+            
+            // Update UI after action
             this.updateUI();
             
             // Call onUpdate callback if provided
@@ -441,25 +464,52 @@ export default class PerksFlawsUI {
         // Create controls
         const controls = document.createElement('div');
         controls.className = 'item-controls';
+        
+        // For flaws with variable values, add a select dropdown
+        if (typeof flaw.value === 'object') {
+            const selectGroup = document.createElement('div');
+            selectGroup.className = 'select-group';
+            
+            const select = document.createElement('select');
+            select.className = 'value-select';
+            
+            for (const [key, value] of Object.entries(flaw.value)) {
+                const option = document.createElement('option');
+                option.value = value;
+                option.textContent = `${key} (${value} SP)`;
+                select.appendChild(option);
+            }
+            
+            selectGroup.appendChild(select);
+            controls.appendChild(selectGroup);
+        }
 
         // Add/Remove button
         const actionBtn = document.createElement('button');
         actionBtn.className = `action-btn ${isSelected ? 'remove-btn' : 'add-btn'}`;
         actionBtn.textContent = isSelected ? 'Remove' : 'Add';
 
-        actionBtn.addEventListener('click', () => {
+        actionBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent any default behavior
+            console.log(`Button clicked for flaw: ${flaw.name}, action: ${isSelected ? 'remove' : 'add'}`);
+            
             if (isSelected) {
-                this.perksFlawsManager.removeFlaw(flaw.id);
+                const success = this.perksFlawsManager.removeFlaw(flaw.id);
+                console.log(`Removed flaw ${flaw.id}: ${success ? 'success' : 'failed'}`);
             } else {
                 let selectedValue = null;
                 if (typeof flaw.value === 'object') {
                     const select = controls.querySelector('.value-select');
-                    selectedValue = parseInt(select.value);
+                    selectedValue = select ? parseInt(select.value) : Object.values(flaw.value)[0];
+                    console.log(`Selected value for ${flaw.name}: ${selectedValue}`);
                 }
-                this.perksFlawsManager.addFlaw(flaw.id, selectedValue);
+                const success = this.perksFlawsManager.addFlaw(flaw.id, selectedValue);
+                console.log(`Added flaw ${flaw.id} with value ${selectedValue}: ${success ? 'success' : 'failed'}`);
             }
+            
+            // Update UI after action
             this.updateUI();
-
+            
             // Call onUpdate callback if provided
             if (this.onUpdateCallback) {
                 this.onUpdateCallback();
@@ -476,7 +526,94 @@ export default class PerksFlawsUI {
      * Update the selected perks and flaws summary
      */
     updateSelectedSummary() {
-        // Implementation for updating the selected perks and flaws summary
+        // Get selected perks and flaws lists
+        const perksListEl = document.getElementById('selected-perks-list');
+        const flawsListEl = document.getElementById('selected-flaws-list');
+        
+        if (!perksListEl || !flawsListEl) {
+            console.error('Selected perks or flaws list elements not found');
+            return;
+        }
+        
+        // Clear current lists
+        perksListEl.innerHTML = '';
+        flawsListEl.innerHTML = '';
+        
+        // Add selected perks
+        const selectedPerks = this.perksFlawsManager.getCharacterPerks();
+        if (selectedPerks.length === 0) {
+            const emptyItem = document.createElement('li');
+            emptyItem.className = 'empty-item';
+            emptyItem.textContent = 'No perks selected';
+            perksListEl.appendChild(emptyItem);
+        } else {
+            selectedPerks.forEach(perk => {
+                const item = document.createElement('li');
+                item.className = 'selected-item';
+                
+                // Display cost based on whether it's variable or fixed
+                const cost = typeof perk.cost === 'object' ? 
+                    perk.selectedCost || Object.values(perk.cost)[0] : 
+                    perk.cost;
+                
+                item.innerHTML = `
+                    <span class="item-name">${perk.name}</span>
+                    <span class="item-cost">${cost} SP</span>
+                    <button class="remove-btn small" data-id="${perk.id}" data-type="perk">×</button>
+                `;
+                perksListEl.appendChild(item);
+                
+                // Add click event for remove button
+                const removeBtn = item.querySelector('.remove-btn');
+                removeBtn.addEventListener('click', () => {
+                    this.perksFlawsManager.removePerk(perk.id);
+                    this.updateUI();
+                    
+                    // Call onUpdate callback if provided
+                    if (this.onUpdateCallback) {
+                        this.onUpdateCallback();
+                    }
+                });
+            });
+        }
+        
+        // Add selected flaws
+        const selectedFlaws = this.perksFlawsManager.getCharacterFlaws();
+        if (selectedFlaws.length === 0) {
+            const emptyItem = document.createElement('li');
+            emptyItem.className = 'empty-item';
+            emptyItem.textContent = 'No flaws selected';
+            flawsListEl.appendChild(emptyItem);
+        } else {
+            selectedFlaws.forEach(flaw => {
+                const item = document.createElement('li');
+                item.className = 'selected-item';
+                
+                // Display value based on whether it's variable or fixed
+                const value = typeof flaw.value === 'object' ? 
+                    flaw.selectedValue || Object.values(flaw.value)[0] : 
+                    flaw.value;
+                
+                item.innerHTML = `
+                    <span class="item-name">${flaw.name}</span>
+                    <span class="item-value">${value} SP</span>
+                    <button class="remove-btn small" data-id="${flaw.id}" data-type="flaw">×</button>
+                `;
+                flawsListEl.appendChild(item);
+                
+                // Add click event for remove button
+                const removeBtn = item.querySelector('.remove-btn');
+                removeBtn.addEventListener('click', () => {
+                    this.perksFlawsManager.removeFlaw(flaw.id);
+                    this.updateUI();
+                    
+                    // Call onUpdate callback if provided
+                    if (this.onUpdateCallback) {
+                        this.onUpdateCallback();
+                    }
+                });
+            });
+        }
     }
 
     /**
@@ -484,8 +621,74 @@ export default class PerksFlawsUI {
      */
     updatePointsDisplay() {
         const points = this.perksFlawsManager.calculatePointsAdjustment();
-        document.getElementById('perks-cost').textContent = `${points.perksCost} SP`;
-        document.getElementById('flaws-points').textContent = `${points.flawsPoints} SP`;
-        document.getElementById('net-adjustment').textContent = `${points.netAdjustment} SP`;
+        
+        // Update points in the header
+        const pointsDisplay = document.getElementById('perks-flaws-points-display');
+        if (pointsDisplay) {
+            const sign = points.netAdjustment > 0 ? '+' : '';
+            pointsDisplay.textContent = `${sign}${points.netAdjustment} SP`;
+            
+            // Add a class to style positive/negative values
+            pointsDisplay.className = points.netAdjustment >= 0 ? 'points positive' : 'points negative';
+        }
+        
+        // Update points in the summary
+        const perksCount = document.getElementById('perks-cost');
+        const flawsPoints = document.getElementById('flaws-points');
+        const netAdjustment = document.getElementById('net-adjustment');
+        
+        if (perksCount && flawsPoints && netAdjustment) {
+            perksCount.textContent = `${points.perksCost} SP`;
+            flawsPoints.textContent = `${points.flawsPoints} SP`;
+            
+            const sign = points.netAdjustment > 0 ? '+' : '';
+            netAdjustment.textContent = `${sign}${points.netAdjustment} SP`;
+            netAdjustment.className = points.netAdjustment >= 0 ? 'total-item positive' : 'total-item negative';
+        }
+    }
+
+    /**
+     * Set character perks and flaws
+     * @param {Array} perks - Character perks
+     * @param {Array} flaws - Character flaws
+     */
+    setCharacterPerksFlaws(perks, flaws) {
+        this.perksFlawsManager.setCharacterPerksFlaws(perks, flaws);
+        this.updateUI();
+    }
+
+    /**
+     * Set maximum flaw points
+     * @param {number} max - Maximum flaw points
+     */
+    setMaxFlawPoints(max) {
+        this.perksFlawsManager.maxFlawPoints = max;
+        this.updateUI();
+    }
+
+    /**
+     * Get the current perks, flaws, and points adjustment
+     * @returns {Object} Perks, flaws, and points adjustment
+     */
+    getPerksFlawsData() {
+        const perks = this.perksFlawsManager.getCharacterPerks() || [];
+        const flaws = this.perksFlawsManager.getCharacterFlaws() || [];
+        const pointsAdjustment = this.perksFlawsManager.calculatePointsAdjustment() || { netAdjustment: 0 };
+        
+        return {
+            perks,
+            flaws,
+            pointsModifier: pointsAdjustment.netAdjustment || 0
+        };
+    }
+
+    /**
+     * Reset all perks and flaws
+     */
+    resetPerksFlaws() {
+        if (this.perksFlawsManager) {
+            this.perksFlawsManager.resetPerksFlaws();
+            this.updateUI();
+        }
     }
 }

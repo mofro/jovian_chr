@@ -4,46 +4,88 @@
  */
 
 /**
+ * File: js/skillManager.js
+ * Data management for skills in the Jovian Chronicles Character Creator
+ */
+
+/**
  * SkillManager Class
  * Handles the data and logic for skills management
  */
 export default class SkillManager {
     /**
      * Initialize the SkillManager
-     * @param {Object} skillsData - Skills data
-     * @param {Object} perksFlawsData - Perks and flaws data
-     * @param {number} maxSkillPoints - Maximum skill points
+     * @param {Object} skillsData - Skills data object containing categories and skills arrays
+     * @param {Object} perksFlawsData - Perks and flaws data (optional)
+     * @param {number} maxSkillPoints - Maximum skill points (default: 50)
      */
     constructor(skillsData, perksFlawsData, maxSkillPoints) {
-        this.skillsData = skillsData.skillsData || { categories: [], skills: [] }; // Fallback to empty data
+        // Normalize and validate skillsData
+        this.skillsData = this.normalizeSkillsData(skillsData);
         this.perksFlawsData = perksFlawsData || {};
         this.maxSkillPoints = maxSkillPoints || 50; // Default to adventurous game
-
-        console.log('SkillManager Constructor - skillsData:', this.skillsData);
-        console.log('SkillManager Constructor - skillsData.skills:', this.skillsData.skills);
-
+        
         // Initialize character skills from the skills data
         this.characterSkills = this.initializeCharacterSkills();
-        console.log('SkillManager Constructor - Initialized character skills:', this.characterSkills);
     }
-
+    
+    /**
+     * Normalize skills data to a consistent structure
+     * @param {Object} data - Input skills data (potentially inconsistently structured)
+     * @returns {Object} Normalized skills data with categories and skills arrays
+     */
+    normalizeSkillsData(data) {
+        // Handle null or undefined data
+        if (!data) {
+            return { categories: [], skills: [] };
+        }
+        
+        // Handle double nesting (when data.skillsData exists)
+        if (data.skillsData) {
+            return this.normalizeSkillsData(data.skillsData);
+        }
+        
+        // Handle case where data is already correctly structured
+        if (Array.isArray(data.skills)) {
+            return {
+                categories: Array.isArray(data.categories) ? data.categories : [],
+                skills: data.skills
+            };
+        }
+        
+        // Handle case where data might be just the skills array
+        if (Array.isArray(data)) {
+            return {
+                categories: [],
+                skills: data
+            };
+        }
+        
+        // Fallback for unexpected formats
+        console.warn('Unexpected skills data format:', data);
+        return { categories: [], skills: [] };
+    }
+    
     /**
      * Initialize character skills from skills data
-     * @returns {Array} Initialized character skills
+     * @returns {Array} Array of character skills with default values
      */
     initializeCharacterSkills() {
-        console.log('skills data: ', this.skillsData);
-        if (!this.skillsData || !this.skillsData.skills || !Array.isArray(this.skillsData.skills)) {
-            console.error('Invalid skills data: skillsData.skills must be an array.');
+        // Deep validation of skills data structure
+        if (!this.skillsData || 
+            !this.skillsData.skills || 
+            !Array.isArray(this.skillsData.skills) || 
+            this.skillsData.skills.length === 0) {
+            console.warn('Invalid or missing skills data. Using empty skills array.');
             return [];
         }
-
-        console.log('Made it into initializeCharacterSkills: ', this.skillsData.skills);
+        
+        // Map skills data to character skills format with validation
         return this.skillsData.skills
             .filter(skill => {
                 // Validate required fields
-                if (!skill.id || !skill.name || !skill.category) {
-                    console.error(`Invalid skill entry: Missing required fields.`, skill);
+                if (!skill.id || !skill.name) {
+                    console.warn(`Skipping invalid skill entry: Missing required fields.`, skill);
                     return false;
                 }
                 return true;
@@ -53,12 +95,13 @@ export default class SkillManager {
                 name: skill.name,
                 category: skill.category || 'General',
                 description: skill.description || '',
-                complex: skill.complex || false,
+                complex: Boolean(skill.complex),
                 level: 0,
                 complexity: 1, // All skills start with complexity 1 for free
                 specializations: [],
                 cost: 0, // Initial cost is 0
-                relatedAttributes: skill.relatedAttributes || []
+                relatedAttributes: Array.isArray(skill.relatedAttributes) ? 
+                    skill.relatedAttributes : []
             }));
     }
 
@@ -67,11 +110,24 @@ export default class SkillManager {
      * @returns {Array} List of categories
      */
     getCategories() {
-        if (!this.skillsData || !this.skillsData.categories) {
-            return [];
+        // First check if we have categories in the data structure
+        if (this.skillsData && Array.isArray(this.skillsData.categories)) {
+            return [...this.skillsData.categories];
         }
-        console.log('CATEGORIES!: ',...this.skillsData.categories);
-        return [...this.skillsData.categories];
+        
+        // Fallback: extract unique categories from skills
+        if (this.skillsData && Array.isArray(this.skillsData.skills)) {
+            const categories = new Set();
+            this.skillsData.skills.forEach(skill => {
+                if (skill.category) {
+                    categories.add(skill.category);
+                }
+            });
+            return [...categories].sort();
+        }
+        
+        // Return empty array if no data is available
+        return [];
     }
 
     /**
@@ -120,7 +176,7 @@ export default class SkillManager {
         }
         
         return this.characterSkills.filter(skill => 
-            skill.category.toLowerCase() === category.toLowerCase()
+            skill.category && skill.category.toLowerCase() === category.toLowerCase()
         );
     }
 
@@ -189,12 +245,31 @@ export default class SkillManager {
         const used = this.characterSkills.reduce((total, skill) => {
             return total + this.calculateSkillCost(skill);
         }, 0);
-
+    
+        // Calculate remaining (ensure it's not undefined)
+        const remaining = Math.max(0, this.maxSkillPoints - used);
+    
         return {
             used,
             max: this.maxSkillPoints,
-            remaining: Math.max(0, this.maxSkillPoints - used)
+            remaining: remaining // Explicitly calculate remaining
         };
+    }
+
+    /**
+     * Set the maximum skill points
+     * @param {number} maxPoints - Maximum skill points
+     */
+    setMaxSkillPoints(maxPoints) {
+        if (!maxPoints || isNaN(maxPoints)) {
+            console.error('Invalid maxSkillPoints value:', maxPoints);
+            return;
+        }
+        
+        this.maxSkillPoints = maxPoints;
+        
+        // Recalculate the points
+        this.getSkillPoints();
     }
 
     /**
@@ -238,21 +313,27 @@ export default class SkillManager {
      * @returns {boolean} Whether the increase was successful
      */
     increaseSkillLevel(skillId) {
-        if (!this.canIncreaseSkillLevel(skillId)) {
-            return false;
-        }
-        
         const skillIndex = this.characterSkills.findIndex(s => s.id === skillId);
         if (skillIndex === -1) {
             return false;
         }
+    
+        const skill = this.characterSkills[skillIndex];
         
-        // Increase the level
+        // Check if there are enough points to increase the skill level
+        if (!this.canIncreaseSkillLevel(skillId)) {
+            return false;
+        }
+    
+        // Calculate cost before and after increase
+        const currentCost = this.calculateSkillCost(skill);
+        const increasedSkill = { ...skill, level: skill.level + 1 };
+        const increasedCost = this.calculateSkillCost(increasedSkill);
+    
+        // Increase the level and update cost
         this.characterSkills[skillIndex].level++;
-        
-        // Recalculate cost
-        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
-        
+        this.characterSkills[skillIndex].cost = increasedCost;
+    
         return true;
     }
 
@@ -266,20 +347,23 @@ export default class SkillManager {
         if (skillIndex === -1) {
             return false;
         }
-        
+    
         const skill = this.characterSkills[skillIndex];
-
+    
         // Can't decrease below 0
         if (skill.level <= 0) {
             return false;
         }
-        
-        // Decrease the level
+    
+        // Calculate cost before and after decrease
+        const currentCost = this.calculateSkillCost(skill);
+        const decreasedSkill = { ...skill, level: skill.level - 1 };
+        const decreasedCost = this.calculateSkillCost(decreasedSkill);
+    
+        // Decrease the level and update cost
         this.characterSkills[skillIndex].level--;
-        
-        // Recalculate cost
-        this.characterSkills[skillIndex].cost = this.calculateSkillCost(this.characterSkills[skillIndex]);
-        
+        this.characterSkills[skillIndex].cost = decreasedCost;
+    
         return true;
     }
 
@@ -447,20 +531,38 @@ export default class SkillManager {
         return true;
     }
 
-    /**
+   /**
      * Get skills data needed for secondary traits calculation
      * @returns {Object} Skills data for traits
      */
     getSkillsForTraits() {
-        // Find the hand-to-hand and melee skills
+        // Find the hand-to-hand and melee skills with validation
         const handToHand = this.characterSkills.find(skill => skill.id === 'hand-to-hand');
         const melee = this.characterSkills.find(skill => skill.id === 'melee');
         
         return {
-            handToHandLevel: handToHand ? handToHand.level : 0,
-            meleeLevel: melee ? melee.level : 0
+            handToHand: handToHand ? { level: handToHand.level || 0 } : { level: 0 },
+            melee: melee ? { level: melee.level || 0 } : { level: 0 }
         };
     }
+
+    /**
+     * Set the maximum skill points
+     * @param {number} maxPoints - Maximum skill points
+     */
+    setMaxSkillPoints(maxPoints) {
+        if (!maxPoints || isNaN(maxPoints)) {
+            console.error('Invalid maxSkillPoints value:', maxPoints);
+            return;
+        }
+        
+        console.log(`Setting max skill points: ${this.maxSkillPoints} -> ${maxPoints}`);
+        this.maxSkillPoints = maxPoints;
+        
+        // Return the updated skill points
+        return this.getSkillPoints();
+    }
+    
 
     /**
      * Reset all skills to initial state

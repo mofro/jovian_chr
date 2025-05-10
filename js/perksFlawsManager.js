@@ -11,11 +11,13 @@ export default class PerksFlawsManager {
     /**
      * Initialize the PerksFlawsManager
      * @param {Object} perksFlawsData - Perks and flaws data
-     * @param {number} maxFlawPoints - Maximum allowed flaw points (usually 12, or 20 for Cinematic games)
+     * @param {number} maxFlawPoints - Maximum allowed flaw points
+     * @param {Function} onUpdate - Callback function when perks/flaws change
      */
-    constructor(perksFlawsData, maxFlawPoints = 12) {
-        this.perksFlawsData = perksFlawsData;
+    constructor(perksFlawsData, maxFlawPoints = 12, onUpdate = null) {
+        this.perksFlawsData = perksFlawsData || { perks: [], flaws: [] };
         this.maxFlawPoints = maxFlawPoints;
+        this.onUpdate = onUpdate || function() {};
         
         // Initialize character perks and flaws
         this.characterPerks = [];
@@ -108,6 +110,11 @@ export default class PerksFlawsManager {
     setCharacterPerksFlaws(perks, flaws) {
         this.characterPerks = perks ? [...perks] : [];
         this.characterFlaws = flaws ? [...flaws] : [];
+        
+        // Call onUpdate callback
+        if (this.onUpdate) {
+            this.onUpdate();
+        }
     }
 
     /**
@@ -115,27 +122,52 @@ export default class PerksFlawsManager {
      * @returns {Object} Points adjustment
      */
     calculatePointsAdjustment() {
-        // Calculate cost of perks
+        // Calculate cost of perks with improved variable cost handling
         const perksCost = this.characterPerks.reduce((total, perk) => {
-            // Handle perks with variable costs (e.g., Rank, Wealth)
-            const cost = typeof perk.cost === 'object' ? perk.selectedCost : perk.cost;
-            return total + (cost || 0);
+            let cost = 0;
+            
+            if (typeof perk.cost === 'object' && perk.cost !== null) {
+                // For variable costs, use selectedCost or first available cost
+                cost = perk.selectedCost || Object.values(perk.cost)[0] || 0;
+            } else {
+                // For fixed costs
+                cost = perk.cost || 0;
+            }
+            
+            console.log(`Perk: ${perk.name}, Cost: ${cost}`);
+            return total + cost;
         }, 0);
         
-        // Calculate points granted by flaws
+        // Calculate points granted by flaws with improved variable value handling
         const flawsPoints = this.characterFlaws.reduce((total, flaw) => {
-            // Handle flaws with variable values (e.g., Code of Honor, Social Stigma)
-            const value = typeof flaw.value === 'object' ? flaw.selectedValue : flaw.value;
-            // Make sure we convert negative values to positive for addition
-            const absValue = typeof value === 'string' ? 
-                parseInt(value.replace('-', '')) : Math.abs(value || 0);
-            return total + absValue;
+            let value = 0;
+            
+            if (typeof flaw.value === 'object' && flaw.value !== null) {
+                // For variable values, use selectedValue or first available value
+                const rawValue = flaw.selectedValue || Object.values(flaw.value)[0] || 0;
+                
+                // Handle negative values (convert to positive for addition)
+                value = typeof rawValue === 'string' ? 
+                    Math.abs(parseInt(rawValue.replace('-', ''))) : 
+                    Math.abs(rawValue);
+            } else {
+                // For fixed values
+                value = typeof flaw.value === 'string' ? 
+                    Math.abs(parseInt(flaw.value.replace('-', ''))) : 
+                    Math.abs(flaw.value || 0);
+            }
+            
+            console.log(`Flaw: ${flaw.name}, Value: ${value}`);
+            return total + value;
         }, 0);
+        
+        const netAdjustment = flawsPoints - perksCost;
+        console.log(`Points adjustment: ${flawsPoints} - ${perksCost} = ${netAdjustment}`);
         
         return {
             perksCost,
             flawsPoints,
-            netAdjustment: flawsPoints - perksCost
+            netAdjustment
         };
     }
 
@@ -146,10 +178,19 @@ export default class PerksFlawsManager {
     getFlawPoints() {
         const flawsPoints = this.characterFlaws.reduce((total, flaw) => {
             // Handle flaws with variable values
-            const value = typeof flaw.value === 'object' ? flaw.selectedValue : flaw.value;
-            // Make sure we convert negative values to positive for addition
+            let value;
+            
+            if (typeof flaw.value === 'object') {
+                value = flaw.selectedValue || 0;
+            } else {
+                value = flaw.value || 0;
+            }
+            
+            // Convert negative values to positive for addition
             const absValue = typeof value === 'string' ? 
-                parseInt(value.replace('-', '')) : Math.abs(value || 0);
+                parseInt(value.replace('-', '')) : 
+                Math.abs(value);
+                
             return total + absValue;
         }, 0);
         
@@ -163,31 +204,62 @@ export default class PerksFlawsManager {
     /**
      * Add a perk to the character
      * @param {string} perkId - Perk ID
-     * @param {number|string} selectedCost - Selected cost for variable cost perks
+     * @param {number|string|null} selectedCost - Selected cost for variable cost perks
      * @param {Object} additionalData - Additional data for the perk (e.g., for Rank or Connections)
      * @returns {boolean} Whether the addition was successful
      */
     addPerk(perkId, selectedCost = null, additionalData = {}) {
         // Check if the perk is already added
         if (this.characterPerks.some(p => p.id === perkId)) {
+            console.error(`Perk ${perkId} is already added`);
             return false;
         }
         
         // Find the perk in the available perks
         const perk = this.perksFlawsData.perks.find(p => p.id === perkId);
         if (!perk) {
+            console.error(`Perk ${perkId} not found`);
             return false;
         }
         
-        // Create a copy of the perk with selected cost and additional data
+        // Handle variable costs
+        let finalCost = perk.cost;
+        
+        if (typeof perk.cost === 'object' && perk.cost !== null) {
+            // For variable costs, validate the selected cost
+            if (selectedCost === null) {
+                console.error(`Selected cost is required for variable cost perk ${perkId}`);
+                return false;
+            }
+            
+            // Convert to number if necessary
+            const costValue = typeof selectedCost === 'string' ? 
+                parseInt(selectedCost) : selectedCost;
+                
+            // Validate the selected cost is one of the valid options
+            const validCosts = Object.values(perk.cost).filter(c => c !== undefined && c !== null);
+            if (validCosts.length === 0 || !validCosts.includes(costValue)) {
+                console.error(`Invalid cost ${costValue} for perk ${perkId}. Valid costs: ${validCosts.join(', ')}`);
+                return false;
+            }
+            
+            finalCost = costValue;
+        }
+        
+        // Create a deep copy of the perk with selected cost and additional data
         const characterPerk = { 
-            ...perk,
-            selectedCost: selectedCost !== null ? selectedCost : perk.cost,
+            ...JSON.parse(JSON.stringify(perk)), // Deep copy to avoid reference issues
+            selectedCost: finalCost,
             ...additionalData
         };
         
         // Add the perk to the character
         this.characterPerks.push(characterPerk);
+        
+        // Call onUpdate callback
+        if (this.onUpdate) {
+            this.onUpdate();
+        }
         
         return true;
     }
@@ -200,32 +272,72 @@ export default class PerksFlawsManager {
     removePerk(perkId) {
         const initialLength = this.characterPerks.length;
         this.characterPerks = this.characterPerks.filter(p => p.id !== perkId);
-        return this.characterPerks.length < initialLength;
+        
+        const success = this.characterPerks.length < initialLength;
+        
+        if (success && this.onUpdate) {
+            this.onUpdate();
+        }
+        
+        return success;
     }
 
     /**
      * Add a flaw to the character
      * @param {string} flawId - Flaw ID
-     * @param {number|string} selectedValue - Selected value for variable value flaws
+     * @param {number|string|null} selectedValue - Selected value for variable value flaws
      * @param {Object} additionalData - Additional data for the flaw
      * @returns {boolean} Whether the addition was successful
      */
     addFlaw(flawId, selectedValue = null, additionalData = {}) {
         // Check if the flaw is already added
         if (this.characterFlaws.some(f => f.id === flawId)) {
+            console.error(`Flaw ${flawId} is already added`);
             return false;
         }
         
         // Find the flaw in the available flaws
         const flaw = this.perksFlawsData.flaws.find(f => f.id === flawId);
         if (!flaw) {
+            console.error(`Flaw ${flawId} not found`);
             return false;
         }
         
-        // Create a copy of the flaw with selected value and additional data
+        // Handle variable values
+        let finalValue = flaw.value;
+        
+        if (typeof flaw.value === 'object' && flaw.value !== null) {
+            // For variable values, validate the selected value
+            if (selectedValue === null) {
+                console.error(`Selected value is required for variable value flaw ${flawId}`);
+                return false;
+            }
+            
+            // Convert to number if necessary
+            let valueNum;
+            if (typeof selectedValue === 'string') {
+                // Handle negative string values like "-2"
+                valueNum = selectedValue.startsWith('-') ? 
+                    -parseInt(selectedValue.substring(1)) : 
+                    parseInt(selectedValue);
+            } else {
+                valueNum = selectedValue;
+            }
+            
+            // Validate the selected value is one of the valid options
+            const validValues = Object.values(flaw.value).filter(v => v !== undefined && v !== null);
+            if (validValues.length === 0 || !validValues.includes(valueNum)) {
+                console.error(`Invalid value ${valueNum} for flaw ${flawId}. Valid values: ${validValues.join(', ')}`);
+                return false;
+            }
+            
+            finalValue = valueNum;
+        }
+        
+        // Create a deep copy of the flaw with selected value and additional data
         const characterFlaw = { 
-            ...flaw,
-            selectedValue: selectedValue !== null ? selectedValue : flaw.value,
+            ...JSON.parse(JSON.stringify(flaw)), // Deep copy to avoid reference issues
+            selectedValue: finalValue,
             ...additionalData
         };
         
@@ -233,16 +345,23 @@ export default class PerksFlawsManager {
         const currentPoints = this.getFlawPoints().used;
         
         // Calculate the value of the new flaw
-        const newFlawValue = typeof characterFlaw.selectedValue === 'object' ? 
-            characterFlaw.selectedValue : Math.abs(characterFlaw.selectedValue || 0);
+        const newFlawValue = typeof finalValue === 'string' ? 
+            Math.abs(parseInt(finalValue)) : 
+            Math.abs(finalValue || 0);
         
         // Check if adding this flaw would exceed the maximum allowed flaw points
         if (currentPoints + newFlawValue > this.maxFlawPoints) {
+            console.error(`Adding this flaw would exceed the maximum allowed flaw points (${this.maxFlawPoints})`);
             return false;
         }
         
         // Add the flaw to the character
         this.characterFlaws.push(characterFlaw);
+        
+        // Call onUpdate callback
+        if (this.onUpdate) {
+            this.onUpdate();
+        }
         
         return true;
     }
@@ -255,31 +374,64 @@ export default class PerksFlawsManager {
     removeFlaw(flawId) {
         const initialLength = this.characterFlaws.length;
         this.characterFlaws = this.characterFlaws.filter(f => f.id !== flawId);
-        return this.characterFlaws.length < initialLength;
+        
+        const success = this.characterFlaws.length < initialLength;
+        
+        if (success && this.onUpdate) {
+            this.onUpdate();
+        }
+        
+        return success;
     }
 
     /**
      * Update a perk's additional data or selected cost
      * @param {string} perkId - Perk ID
-     * @param {number|string} selectedCost - New selected cost
+     * @param {number|string|null} selectedCost - New selected cost
      * @param {Object} additionalData - New additional data
      * @returns {boolean} Whether the update was successful
      */
     updatePerk(perkId, selectedCost = null, additionalData = {}) {
         const perkIndex = this.characterPerks.findIndex(p => p.id === perkId);
         if (perkIndex === -1) {
+            console.error(`Perk ${perkId} not found`);
             return false;
         }
         
-        // Update the perk
+        // Handle variable costs
         if (selectedCost !== null) {
-            this.characterPerks[perkIndex].selectedCost = selectedCost;
+            // Find the original perk definition to validate cost
+            const originalPerk = this.perksFlawsData.perks.find(p => p.id === perkId);
+            
+            if (originalPerk && typeof originalPerk.cost === 'object') {
+                // Convert to number if necessary
+                const costValue = typeof selectedCost === 'string' ? 
+                    parseInt(selectedCost) : selectedCost;
+                
+                // Validate the selected cost is one of the valid options
+                const validCosts = Object.values(originalPerk.cost);
+                if (!validCosts.includes(costValue)) {
+                    console.error(`Invalid cost ${costValue} for perk ${perkId}. Valid costs: ${validCosts.join(', ')}`);
+                    return false;
+                }
+                
+                this.characterPerks[perkIndex].selectedCost = costValue;
+            } else {
+                // For non-variable costs, just use the original cost
+                this.characterPerks[perkIndex].selectedCost = originalPerk ? originalPerk.cost : selectedCost;
+            }
         }
         
+        // Update with additional data
         this.characterPerks[perkIndex] = {
             ...this.characterPerks[perkIndex],
             ...additionalData
         };
+        
+        // Call onUpdate callback
+        if (this.onUpdate) {
+            this.onUpdate();
+        }
         
         return true;
     }
@@ -287,39 +439,73 @@ export default class PerksFlawsManager {
     /**
      * Update a flaw's additional data or selected value
      * @param {string} flawId - Flaw ID
-     * @param {number|string} selectedValue - New selected value
+     * @param {number|string|null} selectedValue - New selected value
      * @param {Object} additionalData - New additional data
      * @returns {boolean} Whether the update was successful
      */
     updateFlaw(flawId, selectedValue = null, additionalData = {}) {
         const flawIndex = this.characterFlaws.findIndex(f => f.id === flawId);
         if (flawIndex === -1) {
+            console.error(`Flaw ${flawId} not found`);
             return false;
         }
         
-        // If updating the value, check if it would exceed the maximum flaw points
+        // Handle variable values
         if (selectedValue !== null) {
-            const oldValue = typeof this.characterFlaws[flawIndex].selectedValue === 'object' ? 
-                this.characterFlaws[flawIndex].selectedValue : 
-                Math.abs(this.characterFlaws[flawIndex].selectedValue || 0);
-                
-            const newValue = typeof selectedValue === 'object' ? 
-                selectedValue : Math.abs(selectedValue || 0);
-                
-            const currentPoints = this.getFlawPoints().used;
+            // Find the original flaw definition to validate value
+            const originalFlaw = this.perksFlawsData.flaws.find(f => f.id === flawId);
             
-            // Check if the new value would exceed the maximum flaw points
-            if (currentPoints - oldValue + newValue > this.maxFlawPoints) {
-                return false;
+            if (originalFlaw && typeof originalFlaw.value === 'object') {
+                // Convert to number if necessary
+                let valueNum;
+                if (typeof selectedValue === 'string') {
+                    // Handle negative string values like "-2"
+                    valueNum = selectedValue.startsWith('-') ? 
+                        -parseInt(selectedValue.substring(1)) : 
+                        parseInt(selectedValue);
+                } else {
+                    valueNum = selectedValue;
+                }
+                
+                // Validate the selected value is one of the valid options
+                const validValues = Object.values(originalFlaw.value);
+                if (!validValues.includes(valueNum)) {
+                    console.error(`Invalid value ${valueNum} for flaw ${flawId}. Valid values: ${validValues.join(', ')}`);
+                    return false;
+                }
+                
+                // Calculate the old and new value to check if it would exceed the maximum
+                const oldValue = typeof this.characterFlaws[flawIndex].selectedValue === 'object' ? 
+                    Math.abs(Object.values(this.characterFlaws[flawIndex].selectedValue)[0] || 0) : 
+                    Math.abs(this.characterFlaws[flawIndex].selectedValue || 0);
+                    
+                const newValue = Math.abs(valueNum);
+                    
+                const currentPoints = this.getFlawPoints().used;
+                
+                // Check if the new value would exceed the maximum allowed flaw points
+                if (currentPoints - oldValue + newValue > this.maxFlawPoints) {
+                    console.error(`Updating this flaw would exceed the maximum allowed flaw points (${this.maxFlawPoints})`);
+                    return false;
+                }
+                
+                this.characterFlaws[flawIndex].selectedValue = valueNum;
+            } else {
+                // For non-variable values, just use the original value
+                this.characterFlaws[flawIndex].selectedValue = originalFlaw ? originalFlaw.value : selectedValue;
             }
-            
-            this.characterFlaws[flawIndex].selectedValue = selectedValue;
         }
         
+        // Update with additional data
         this.characterFlaws[flawIndex] = {
             ...this.characterFlaws[flawIndex],
             ...additionalData
         };
+        
+        // Call onUpdate callback
+        if (this.onUpdate) {
+            this.onUpdate();
+        }
         
         return true;
     }
@@ -394,5 +580,10 @@ export default class PerksFlawsManager {
     resetPerksFlaws() {
         this.characterPerks = [];
         this.characterFlaws = [];
+        
+        // Call onUpdate callback
+        if (this.onUpdate) {
+            this.onUpdate();
+        }
     }
 }

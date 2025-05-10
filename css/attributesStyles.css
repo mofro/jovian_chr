@@ -50,7 +50,7 @@
 }
 
 .attribute-name {
-    display: flex;
+    display: inline-block;
     justify-content: space-between;
     font-weight: bold;
     margin-bottom: 10px;
@@ -60,6 +60,7 @@
 }
 
 .attribute-abbr {
+    margin-inline-end: 10px;
     color: #718096;
     font-size: 0.9em;
 }
@@ -154,26 +155,26 @@
 
 /* Tooltip for attribute descriptions */
 .attribute-tooltip {
-    position: absolute;
-    top: 12px;
-    right: 12px;
+    position: relative; /* Changed from absolute to relative */
+    margin-right: 8px; /* Adds spacing between the tooltip and the title */
     width: 18px;
     height: 18px;
     border-radius: 50%;
     background-color: #a0aec0;
     color: white;
-    display: flex;
+    display: inline-flex; /* Changed to inline-flex for proper alignment */
     align-items: center;
     justify-content: center;
     font-size: 12px;
     font-weight: bold;
     cursor: help;
+    vertical-align: middle; /* Ensures alignment with the title */
 }
 
 .attribute-tooltip:hover::after {
     content: attr(data-tooltip);
     position: absolute;
-    right: 0;
+    left: 0; /* Adjusted to align with the new position */
     top: 25px;
     background-color: #1a365d;
     color: white;
@@ -185,6 +186,14 @@
     font-size: 0.85rem;
     line-height: 1.4;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.attribute-name-container {
+    display: inline-block; /*Ensures the tooltip and title are inline*/
+    justify-content: space-between;
+
+    width: 100%; /* Prevents overflow */
+    align-items: center; /* Vertically aligns the tooltip and title */
 }
 
 /* Responsive adjustments */
