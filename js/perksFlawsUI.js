@@ -625,18 +625,25 @@ export default class PerksFlawsUI {
         // Update points in the header
         const pointsDisplay = document.getElementById('perks-flaws-points-display');
         if (pointsDisplay) {
-            pointsDisplay.textContent = `${points.netAdjustment} SP`;
+            const sign = points.netAdjustment > 0 ? '+' : '';
+            pointsDisplay.textContent = `${sign}${points.netAdjustment} SP`;
+            
+            // Add a class to style positive/negative values
+            pointsDisplay.className = points.netAdjustment >= 0 ? 'points positive' : 'points negative';
         }
         
         // Update points in the summary
         const perksCount = document.getElementById('perks-cost');
-        const flawsCount = document.getElementById('flaws-points');
+        const flawsPoints = document.getElementById('flaws-points');
         const netAdjustment = document.getElementById('net-adjustment');
         
-        if (perksCount && flawsCount && netAdjustment) {
+        if (perksCount && flawsPoints && netAdjustment) {
             perksCount.textContent = `${points.perksCost} SP`;
-            flawsCount.textContent = `${points.flawsPoints} SP`;
-            netAdjustment.textContent = `${points.netAdjustment} SP`;
+            flawsPoints.textContent = `${points.flawsPoints} SP`;
+            
+            const sign = points.netAdjustment > 0 ? '+' : '';
+            netAdjustment.textContent = `${sign}${points.netAdjustment} SP`;
+            netAdjustment.className = points.netAdjustment >= 0 ? 'total-item positive' : 'total-item negative';
         }
     }
 

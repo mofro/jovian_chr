@@ -122,39 +122,52 @@ export default class PerksFlawsManager {
      * @returns {Object} Points adjustment
      */
     calculatePointsAdjustment() {
-        // Calculate cost of perks
+        // Calculate cost of perks with improved variable cost handling
         const perksCost = this.characterPerks.reduce((total, perk) => {
-            // Handle perks with variable costs (e.g., Rank, Wealth)
-            const cost = typeof perk.cost === 'object' ? 
-                (perk.selectedCost || 0) : 
-                (perk.cost || 0);
-                
+            let cost = 0;
+            
+            if (typeof perk.cost === 'object' && perk.cost !== null) {
+                // For variable costs, use selectedCost or first available cost
+                cost = perk.selectedCost || Object.values(perk.cost)[0] || 0;
+            } else {
+                // For fixed costs
+                cost = perk.cost || 0;
+            }
+            
+            console.log(`Perk: ${perk.name}, Cost: ${cost}`);
             return total + cost;
         }, 0);
         
-        // Calculate points granted by flaws
+        // Calculate points granted by flaws with improved variable value handling
         const flawsPoints = this.characterFlaws.reduce((total, flaw) => {
-            // Handle flaws with variable values (e.g., Code of Honor, Social Stigma)
-            let value;
+            let value = 0;
             
-            if (typeof flaw.value === 'object') {
-                value = flaw.selectedValue || 0;
+            if (typeof flaw.value === 'object' && flaw.value !== null) {
+                // For variable values, use selectedValue or first available value
+                const rawValue = flaw.selectedValue || Object.values(flaw.value)[0] || 0;
+                
+                // Handle negative values (convert to positive for addition)
+                value = typeof rawValue === 'string' ? 
+                    Math.abs(parseInt(rawValue.replace('-', ''))) : 
+                    Math.abs(rawValue);
             } else {
-                value = flaw.value || 0;
+                // For fixed values
+                value = typeof flaw.value === 'string' ? 
+                    Math.abs(parseInt(flaw.value.replace('-', ''))) : 
+                    Math.abs(flaw.value || 0);
             }
             
-            // Convert negative values (like "-2") to positive for addition
-            const absValue = typeof value === 'string' ? 
-                parseInt(value.replace('-', '')) : 
-                Math.abs(value);
-                
-            return total + absValue;
+            console.log(`Flaw: ${flaw.name}, Value: ${value}`);
+            return total + value;
         }, 0);
+        
+        const netAdjustment = flawsPoints - perksCost;
+        console.log(`Points adjustment: ${flawsPoints} - ${perksCost} = ${netAdjustment}`);
         
         return {
             perksCost,
             flawsPoints,
-            netAdjustment: flawsPoints - perksCost
+            netAdjustment
         };
     }
 

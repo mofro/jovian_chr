@@ -11,35 +11,60 @@ import PerksFlawsUI from './perksFlawsUI.js';
 import SecondaryTraitsUI from './secondaryTraitsUI.js';
 
 // Game settings with power levels
-const gameSettings = {
-    gritty: {
-        name: "Gritty Game",
-        description: "A realistic game where characters face serious challenges and dangers.",
-        characterPoints: 20,
-        skillPoints: 40,
-    },
-    adventurous: {
-        name: "Adventurous Game",
-        description: "The standard Jovian Chronicles setting with heroic characters.",
-        characterPoints: 30,
-        skillPoints: 50,
-    },
-    cinematic: {
-        name: "Cinematic Game",
-        description: "A high-powered game with exceptional characters capable of amazing feats.",
-        characterPoints: 50,
-        skillPoints: 70,
-    }
-};
+// const gameSettings = {
+//     gritty: {
+//         name: "Gritty Game",
+//         description: "A realistic game where characters face serious challenges and dangers.",
+//         characterPoints: 20,
+//         skillPoints: 40,
+//     },
+//     adventurous: {
+//         name: "Adventurous Game",
+//         description: "The standard Jovian Chronicles setting with heroic characters.",
+//         characterPoints: 30,
+//         skillPoints: 50,
+//     },
+//     cinematic: {
+//         name: "Cinematic Game",
+//         description: "A high-powered game with exceptional characters capable of amazing feats.",
+//         characterPoints: 50,
+//         skillPoints: 70,
+//     }
+// };
 
 // Main application class
 class JovianCharacterCreator {
     constructor() {
         // Initialize event bus
         this.eventBus = eventBus;
-        
+
+    
+        // Define game settings
+        this.gameSettings = {
+            gritty: {
+                name: "Gritty Game",
+                description: "A realistic game where characters face serious challenges and dangers.",
+                characterPoints: 20,
+                skillPoints: 40,
+                flawPoints: 8 // Add this if it's missing
+            },
+            adventurous: {
+                name: "Adventurous Game",
+                description: "The standard Jovian Chronicles setting with heroic characters.",
+                characterPoints: 30,
+                skillPoints: 50,
+                flawPoints: 10 // Add this if it's missing
+            },
+            cinematic: {
+                name: "Cinematic Game",
+                description: "A high-powered game with exceptional characters capable of amazing feats.",
+                characterPoints: 50,
+                skillPoints: 70,
+                flawPoints: 12 // Add this if it's missing
+            }
+        };        
         // Initialize central character state
-        this.characterState = new CharacterState(this.eventBus, gameSettings);
+        this.characterState = new CharacterState(this.eventBus, this.gameSettings);
         
         // Store loaded data
         this.skillsData = null;
@@ -64,19 +89,19 @@ class JovianCharacterCreator {
             if (document.readyState !== 'complete') {
                 await new Promise(resolve => window.addEventListener('load', resolve));
             }
-
+    
             // Load external data
             const dataLoaded = await this.loadData();
             if (!dataLoaded) {
                 throw new Error('Failed to load required data.');
             }
-
+    
             // Initialize UI components
             this.initUI();
-
+    
             // Set up event listeners
             this.setupEventListeners();
-
+    
             console.log('Jovian Chronicles Character Creator initialized');
         } catch (error) {
             console.error('Initialization error:', error);
@@ -141,6 +166,8 @@ class JovianCharacterCreator {
     }
 
     initUI() {
+        console.log('Initializing UI components');
+    
         // Initialize attributes UI
         const attributesContainer = document.querySelector('#attributes-tab');
         if (attributesContainer) {
@@ -150,35 +177,56 @@ class JovianCharacterCreator {
                     this.characterState.updateAttributes(attributes, usedPoints);
                 }
             });
-            
-            // Subscribe to attribute events
-            this.eventBus.subscribe('attributes:updated', data => {
-                this.updateSecondaryTraits();
-            });
+        
+            console.log('Attributes UI initialized');
         }
+        
+        // Initialize skills UI with proper points
+
+            // // Subscribe to attribute events
+            // this.eventBus.subscribe('attributes:updated', data => {
+            //     this.updateSecondaryTraits();
+            // });
+        // }
         
         // Initialize skills UI
         const skillsContainer = document.querySelector('#skills-tab');
         if (skillsContainer) {
+            const skillPoints = this.characterState.getSkillPoints();
+            console.log('Initial skill points:', skillPoints);
+            
             this.skillsUI = new SkillsUI(skillsContainer, {
-                skillsData: this.skillsData, // Pass the whole data object
-                perksFlawsData: this.perksFlawsData,
-                maxSkillPoints: this.characterState.getSkillPoints().max,
+                skillsData: this.skillsData,
+                maxSkillPoints: skillPoints.max,
                 onUpdate: (skills, usedPoints) => {
                     this.characterState.updateSkills(skills, usedPoints);
                 }
             });
             
-            // Subscribe to skills events
-            this.eventBus.subscribe('skills:updated', data => {
-                this.updateSecondaryTraits();
-            });
+            console.log('Skills UI initialized');
         }
+            
+       // }
         
         // Initialize perks & flaws UI
         const perksFlawsContainer = document.querySelector('#perks-flaws-tab');
         if (perksFlawsContainer) {
-            const maxFlawPoints = gameSettings[this.characterState.getState().setting].flawPoints;
+            // Use a default value if gameSettings isn't available
+            let maxFlawPoints = 12; // Default value
+            
+            try {
+                const currentState = this.characterState.getState();
+                const currentSetting = currentState.setting;
+                
+                // Only try to access gameSettings if we have the required variables
+                if (this.gameSettings && currentSetting && this.gameSettings[currentSetting]) {
+                    maxFlawPoints = this.gameSettings[currentSetting].flawPoints || maxFlawPoints;
+                } else {
+                    console.warn('Game settings not fully available, using default maxFlawPoints:', maxFlawPoints);
+                }
+            } catch (error) {
+                console.warn('Error accessing game settings, using default maxFlawPoints:', maxFlawPoints, error);
+            }
             
             this.perksFlawsUI = new PerksFlawsUI(perksFlawsContainer, this.perksFlawsData, maxFlawPoints, 
                 (perks, flaws, pointsModifier) => {
@@ -186,15 +234,9 @@ class JovianCharacterCreator {
                 }
             );
             
-            // Subscribe to perks/flaws events
-            this.eventBus.subscribe('perksFlaws:updated', data => {
-                if (this.skillsUI) {
-                    // Update the skill points based on the adjusted maximum
-                    this.skillsUI.setMaxSkillPoints(data.adjustedSkillPoints.max);
-                }
-            });
+            console.log('Perks & Flaws UI initialized');
         }
-        
+            
         // Initialize secondary traits UI
         const secondaryTraitsContainer = document.querySelector('#secondary-traits-tab');
         if (secondaryTraitsContainer) {
@@ -206,16 +248,30 @@ class JovianCharacterCreator {
                 }
             });
             
-            // Subscribe to armor updates
-            this.eventBus.subscribe('armor:updated', armorPoints => {
-                if (this.secondaryTraitsUI) {
-                    this.secondaryTraitsUI.getTraitsManager().setArmorPoints(armorPoints);
-                }
-            });
+            console.log('Secondary Traits UI initialized');
         }
         
+            
+        //     // Subscribe to armor updates
+        //     this.eventBus.subscribe('armor:updated', armorPoints => {
+        //         if (this.secondaryTraitsUI) {
+        //             this.secondaryTraitsUI.getTraitsManager().setArmorPoints(armorPoints);
+        //         }
+        //     });
+        // }
+  
+        // Set up tab navigation
         this.setupTabNavigation();
-    }
+     
+        // Ensure the first tab is active
+        const firstTabButton = document.querySelector('.tab-button');
+        if (firstTabButton) {
+            firstTabButton.click();
+        }
+
+        // Update the footer display
+        this.updateFooterPointsDisplay();
+   }
 
     updateSecondaryTraits() {
         if (this.secondaryTraitsUI) {
@@ -259,12 +315,43 @@ class JovianCharacterCreator {
                 if (this.skillsUI) {
                     this.skillsUI.setMaxSkillPoints(data.skillPoints);
                 }
+                this.updateFooterPointsDisplay();
                 
-                if (this.perksFlawsUI) {
-                    const maxFlawPoints = gameSettings[data.setting].flawPoints;
-                    this.perksFlawsUI.setMaxFlawPoints(maxFlawPoints);
+                if (this.perksFlawsUI && this.gameSettings && data.setting) {
+                    try {
+                        const maxFlawPoints = this.gameSettings[data.setting].flawPoints || 12;
+                        this.perksFlawsUI.setMaxFlawPoints(maxFlawPoints);
+                    } catch (error) {
+                        console.error('Error updating perksFlawsUI flawPoints:', error);
+                    }
                 }
+              });
+
+            // Subscribe to skills events
+            this.eventBus.subscribe('skills:updated', data => {
+                this.updateSecondaryTraits();
+                this.updateFooterPointsDisplay();
             });
+
+            // Subscribe to perks/flaws events
+            this.eventBus.subscribe('perksFlaws:updated', data => {
+                console.log('Perks/Flaws updated event received:', data);
+                
+                if (this.skillsUI) {
+                    // Update the skill points based on the adjusted maximum
+                    this.skillsUI.setMaxSkillPoints(data.adjustedSkillPoints.max);
+                    
+                    // Force a UI update to reflect the new points
+                    this.skillsUI.update();
+                }
+                
+                // Update the footer display
+                this.updateFooterPointsDisplay();
+
+                // Also update secondary traits as perks/flaws might affect them
+                this.updateSecondaryTraits();
+            });
+    
         }
         
         // Save character button
@@ -363,6 +450,38 @@ class JovianCharacterCreator {
                 state.perksFlaws.flaws
             );
         });
+
+     // Subscribe to perks/flaws events with improved handler
+     this.eventBus.subscribe('perksFlaws:updated', data => {
+        console.log('Perks/Flaws updated event received:', data);
+        
+        if (this.skillsUI) {
+            // Update the skill points based on the adjusted maximum
+            this.skillsUI.setMaxSkillPoints(data.adjustedSkillPoints.max);
+            
+            // Force a UI update to reflect the new points
+            this.skillsUI.update();
+        }
+        
+        // Also update secondary traits as perks/flaws might affect them
+        this.updateSecondaryTraits();
+        this.updateFooterPointsDisplay();
+    });
+    
+    // Enhance attributes update handling
+    this.eventBus.subscribe('attributes:updated', data => {
+        console.log('Attributes updated event received:', data);
+        this.updateSecondaryTraits();
+        
+        // If we're currently on the secondary traits tab, update its display
+        const activeTab = document.querySelector('.tab-button.active');
+        if (activeTab && activeTab.getAttribute('data-tab') === 'secondary-traits') {
+            if (this.secondaryTraitsUI) {
+                this.secondaryTraitsUI.update();
+            }
+        }
+    });
+
     }
 
     /**
@@ -548,6 +667,19 @@ class JovianCharacterCreator {
         }
     }
 
+    updateFooterPointsDisplay() {
+        // Get the current skill points
+        const skillPoints = this.characterState.getSkillPoints();
+        console.log('Footer display update - Skill points:', skillPoints);
+        
+        // Find the skill points display element in the footer
+        const footerSkillPointsDisplay = document.getElementById('footer-skill-points-display');
+        
+        if (footerSkillPointsDisplay) {
+            footerSkillPointsDisplay.textContent = `${skillPoints.used}/${skillPoints.max} (${skillPoints.remaining} remaining)`;
+        }
+    }
+
     /**
      * Show a message to the user
      * @param {string} message - Message text
@@ -591,40 +723,71 @@ class JovianCharacterCreator {
     setupTabNavigation() {
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabPanes = document.querySelectorAll('.tab-pane');
-
-        console.log('Tab buttons:', tabButtons);
-        console.log('Tab panes:', tabPanes);
-
+    
+        console.log('Setting up tab navigation for', tabButtons.length, 'tabs');
+    
         tabButtons.forEach(button => {
             button.addEventListener('click', () => {
                 // Remove active class from all buttons and panes
                 tabButtons.forEach(btn => btn.classList.remove('active'));
                 tabPanes.forEach(pane => pane.classList.remove('active'));
-
+    
                 // Add active class to the clicked button and corresponding pane
                 button.classList.add('active');
                 const tabId = button.getAttribute('data-tab');
                 const targetPane = document.getElementById(`${tabId}-tab`);
+                
                 if (targetPane) {
                     targetPane.classList.add('active');
+                    console.log(`Switched to tab: ${tabId}`);
                 } else {
                     console.error(`Tab pane with ID '${tabId}-tab' not found.`);
                 }
-
-                // Trigger updates for the corresponding UI component
-                if (tabId === 'attributes' && this.attributesUI) {
-                    this.attributesUI.update();
-                } else if (tabId === 'skills' && this.skillsUI) {
-                    this.skillsUI.update();
-                } else if (tabId === 'perks-flaws' && this.perksFlawsUI) {
-                    this.perksFlawsUI.updateUI();
-                } else if (tabId === 'secondary-traits' && this.secondaryTraitsUI) {
-                    this.secondaryTraitsUI.update();
-                }
+    
+                // Perform a complete refresh of the tab's content
+                this.refreshTabContent(tabId);
             });
         });
     }
 
+    refreshTabContent(tabId) {
+        switch(tabId) {
+            case 'attributes':
+                if (this.attributesUI) {
+                    console.log('Refreshing attributes tab');
+                    this.attributesUI.update();
+                }
+                break;
+                
+            case 'skills':
+                if (this.skillsUI) {
+                    console.log('Refreshing skills tab');
+                    // Ensure skill points maximum is up to date
+                    const adjustedMax = this.characterState.getSkillPoints().max;
+                    this.skillsUI.setMaxSkillPoints(adjustedMax);
+                    this.skillsUI.update();
+                }
+                break;
+                
+            case 'perks-flaws':
+                if (this.perksFlawsUI) {
+                    console.log('Refreshing perks/flaws tab');
+                    this.perksFlawsUI.updateUI();
+                }
+                break;
+                
+            case 'secondary-traits':
+                console.log('Refreshing secondary traits tab');
+                // Update secondary traits based on current attributes and skills
+                this.updateSecondaryTraits();
+                break;
+        }
+    }
+
+    /**
+     * Refresh the content of the active tab
+     * @param {string} tabId - ID of the active tab
+     */
     updateActiveTab(tabId) {
         // Update tab-specific content
         switch(tabId) {

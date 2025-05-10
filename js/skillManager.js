@@ -245,11 +245,14 @@ export default class SkillManager {
         const used = this.characterSkills.reduce((total, skill) => {
             return total + this.calculateSkillCost(skill);
         }, 0);
-
+    
+        // Calculate remaining (ensure it's not undefined)
+        const remaining = Math.max(0, this.maxSkillPoints - used);
+    
         return {
             used,
             max: this.maxSkillPoints,
-            remaining: Math.max(0, this.maxSkillPoints - used)
+            remaining: remaining // Explicitly calculate remaining
         };
     }
 
@@ -553,11 +556,13 @@ export default class SkillManager {
             return;
         }
         
+        console.log(`Setting max skill points: ${this.maxSkillPoints} -> ${maxPoints}`);
         this.maxSkillPoints = maxPoints;
         
-        // Recalculate the points
-        this.getSkillPoints();
+        // Return the updated skill points
+        return this.getSkillPoints();
     }
+    
 
     /**
      * Reset all skills to initial state

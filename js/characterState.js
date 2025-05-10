@@ -40,7 +40,9 @@ export class CharacterState {
                 },
                 skillPoints: {
                     used: 0,
-                    max: gameSettings[defaultSetting].skillPoints
+                    max: gameSettings[defaultSetting].skillPoints,
+                    // Add this explicit initialization
+                    remaining: gameSettings[defaultSetting].skillPoints 
                 },
                 perksFlawsModifier: 0
             },
@@ -70,19 +72,31 @@ export class CharacterState {
      * @param {string} setting - Game setting key
      */
     changeGameSetting(setting) {
-        if (!this.gameSettings[setting]) return;
-        
-        this.state.setting = setting;
-        
-        // Update point limits based on new setting
-        this.state.points.characterPoints.max = this.gameSettings[setting].characterPoints;
-        this.state.points.skillPoints.max = this.gameSettings[setting].skillPoints;
-        
-        this.eventBus.publish('setting:changed', {
-            setting,
-            characterPoints: this.state.points.characterPoints.max,
-            skillPoints: this.state.points.skillPoints.max
-        });
+        try {
+            if (!this.gameSettings) {
+                console.error('Game settings not available in CharacterState');
+                return;
+            }
+            
+            if (!this.gameSettings[setting]) {
+                console.error(`Invalid game setting: ${setting}`);
+                return;
+            }
+            
+            this.state.setting = setting;
+            
+            // Update point limits based on new setting
+            this.state.points.characterPoints.max = this.gameSettings[setting].characterPoints;
+            this.state.points.skillPoints.max = this.gameSettings[setting].skillPoints;
+            
+            this.eventBus.publish('setting:changed', {
+                setting,
+                characterPoints: this.state.points.characterPoints.max,
+                skillPoints: this.state.points.skillPoints.max
+            });
+        } catch (error) {
+            console.error('Error changing game setting:', error);
+        }
     }
     
     /**
@@ -122,7 +136,9 @@ export class CharacterState {
      * @param {number} pointsModifier - Net skill points adjustment
      */
     updatePerksFlaws(perks, flaws, pointsModifier) {
-        // Ensure we have valid arrays to spread
+        console.log('Updating perks/flaws with modifier:', pointsModifier);
+        
+        // Ensure we have valid arrays
         this.state.perksFlaws.perks = perks ? [...perks] : [];
         this.state.perksFlaws.flaws = flaws ? [...flaws] : [];
         this.state.points.perksFlawsModifier = pointsModifier || 0;
@@ -130,13 +146,25 @@ export class CharacterState {
         // Calculate adjusted skill points max
         const baseMax = this.gameSettings[this.state.setting].skillPoints;
         const adjustedMax = baseMax + (pointsModifier || 0);
+        
+        console.log(`Adjusting skill points: base ${baseMax} + modifier ${pointsModifier} = ${adjustedMax}`);
+        
+        // Update the skill points maximum
         this.state.points.skillPoints.max = adjustedMax;
         
+        // Calculate the adjusted remaining points
+        const remaining = Math.max(0, adjustedMax - this.state.points.skillPoints.used);
+        
+        // Publish the perks/flaws updated event with complete skill points info
         this.eventBus.publish('perksFlaws:updated', {
             perks: this.state.perksFlaws.perks,
             flaws: this.state.perksFlaws.flaws,
             pointsModifier: this.state.points.perksFlawsModifier,
-            adjustedSkillPoints: this.state.points.skillPoints
+            adjustedSkillPoints: {
+                used: this.state.points.skillPoints.used,
+                max: adjustedMax,
+                remaining: remaining
+            }
         });
     }
     
@@ -175,7 +203,24 @@ export class CharacterState {
      * @returns {Object} Skill points info
      */
     getSkillPoints() {
-        return { ...this.state.points.skillPoints };
+        // Calculate base values
+        const used = this.state.points.skillPoints.used;
+        const baseMax = this.gameSettings[this.state.setting].skillPoints;
+        const modifier = this.state.points.perksFlawsModifier || 0;
+        
+        // Apply perks/flaws modifier to max
+        const adjustedMax = baseMax + modifier;
+        
+        // Calculate remaining
+        const remaining = Math.max(0, adjustedMax - used);
+        
+        return { 
+            used: used, 
+            max: adjustedMax, // Use adjusted max that includes perks/flaws modifier
+            remaining: remaining,
+            baseMax: baseMax, // Optionally include the base max for reference
+            modifier: modifier // Optionally include the modifier for reference
+        };
     }
     
     /**

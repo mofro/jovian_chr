@@ -362,6 +362,21 @@ export default class SkillsUI {
         return item;
     }
 
+    /** Update the skill points display
+     * @returns {void}
+     */
+    updatePointsDisplay() {
+        // Get the current skill points
+        const points = this.skillManager.getSkillPoints();
+        
+        // Update the points display in the header
+        const pointsDisplay = document.getElementById('skill-points-used');
+        if (pointsDisplay) {
+            pointsDisplay.textContent = `${points.used}/${points.max} SP (${points.remaining} remaining)`;
+        }
+    }
+    
+
     /**
      * Update the state of buttons based on skill points and levels
      * @returns {void}
@@ -430,6 +445,8 @@ export default class SkillsUI {
      */
     update() {
         this.updateSkillList();
+        this.updatePointsDisplay();
+        this.updateButtonsState();
     }
 
     /**
